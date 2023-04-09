@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.serialPortMain = new System.IO.Ports.SerialPort(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTest = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblModelName = new System.Windows.Forms.Label();
@@ -43,7 +42,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lblTest);
             this.panel1.Controls.Add(this.lblDate);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblModelName);
@@ -53,16 +51,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 64);
             this.panel1.TabIndex = 0;
-            // 
-            // lblTest
-            // 
-            this.lblTest.AutoSize = true;
-            this.lblTest.Location = new System.Drawing.Point(12, 52);
-            this.lblTest.Name = "lblTest";
-            this.lblTest.Size = new System.Drawing.Size(37, 12);
-            this.lblTest.TabIndex = 4;
-            this.lblTest.Text = "TEST";
-            this.lblTest.Visible = false;
             // 
             // lblDate
             // 
@@ -153,9 +141,8 @@
 
         #endregion
 
-        private System.IO.Ports.SerialPort serialPort1;
+        private System.IO.Ports.SerialPort serialPortMain;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblTest;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblModelName;

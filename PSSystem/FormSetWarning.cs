@@ -15,6 +15,7 @@ namespace PSSystem
         public FormSetWarning()
         {
             InitializeComponent();
+            GSerial.SetupSerialPort(comboPort);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -22,6 +23,11 @@ namespace PSSystem
             if (Globals.gCurrentIndex != (int)FORM_INDEX.NO_FORM_MAIN)
                 Globals.ChangeForm((int)FORM_INDEX.NO_FORM_MAIN);
 
+        }
+
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            GSerial.Connect(btnConnect);
         }
     }
 }

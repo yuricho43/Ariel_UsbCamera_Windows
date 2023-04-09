@@ -19,7 +19,7 @@ namespace PSSystem
         public const int MAX_CAMERA = 4;
         public static int gCurrentIndex = 0;
         public static int gCurrentCam = 0;
-        public static Form  gMainForm;
+        public static Form1  gMainForm;
         public static Form[] gFormList = new Form[MAX_COUNT];
         public static Mat[] gFrame = new Mat[MAX_COUNT];
         public static VideoCapture[] gVideoList = new VideoCapture[MAX_CAMERA];
@@ -34,6 +34,7 @@ namespace PSSystem
         public static int[] gCriticalThreshold = new int[5];
         public static int gNumSensor;
         public static string[] gWifi = new string[3];   // SSID, PASS
+        public static string gComPort;
 
         public static void ChangeForm(int index)
         {
@@ -68,7 +69,7 @@ namespace PSSystem
             SetSetting("CriticalThreshold", strCritical);
             SetSetting("NumberOfSensor", gNumSensor.ToString());
             SetSetting("WifiValue", strWifi);
+            SetSetting("ComPort", gComPort);
         }
-
     }
 }

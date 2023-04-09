@@ -24,6 +24,7 @@ namespace PSSystem
 
         }
 
+        //--- Set Port
         private void btnWarning_Click(object sender, EventArgs e)
         {
             Globals.ChangeForm((int)FORM_INDEX.NO_FORM_SET_WARNING);
@@ -32,14 +33,12 @@ namespace PSSystem
 
         private void btnCritical_Click(object sender, EventArgs e)
         {
-            Globals.ChangeForm((int)FORM_INDEX.NO_FORM_SET_CRITICAL);
-
+            // Globals.ChangeForm((int)FORM_INDEX.NO_FORM_SET_CRITICAL);
         }
 
         private void btnSensor_Click(object sender, EventArgs e)
         {
-            Globals.ChangeForm((int)FORM_INDEX.NO_FORM_SET_NUMSENSOR);
-
+            //Globals.ChangeForm((int)FORM_INDEX.NO_FORM_SET_NUMSENSOR);
         }
 
         private void btnRelay_Click(object sender, EventArgs e)
@@ -58,6 +57,7 @@ namespace PSSystem
         {
             Globals.ChangeForm((int)FORM_INDEX.NO_FORM_SET_DATA);
         }
+
         private void btnVideo_Click(object sender, EventArgs e)
         {
             // Goto Video 화면 
@@ -67,7 +67,7 @@ namespace PSSystem
 
         private void btnWifi_Click(object sender, EventArgs e)
         {
-            Globals.ChangeForm((int)FORM_INDEX.NO_FORM_SET_WIFI);
+            // Globals.ChangeForm((int)FORM_INDEX.NO_FORM_SET_DEBUG);
         }
 
         private void btnEvent_Click(object sender, EventArgs e)

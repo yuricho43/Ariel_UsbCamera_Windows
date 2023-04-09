@@ -49,10 +49,11 @@ namespace PSSystem
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(306, 15);
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Yellow;
+            this.label2.Location = new System.Drawing.Point(306, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 37);
+            this.label2.Size = new System.Drawing.Size(247, 57);
             this.label2.TabIndex = 22;
             this.label2.Text = "센서 수 설정";
             // 

@@ -26,7 +26,7 @@ namespace PSSystem
         NO_FORM_SET_STATE = 8,
         NO_FORM_SET_DATA,
         NO_FORM_SET_VIDEO = 10,
-        NO_FORM_SET_WIFI,
+        NO_FORM_SET_DEBUG,
         NO_FORM_EVENT,
         NO_FORM_FORMTOP_BASE = 13,
         NO_FORM_FORMTOP_1,
@@ -55,7 +55,7 @@ namespace PSSystem
             Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_STATE] = new FormSetState();
             Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_DATA] = new FormSetData();
             Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_VIDEO] = new FormSetVideo();
-            Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_WIFI] = new FormSetWifi();
+            Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_DEBUG] = new FormSetDebug();
             Globals.gFormList[(int)FORM_INDEX.NO_FORM_EVENT] = new FormEvent();
             Globals.gMainForm = this;
 
@@ -63,20 +63,23 @@ namespace PSSystem
 
             for (int i = 0; i < Globals.MAX_COUNT; i++)
             {
-                Globals.gFormList[i].TopLevel = false;
-                Globals.gFormList[i].Size = new System.Drawing.Size(800, 416);
-                Globals.gFormList[i].BackgroundImage = Properties.Resources.back1;
-                panelMiddle.Controls.Add(Globals.gFormList[i]);
+                if (i != 11) // 11 ==> Debug Window
+                {
+                    Globals.gFormList[i].TopLevel = false;
+                    Globals.gFormList[i].Size = new System.Drawing.Size(800, 416);
+                    Globals.gFormList[i].BackgroundImage = Properties.Resources.back1;
+                    panelMiddle.Controls.Add(Globals.gFormList[i]);
+                }
             }
             Globals.gFormList[0].Show();
             panel1.BackgroundImage = Properties.Resources.back;
             lblModelName.BackColor = Color.Transparent;
             label1.BackColor = Color.Transparent;
             lblDate.BackColor = Color.Transparent;
-            btnMenu.BackColor = Color.Transparent;
 
-            string oneTimeKeywordFilePath = ConfigurationManager.AppSettings["OneTimeKeyword"];
-            lblTest.Text = oneTimeKeywordFilePath;
+            // For Debug Message
+            Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_DEBUG].Show();
+
         }
 
         private void Read_Configuration()
@@ -87,6 +90,7 @@ namespace PSSystem
             string strCritical = Globals.GetSetting("CriticalThreshold");
             string strNumSensor = Globals.GetSetting("NumberOfSensor");
             string strWifi = Globals.GetSetting("WifiValue");
+            string strCom = Globals.GetSetting("COMPort");
 
             if (strNames == null)
                 strNames = "ID001,ID002,ID003,ID004";
@@ -107,11 +111,15 @@ namespace PSSystem
             if (strWifi == null)
                 strWifi = "WIFI-SSD,WIFI-PASS";
             Globals.gWifi = strWifi.Split(',').ToArray<string>();
+
+            if (strCom == null)
+                strCom = "COM3";
+            Globals.gComPort = strCom;
         }
 
         static public void ShowControls()
         {
-            ((Form1)Globals.gMainForm).ShowTopMenu();
+            Globals.gMainForm.ShowTopMenu();
         }
 
         public void ShowTopMenu()
@@ -141,6 +149,12 @@ namespace PSSystem
         {
             Globals.Write_Configuration();
             Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_VIDEO].Close();
+        }
+
+        public void Process_Received__Data(byte [] dataSensor, int len)
+        {
+            // Display Log Data
+            ((FormSetDebug)Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_DEBUG]).Display_Binary_Data(dataSensor, len);
         }
     }
 }

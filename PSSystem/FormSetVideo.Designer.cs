@@ -91,56 +91,64 @@ namespace PSSystem
             // 
             // btnCam1
             // 
-            this.btnCam1.Location = new System.Drawing.Point(12, 48);
+            this.btnCam1.BackColor = System.Drawing.Color.Blue;
+            this.btnCam1.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCam1.Location = new System.Drawing.Point(12, 73);
             this.btnCam1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCam1.Name = "btnCam1";
-            this.btnCam1.Size = new System.Drawing.Size(75, 18);
+            this.btnCam1.Size = new System.Drawing.Size(75, 27);
             this.btnCam1.TabIndex = 10;
             this.btnCam1.Text = "카메라1";
-            this.btnCam1.UseVisualStyleBackColor = true;
+            this.btnCam1.UseVisualStyleBackColor = false;
             this.btnCam1.Click += new System.EventHandler(this.btnCam1_Click);
             // 
             // btnCam2
             // 
-            this.btnCam2.Location = new System.Drawing.Point(705, 48);
+            this.btnCam2.BackColor = System.Drawing.Color.Blue;
+            this.btnCam2.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCam2.Location = new System.Drawing.Point(701, 73);
             this.btnCam2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCam2.Name = "btnCam2";
-            this.btnCam2.Size = new System.Drawing.Size(75, 18);
+            this.btnCam2.Size = new System.Drawing.Size(75, 27);
             this.btnCam2.TabIndex = 11;
             this.btnCam2.Text = "카메라2";
-            this.btnCam2.UseVisualStyleBackColor = true;
+            this.btnCam2.UseVisualStyleBackColor = false;
             this.btnCam2.Click += new System.EventHandler(this.btnCam2_Click);
             // 
             // btnCam3
             // 
-            this.btnCam3.Location = new System.Drawing.Point(12, 198);
+            this.btnCam3.BackColor = System.Drawing.Color.Blue;
+            this.btnCam3.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCam3.Location = new System.Drawing.Point(12, 251);
             this.btnCam3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCam3.Name = "btnCam3";
-            this.btnCam3.Size = new System.Drawing.Size(75, 18);
+            this.btnCam3.Size = new System.Drawing.Size(75, 27);
             this.btnCam3.TabIndex = 12;
             this.btnCam3.Text = "카메라3";
-            this.btnCam3.UseVisualStyleBackColor = true;
+            this.btnCam3.UseVisualStyleBackColor = false;
             this.btnCam3.Click += new System.EventHandler(this.btnCam3_Click);
             // 
             // btnCam4
             // 
-            this.btnCam4.Location = new System.Drawing.Point(705, 198);
+            this.btnCam4.BackColor = System.Drawing.Color.Blue;
+            this.btnCam4.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCam4.Location = new System.Drawing.Point(705, 251);
             this.btnCam4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCam4.Name = "btnCam4";
-            this.btnCam4.Size = new System.Drawing.Size(75, 18);
+            this.btnCam4.Size = new System.Drawing.Size(75, 27);
             this.btnCam4.TabIndex = 13;
             this.btnCam4.Text = "카메라4";
-            this.btnCam4.UseVisualStyleBackColor = true;
+            this.btnCam4.UseVisualStyleBackColor = false;
             this.btnCam4.Click += new System.EventHandler(this.btnCam4_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
             this.label1.Location = new System.Drawing.Point(4, 353);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 37);
+            this.label1.Size = new System.Drawing.Size(185, 57);
             this.label1.TabIndex = 14;
             this.label1.Text = "영상보기";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -159,10 +167,10 @@ namespace PSSystem
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(140, 359);
+            this.btnNext.Location = new System.Drawing.Point(12, 306);
             this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 18);
+            this.btnNext.Size = new System.Drawing.Size(41, 45);
             this.btnNext.TabIndex = 16;
             this.btnNext.Text = "Next  Cam";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -173,7 +181,7 @@ namespace PSSystem
             this.pictureBox5.Location = new System.Drawing.Point(68, 7);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(651, 344);
+            this.pictureBox5.Size = new System.Drawing.Size(631, 344);
             this.pictureBox5.TabIndex = 17;
             this.pictureBox5.TabStop = false;
             // 
@@ -198,6 +206,7 @@ namespace PSSystem
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormSetVideo";
             this.Text = "FormD2";
+            this.Shown += new System.EventHandler(this.FormSetVideo_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
