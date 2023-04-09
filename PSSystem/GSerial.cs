@@ -33,6 +33,7 @@ namespace PSSystem
 
         public static void Connect(Button btnConnect)
         {
+            //--- Disconnect --> Connect
             if (serialPort1.IsOpen == false)
             {
                 serialPort1.PortName = gCombPort.SelectedItem.ToString();
@@ -59,10 +60,9 @@ namespace PSSystem
                     btnConnect.Text = "연결하기";
                 }
             }
-            else
+            else   // Connect --> Disconnect
             {
-                btnConnect.Text = "연결끊기";
-                btnConnect.BackColor = Color.Lime;
+                Disconnect(btnConnect);         
             }
         }
 
@@ -81,11 +81,6 @@ namespace PSSystem
                     btnConnect.BackColor = Color.Red;
                     btnConnect.Text = "연결하기";
                 }
-            }
-            else
-            {
-                btnConnect.BackColor = Color.Red;
-                btnConnect.Text = "연결하기";
             }
         }
 

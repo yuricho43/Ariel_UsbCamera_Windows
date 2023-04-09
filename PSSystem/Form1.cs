@@ -15,19 +15,19 @@ namespace PSSystem
     enum FORM_INDEX
     {
         NO_FORM_NONE = 0,
-        NO_FORM_LOGO = 0,       // Initial
-        NO_FORM_MAIN = 1,       // 상시화면
-        NO_FORM_MENU = 2,       // 설정화면
-        NO_FORM_SET_PANEL,      // 배전반
-        NO_FORM_SET_WARNING,
-        NO_FORM_SET_CRITICAL,
-        NO_FORM_SET_NUMSENSOR = 6,
-        NO_FORM_SET_RELAY,
-        NO_FORM_SET_STATE = 8,
-        NO_FORM_SET_DATA,
-        NO_FORM_SET_VIDEO = 10,
-        NO_FORM_SET_DEBUG,
-        NO_FORM_EVENT,
+        NO_FORM_LOGO = 0,           // Initial
+        NO_FORM_MAIN = 1,           // 상시화면
+        NO_FORM_MENU = 2,           // 설정화면
+        NO_FORM_SET_PANEL,          // 배전반, 위험값, 사고값, WIFI, Sensor 수
+        NO_FORM_SET_SERIAL,         // 시리얼 포트
+        NO_FORM_SET_CRITICAL,       // NOT USED --> SET_PANEL에서 처리
+        NO_FORM_SET_NUMSENSOR = 6,  // NOT USED --> SET_PANEL에서 처리
+        NO_FORM_SET_RELAY,          // 릴레이테스트
+        NO_FORM_SET_STATE = 8,      // 상태감시
+        NO_FORM_SET_DATA,           // 데이타검색
+        NO_FORM_SET_VIDEO = 10,     // 비디오 하면
+        NO_FORM_SET_DEBUG,          // 디버깅 화면
+        NO_FORM_EVENT,              // EVENT 발생
         NO_FORM_FORMTOP_BASE = 13,
         NO_FORM_FORMTOP_1,
         NO_FORM_FORMTOP_2,
@@ -48,7 +48,7 @@ namespace PSSystem
             Globals.gFormList[(int)FORM_INDEX.NO_FORM_MAIN] = new FormMain();
             Globals.gFormList[(int)FORM_INDEX.NO_FORM_MENU] = new FormMenu();
             Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_PANEL] = new FormSetPanel();
-            Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_WARNING] = new FormSetWarning();
+            Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_SERIAL] = new FormSetSerial();
             Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_CRITICAL] = new FormSetCritical();
             Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_NUMSENSOR] = new FormSetNumSensor();
             Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_RELAY] = new FormSetRelay();
@@ -154,7 +154,13 @@ namespace PSSystem
         public void Process_Received__Data(byte [] dataSensor, int len)
         {
             // Display Log Data
-            ((FormSetDebug)Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_DEBUG]).Display_Binary_Data(dataSensor, len);
+            ((FormSetDebug) Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_DEBUG]).Display_Binary_Data(dataSensor, len);
+
+            //--- Parse and Save to Global variables.
+            ((FormSetState)Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_STATE]).ParseSensorData(dataSensor, len);
+            //--- Display at State Form.
+            //--- Log Data
+            //--- Check Event, Warning, Critical and Save Event.
         }
     }
 }

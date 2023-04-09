@@ -15,6 +15,8 @@ namespace PSSystem
         public FormEvent()
         {
             InitializeComponent();
+            label2.BackColor = Color.Transparent;
+            label2.Left = (Globals.PANEL_WIDTH - label2.Width) / 2;
         }
 
         private void btnHome_Click(object sender, EventArgs e)

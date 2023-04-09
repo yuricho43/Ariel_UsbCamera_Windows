@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +11,13 @@ using System.Windows.Forms;
 
 namespace PSSystem
 {
-    public partial class FormSetWarning : Form
+    public partial class FormSetSerial : Form
     {
-        public FormSetWarning()
+        public FormSetSerial()
         {
             InitializeComponent();
+            label2.BackColor = Color.Transparent;
+            label2.Left = (Globals.PANEL_WIDTH - label2.Width) / 2;
             GSerial.SetupSerialPort(comboPort);
         }
 

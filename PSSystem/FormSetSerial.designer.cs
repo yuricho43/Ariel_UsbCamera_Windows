@@ -2,7 +2,7 @@
 using System.Drawing;
 namespace PSSystem
 {
-    partial class FormSetWarning
+    partial class FormSetSerial
     {
         /// <summary>
         /// Required designer variable.
@@ -38,6 +38,8 @@ namespace PSSystem
             // 
             // btnHome
             // 
+            this.btnHome.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnHome.ForeColor = System.Drawing.Color.Black;
             this.btnHome.Location = new System.Drawing.Point(725, 359);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHome.Name = "btnHome";
@@ -51,10 +53,11 @@ namespace PSSystem
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(283, 18);
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Yellow;
+            this.label2.Location = new System.Drawing.Point(283, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(188, 37);
+            this.label2.Size = new System.Drawing.Size(230, 43);
             this.label2.TabIndex = 18;
             this.label2.Text = "COM 포트 연결";
             // 
@@ -69,15 +72,15 @@ namespace PSSystem
             // btnConnect
             // 
             this.btnConnect.BackColor = System.Drawing.Color.Red;
-            this.btnConnect.Location = new System.Drawing.Point(212, 109);
+            this.btnConnect.Location = new System.Drawing.Point(207, 102);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(98, 23);
+            this.btnConnect.Size = new System.Drawing.Size(98, 33);
             this.btnConnect.TabIndex = 21;
             this.btnConnect.Text = "연결하기";
             this.btnConnect.UseVisualStyleBackColor = false;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
-            // FormSetWarning
+            // FormSetSerial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -89,7 +92,7 @@ namespace PSSystem
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "FormSetWarning";
+            this.Name = "FormSetSerial";
             this.Text = "FormA1";
             this.ResumeLayout(false);
             this.PerformLayout();

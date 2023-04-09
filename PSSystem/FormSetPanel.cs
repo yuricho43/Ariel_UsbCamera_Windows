@@ -17,6 +17,7 @@ namespace PSSystem
         {
             InitializeComponent();
             label1.BackColor = Color.Transparent;
+            label1.Left = (Globals.PANEL_WIDTH - label1.Width) / 2;
             groupBox1.BackColor = Color.Transparent;
             groupBox2.BackColor = Color.Transparent;
             groupBox3.BackColor = Color.Transparent;

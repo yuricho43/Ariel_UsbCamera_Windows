@@ -51,40 +51,40 @@ namespace PSSystem
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(395, 181);
+            this.pictureBox4.Location = new System.Drawing.Point(394, 217);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(300, 170);
+            this.pictureBox4.Size = new System.Drawing.Size(320, 180);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 9;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(89, 181);
+            this.pictureBox3.Location = new System.Drawing.Point(70, 217);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(300, 170);
+            this.pictureBox3.Size = new System.Drawing.Size(320, 180);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(395, 7);
+            this.pictureBox2.Location = new System.Drawing.Point(394, 32);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(300, 170);
+            this.pictureBox2.Size = new System.Drawing.Size(320, 180);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(89, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(70, 32);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(300, 170);
+            this.pictureBox1.Size = new System.Drawing.Size(320, 180);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -92,11 +92,11 @@ namespace PSSystem
             // btnCam1
             // 
             this.btnCam1.BackColor = System.Drawing.Color.Blue;
-            this.btnCam1.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCam1.Location = new System.Drawing.Point(12, 73);
+            this.btnCam1.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCam1.Location = new System.Drawing.Point(0, 123);
             this.btnCam1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCam1.Name = "btnCam1";
-            this.btnCam1.Size = new System.Drawing.Size(75, 27);
+            this.btnCam1.Size = new System.Drawing.Size(70, 27);
             this.btnCam1.TabIndex = 10;
             this.btnCam1.Text = "카메라1";
             this.btnCam1.UseVisualStyleBackColor = false;
@@ -105,11 +105,11 @@ namespace PSSystem
             // btnCam2
             // 
             this.btnCam2.BackColor = System.Drawing.Color.Blue;
-            this.btnCam2.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCam2.Location = new System.Drawing.Point(701, 73);
+            this.btnCam2.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCam2.Location = new System.Drawing.Point(721, 123);
             this.btnCam2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCam2.Name = "btnCam2";
-            this.btnCam2.Size = new System.Drawing.Size(75, 27);
+            this.btnCam2.Size = new System.Drawing.Size(70, 27);
             this.btnCam2.TabIndex = 11;
             this.btnCam2.Text = "카메라2";
             this.btnCam2.UseVisualStyleBackColor = false;
@@ -118,11 +118,11 @@ namespace PSSystem
             // btnCam3
             // 
             this.btnCam3.BackColor = System.Drawing.Color.Blue;
-            this.btnCam3.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCam3.Location = new System.Drawing.Point(12, 251);
+            this.btnCam3.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCam3.Location = new System.Drawing.Point(0, 301);
             this.btnCam3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCam3.Name = "btnCam3";
-            this.btnCam3.Size = new System.Drawing.Size(75, 27);
+            this.btnCam3.Size = new System.Drawing.Size(70, 27);
             this.btnCam3.TabIndex = 12;
             this.btnCam3.Text = "카메라3";
             this.btnCam3.UseVisualStyleBackColor = false;
@@ -131,11 +131,11 @@ namespace PSSystem
             // btnCam4
             // 
             this.btnCam4.BackColor = System.Drawing.Color.Blue;
-            this.btnCam4.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCam4.Location = new System.Drawing.Point(705, 251);
+            this.btnCam4.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCam4.Location = new System.Drawing.Point(725, 301);
             this.btnCam4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCam4.Name = "btnCam4";
-            this.btnCam4.Size = new System.Drawing.Size(75, 27);
+            this.btnCam4.Size = new System.Drawing.Size(70, 27);
             this.btnCam4.TabIndex = 13;
             this.btnCam4.Text = "카메라4";
             this.btnCam4.UseVisualStyleBackColor = false;
@@ -144,17 +144,19 @@ namespace PSSystem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(4, 353);
+            this.label1.Location = new System.Drawing.Point(721, 202);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 57);
+            this.label1.Size = new System.Drawing.Size(76, 25);
             this.label1.TabIndex = 14;
             this.label1.Text = "영상보기";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnHome
             // 
+            this.btnHome.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnHome.ForeColor = System.Drawing.Color.Black;
             this.btnHome.Location = new System.Drawing.Point(725, 359);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHome.Name = "btnHome";
@@ -167,10 +169,12 @@ namespace PSSystem
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(12, 306);
+            this.btnNext.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnNext.ForeColor = System.Drawing.Color.Black;
+            this.btnNext.Location = new System.Drawing.Point(700, 17);
             this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(41, 45);
+            this.btnNext.Size = new System.Drawing.Size(88, 45);
             this.btnNext.TabIndex = 16;
             this.btnNext.Text = "Next  Cam";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -178,10 +182,10 @@ namespace PSSystem
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(68, 7);
+            this.pictureBox5.Location = new System.Drawing.Point(24, 14);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(631, 344);
+            this.pictureBox5.Size = new System.Drawing.Size(640, 390);
             this.pictureBox5.TabIndex = 17;
             this.pictureBox5.TabStop = false;
             // 

@@ -90,6 +90,7 @@ namespace PSSystem
             this.btnCritical.Text = "(사용안함-사고설정)";
             this.btnCritical.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCritical.UseVisualStyleBackColor = false;
+            this.btnCritical.Visible = false;
             this.btnCritical.Click += new System.EventHandler(this.btnCritical_Click);
             // 
             // btnSensor
@@ -106,6 +107,7 @@ namespace PSSystem
             this.btnSensor.Text = "(사용안함-센서)";
             this.btnSensor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSensor.UseVisualStyleBackColor = false;
+            this.btnSensor.Visible = false;
             this.btnSensor.Click += new System.EventHandler(this.btnSensor_Click);
             // 
             // btnRelay
@@ -135,9 +137,10 @@ namespace PSSystem
             this.btnWifi.Name = "btnWifi";
             this.btnWifi.Size = new System.Drawing.Size(199, 40);
             this.btnWifi.TabIndex = 8;
-            this.btnWifi.Text = "(사용안함-WIFI)";
+            this.btnWifi.Text = "(사용안함-DEBUG)";
             this.btnWifi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnWifi.UseVisualStyleBackColor = false;
+            this.btnWifi.Visible = false;
             this.btnWifi.Click += new System.EventHandler(this.btnWifi_Click);
             // 
             // btnVideo
@@ -190,6 +193,8 @@ namespace PSSystem
             // 
             // btnHome
             // 
+            this.btnHome.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnHome.ForeColor = System.Drawing.Color.Black;
             this.btnHome.Location = new System.Drawing.Point(725, 359);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHome.Name = "btnHome";

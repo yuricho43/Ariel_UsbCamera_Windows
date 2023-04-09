@@ -37,7 +37,6 @@ namespace PSSystem
             });
 
         }
-
         private void btnEnq_Click(object sender, EventArgs e)
         {
             byte bCmd = Convert.ToByte(textCommand.Text, 16);

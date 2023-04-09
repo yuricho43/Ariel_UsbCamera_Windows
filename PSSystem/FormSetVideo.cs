@@ -10,12 +10,13 @@ namespace PSSystem
     {
         Button[] CameraButton = new Button[4];
         int CurrentCam = -1;
-        int CameraMode = 0;     // 0: 4 Cam, 1: 1Cam
+        int CameraMode = 1;     // 0: 4 Cam, 1: 1Cam
 
         public FormSetVideo()
         {
             InitializeComponent();
             label1.BackColor = Color.Transparent;
+            //label1.Left = (Globals.PANEL_WIDTH - label1.Width) / 2;
 
             CameraButton[0] = btnCam1;
             CameraButton[1] = btnCam2;

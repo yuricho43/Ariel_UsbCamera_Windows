@@ -27,7 +27,7 @@ namespace PSSystem
         //--- Set Port
         private void btnWarning_Click(object sender, EventArgs e)
         {
-            Globals.ChangeForm((int)FORM_INDEX.NO_FORM_SET_WARNING);
+            Globals.ChangeForm((int)FORM_INDEX.NO_FORM_SET_SERIAL);
 
         }
 

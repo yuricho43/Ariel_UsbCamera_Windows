@@ -17,6 +17,7 @@ namespace PSSystem
             InitializeComponent();
 
             label1.BackColor = Color.Transparent;
+            label1.Left = (Globals.PANEL_WIDTH - label1.Width) / 2;
             label2.BackColor = Color.Transparent;
             label3.BackColor = Color.Transparent;
             label4.BackColor = Color.Transparent;
