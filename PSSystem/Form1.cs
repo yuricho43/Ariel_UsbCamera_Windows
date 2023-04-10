@@ -78,8 +78,9 @@ namespace PSSystem
             lblDate.BackColor = Color.Transparent;
 
             // For Debug Message
-            Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_DEBUG].Show();
+            // Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_DEBUG].Show();
 
+            Size = new Size(800, 480);
         }
 
         private void Read_Configuration()
@@ -148,19 +149,25 @@ namespace PSSystem
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Globals.Write_Configuration();
-            Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_VIDEO].Close();
+            ((FormSetVideo)Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_VIDEO]).Close_Video();
         }
 
         public void Process_Received__Data(byte [] dataSensor, int len)
         {
             // Display Log Data
-            ((FormSetDebug) Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_DEBUG]).Display_Binary_Data(dataSensor, len);
+            // ((FormSetDebug) Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_DEBUG]).Display_Binary_Data(dataSensor, len);
 
             //--- Parse and Save to Global variables.
             ((FormSetState)Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_STATE]).ParseSensorData(dataSensor, len);
             //--- Display at State Form.
             //--- Log Data
             //--- Check Event, Warning, Critical and Save Event.
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Globals.Write_Configuration();
+            ((FormSetVideo)Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_VIDEO]).Close_Video();
         }
     }
 }

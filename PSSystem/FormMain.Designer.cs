@@ -48,7 +48,7 @@ namespace PSSystem
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(268, 9);
+            this.label1.Location = new System.Drawing.Point(268, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(213, 43);
             this.label1.TabIndex = 17;
@@ -59,7 +59,7 @@ namespace PSSystem
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(132, 166);
+            this.label4.Location = new System.Drawing.Point(132, 208);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 45);
             this.label4.TabIndex = 20;
@@ -70,7 +70,7 @@ namespace PSSystem
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(132, 118);
+            this.label3.Location = new System.Drawing.Point(132, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 45);
             this.label3.TabIndex = 19;
@@ -81,7 +81,7 @@ namespace PSSystem
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(132, 70);
+            this.label2.Location = new System.Drawing.Point(132, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 45);
             this.label2.TabIndex = 18;
@@ -92,7 +92,7 @@ namespace PSSystem
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(132, 214);
+            this.label5.Location = new System.Drawing.Point(132, 268);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 45);
             this.label5.TabIndex = 21;
@@ -103,7 +103,7 @@ namespace PSSystem
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(132, 262);
+            this.label6.Location = new System.Drawing.Point(132, 328);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 45);
             this.label6.TabIndex = 22;
@@ -114,7 +114,7 @@ namespace PSSystem
             this.lblTemp.AutoSize = true;
             this.lblTemp.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
             this.lblTemp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTemp.Location = new System.Drawing.Point(304, 262);
+            this.lblTemp.Location = new System.Drawing.Point(304, 328);
             this.lblTemp.Name = "lblTemp";
             this.lblTemp.Size = new System.Drawing.Size(90, 45);
             this.lblTemp.TabIndex = 27;
@@ -125,7 +125,7 @@ namespace PSSystem
             this.lblSound.AutoSize = true;
             this.lblSound.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
             this.lblSound.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSound.Location = new System.Drawing.Point(304, 214);
+            this.lblSound.Location = new System.Drawing.Point(304, 268);
             this.lblSound.Name = "lblSound";
             this.lblSound.Size = new System.Drawing.Size(148, 45);
             this.lblSound.TabIndex = 26;
@@ -136,7 +136,7 @@ namespace PSSystem
             this.lblVib.AutoSize = true;
             this.lblVib.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
             this.lblVib.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblVib.Location = new System.Drawing.Point(304, 166);
+            this.lblVib.Location = new System.Drawing.Point(304, 208);
             this.lblVib.Name = "lblVib";
             this.lblVib.Size = new System.Drawing.Size(148, 45);
             this.lblVib.TabIndex = 25;
@@ -147,7 +147,7 @@ namespace PSSystem
             this.lblFire.AutoSize = true;
             this.lblFire.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
             this.lblFire.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFire.Location = new System.Drawing.Point(304, 118);
+            this.lblFire.Location = new System.Drawing.Point(304, 148);
             this.lblFire.Name = "lblFire";
             this.lblFire.Size = new System.Drawing.Size(148, 45);
             this.lblFire.TabIndex = 24;
@@ -158,7 +158,7 @@ namespace PSSystem
             this.lblArc.AutoSize = true;
             this.lblArc.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
             this.lblArc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblArc.Location = new System.Drawing.Point(304, 70);
+            this.lblArc.Location = new System.Drawing.Point(304, 88);
             this.lblArc.Name = "lblArc";
             this.lblArc.Size = new System.Drawing.Size(148, 45);
             this.lblArc.TabIndex = 23;
@@ -166,7 +166,7 @@ namespace PSSystem
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 416);
             this.Controls.Add(this.lblTemp);
@@ -180,6 +180,7 @@ namespace PSSystem
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMain";

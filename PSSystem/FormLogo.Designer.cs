@@ -43,7 +43,7 @@ namespace PSSystem
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 36F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(53, 7);
+            this.label1.Location = new System.Drawing.Point(53, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(699, 65);
             this.label1.TabIndex = 0;
@@ -54,7 +54,7 @@ namespace PSSystem
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(213, 83);
+            this.label2.Location = new System.Drawing.Point(213, 104);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(303, 45);
             this.label2.TabIndex = 1;
@@ -65,7 +65,7 @@ namespace PSSystem
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(213, 130);
+            this.label3.Location = new System.Drawing.Point(213, 162);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(334, 45);
             this.label3.TabIndex = 2;
@@ -76,7 +76,7 @@ namespace PSSystem
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(213, 178);
+            this.label4.Location = new System.Drawing.Point(213, 222);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(336, 45);
             this.label4.TabIndex = 3;
@@ -90,7 +90,7 @@ namespace PSSystem
             // 
             // FormLogo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 416);
@@ -98,6 +98,7 @@ namespace PSSystem
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormLogo";

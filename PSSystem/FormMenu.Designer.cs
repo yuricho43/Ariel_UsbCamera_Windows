@@ -50,7 +50,7 @@ namespace PSSystem
             this.btnName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnName.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnName.ForeColor = System.Drawing.Color.White;
-            this.btnName.Location = new System.Drawing.Point(156, 45);
+            this.btnName.Location = new System.Drawing.Point(156, 56);
             this.btnName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnName.Name = "btnName";
             this.btnName.Size = new System.Drawing.Size(199, 40);
@@ -66,7 +66,7 @@ namespace PSSystem
             this.btnWarning.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWarning.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnWarning.ForeColor = System.Drawing.Color.White;
-            this.btnWarning.Location = new System.Drawing.Point(156, 102);
+            this.btnWarning.Location = new System.Drawing.Point(156, 113);
             this.btnWarning.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnWarning.Name = "btnWarning";
             this.btnWarning.Size = new System.Drawing.Size(199, 40);
@@ -82,7 +82,7 @@ namespace PSSystem
             this.btnCritical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCritical.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCritical.ForeColor = System.Drawing.Color.White;
-            this.btnCritical.Location = new System.Drawing.Point(156, 273);
+            this.btnCritical.Location = new System.Drawing.Point(156, 283);
             this.btnCritical.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCritical.Name = "btnCritical";
             this.btnCritical.Size = new System.Drawing.Size(199, 40);
@@ -99,7 +99,7 @@ namespace PSSystem
             this.btnSensor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSensor.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSensor.ForeColor = System.Drawing.Color.White;
-            this.btnSensor.Location = new System.Drawing.Point(458, 273);
+            this.btnSensor.Location = new System.Drawing.Point(444, 283);
             this.btnSensor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSensor.Name = "btnSensor";
             this.btnSensor.Size = new System.Drawing.Size(199, 40);
@@ -116,7 +116,7 @@ namespace PSSystem
             this.btnRelay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRelay.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnRelay.ForeColor = System.Drawing.Color.White;
-            this.btnRelay.Location = new System.Drawing.Point(156, 159);
+            this.btnRelay.Location = new System.Drawing.Point(156, 169);
             this.btnRelay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRelay.Name = "btnRelay";
             this.btnRelay.Size = new System.Drawing.Size(199, 40);
@@ -132,7 +132,7 @@ namespace PSSystem
             this.btnWifi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWifi.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnWifi.ForeColor = System.Drawing.Color.White;
-            this.btnWifi.Location = new System.Drawing.Point(458, 216);
+            this.btnWifi.Location = new System.Drawing.Point(444, 227);
             this.btnWifi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnWifi.Name = "btnWifi";
             this.btnWifi.Size = new System.Drawing.Size(199, 40);
@@ -149,7 +149,7 @@ namespace PSSystem
             this.btnVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVideo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnVideo.ForeColor = System.Drawing.Color.White;
-            this.btnVideo.Location = new System.Drawing.Point(156, 216);
+            this.btnVideo.Location = new System.Drawing.Point(156, 227);
             this.btnVideo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVideo.Name = "btnVideo";
             this.btnVideo.Size = new System.Drawing.Size(199, 40);
@@ -165,7 +165,7 @@ namespace PSSystem
             this.btnData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnData.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnData.ForeColor = System.Drawing.Color.White;
-            this.btnData.Location = new System.Drawing.Point(458, 102);
+            this.btnData.Location = new System.Drawing.Point(444, 113);
             this.btnData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnData.Name = "btnData";
             this.btnData.Size = new System.Drawing.Size(199, 40);
@@ -181,7 +181,7 @@ namespace PSSystem
             this.btnState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnState.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnState.ForeColor = System.Drawing.Color.White;
-            this.btnState.Location = new System.Drawing.Point(458, 45);
+            this.btnState.Location = new System.Drawing.Point(444, 56);
             this.btnState.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnState.Name = "btnState";
             this.btnState.Size = new System.Drawing.Size(199, 40);
@@ -211,7 +211,7 @@ namespace PSSystem
             this.btnEvent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEvent.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnEvent.ForeColor = System.Drawing.Color.White;
-            this.btnEvent.Location = new System.Drawing.Point(458, 159);
+            this.btnEvent.Location = new System.Drawing.Point(444, 169);
             this.btnEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEvent.Name = "btnEvent";
             this.btnEvent.Size = new System.Drawing.Size(199, 40);
@@ -223,7 +223,7 @@ namespace PSSystem
             // 
             // FormMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 416);
             this.Controls.Add(this.btnEvent);
@@ -238,6 +238,7 @@ namespace PSSystem
             this.Controls.Add(this.btnWarning);
             this.Controls.Add(this.btnName);
             this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMenu";

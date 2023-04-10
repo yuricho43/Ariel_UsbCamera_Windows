@@ -30,6 +30,7 @@ namespace PSSystem
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ColumnHeader columnHeader1;
             System.Windows.Forms.ColumnHeader columnHeader18;
             System.Windows.Forms.ColumnHeader columnHeader35;
@@ -264,6 +265,11 @@ namespace PSSystem
             this.listView5 = new System.Windows.Forms.ListView();
             this.columnHeader39 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label6 = new System.Windows.Forms.Label();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnAuto = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -314,7 +320,7 @@ namespace PSSystem
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Yellow;
-            this.label2.Location = new System.Drawing.Point(310, 10);
+            this.label2.Location = new System.Drawing.Point(310, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(151, 43);
             this.label2.TabIndex = 24;
@@ -325,7 +331,7 @@ namespace PSSystem
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(14, 66);
+            this.label1.Location = new System.Drawing.Point(14, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 17);
             this.label1.TabIndex = 26;
@@ -360,9 +366,10 @@ namespace PSSystem
             listViewItem2,
             listViewItem3,
             listViewItem4});
-            this.listView1.Location = new System.Drawing.Point(57, 66);
+            this.listView1.Location = new System.Drawing.Point(57, 69);
+            this.listView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(697, 65);
+            this.listView1.Size = new System.Drawing.Size(697, 80);
             this.listView1.TabIndex = 27;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -460,9 +467,10 @@ namespace PSSystem
             listViewItem6,
             listViewItem7,
             listViewItem8});
-            this.listView2.Location = new System.Drawing.Point(57, 150);
+            this.listView2.Location = new System.Drawing.Point(57, 157);
+            this.listView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(697, 65);
+            this.listView2.Size = new System.Drawing.Size(697, 80);
             this.listView2.TabIndex = 29;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -536,7 +544,7 @@ namespace PSSystem
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(14, 150);
+            this.label3.Location = new System.Drawing.Point(14, 157);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 17);
             this.label3.TabIndex = 28;
@@ -557,9 +565,10 @@ namespace PSSystem
             listViewItem10,
             listViewItem11,
             listViewItem12});
-            this.listView3.Location = new System.Drawing.Point(57, 232);
+            this.listView3.Location = new System.Drawing.Point(56, 245);
+            this.listView3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(137, 65);
+            this.listView3.Size = new System.Drawing.Size(137, 80);
             this.listView3.TabIndex = 31;
             this.listView3.UseCompatibleStateImageBehavior = false;
             this.listView3.View = System.Windows.Forms.View.Details;
@@ -577,7 +586,7 @@ namespace PSSystem
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(8, 232);
+            this.label4.Location = new System.Drawing.Point(7, 245);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 17);
             this.label4.TabIndex = 30;
@@ -597,9 +606,10 @@ namespace PSSystem
             listViewItem14,
             listViewItem15,
             listViewItem16});
-            this.listView4.Location = new System.Drawing.Point(363, 232);
+            this.listView4.Location = new System.Drawing.Point(362, 245);
+            this.listView4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(99, 65);
+            this.listView4.Size = new System.Drawing.Size(99, 80);
             this.listView4.TabIndex = 33;
             this.listView4.UseCompatibleStateImageBehavior = false;
             this.listView4.View = System.Windows.Forms.View.Details;
@@ -613,7 +623,7 @@ namespace PSSystem
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(315, 232);
+            this.label5.Location = new System.Drawing.Point(314, 245);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 17);
             this.label5.TabIndex = 32;
@@ -632,9 +642,10 @@ namespace PSSystem
             listViewItem17,
             listViewItem18,
             listViewItem19});
-            this.listView5.Location = new System.Drawing.Point(648, 232);
+            this.listView5.Location = new System.Drawing.Point(647, 245);
+            this.listView5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView5.Name = "listView5";
-            this.listView5.Size = new System.Drawing.Size(106, 51);
+            this.listView5.Size = new System.Drawing.Size(106, 63);
             this.listView5.TabIndex = 35;
             this.listView5.UseCompatibleStateImageBehavior = false;
             this.listView5.View = System.Windows.Forms.View.Details;
@@ -648,17 +659,72 @@ namespace PSSystem
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(600, 232);
+            this.label6.Location = new System.Drawing.Point(599, 245);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 17);
             this.label6.TabIndex = 34;
             this.label6.Text = "릴레이";
             // 
+            // btnSend
+            // 
+            this.btnSend.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSend.ForeColor = System.Drawing.Color.Black;
+            this.btnSend.Location = new System.Drawing.Point(56, 333);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(98, 29);
+            this.btnSend.TabIndex = 36;
+            this.btnSend.Text = "Send Enquiry";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(161, 334);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(31, 23);
+            this.textBox1.TabIndex = 37;
+            this.textBox1.Text = "a1";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(198, 338);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 15);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "a1~a4, c0";
+            // 
+            // btnAuto
+            // 
+            this.btnAuto.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnAuto.ForeColor = System.Drawing.Color.Black;
+            this.btnAuto.Location = new System.Drawing.Point(56, 369);
+            this.btnAuto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAuto.Name = "btnAuto";
+            this.btnAuto.Size = new System.Drawing.Size(98, 29);
+            this.btnAuto.TabIndex = 39;
+            this.btnAuto.Text = "자동Enq 시작";
+            this.btnAuto.UseVisualStyleBackColor = true;
+            this.btnAuto.Click += new System.EventHandler(this.btnAuto_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormSetState
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 416);
+            this.Controls.Add(this.btnAuto);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnSend);
             this.Controls.Add(this.listView5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.listView4);
@@ -671,6 +737,7 @@ namespace PSSystem
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.label2);
+            this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormSetState";
@@ -730,5 +797,10 @@ namespace PSSystem
         private ListView listView5;
         private ColumnHeader columnHeader39;
         private Label label6;
+        private Button btnSend;
+        private TextBox textBox1;
+        private Label label7;
+        private Button btnAuto;
+        private Timer timer1;
     }
 }

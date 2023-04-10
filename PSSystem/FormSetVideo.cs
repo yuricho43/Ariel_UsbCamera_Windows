@@ -145,8 +145,7 @@ namespace PSSystem
 
         private void FormSetVideo_FormClosed(object sender, FormClosedEventArgs e)
         {
-            for (int i = 0; i < Globals.MAX_CAMERA; i++)
-                StopCamera(i);
+            Close_Video();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -198,6 +197,12 @@ namespace PSSystem
             {
                 CameraButton[i].Text = Globals.gDevices[i];
             }
+        }
+
+        public void Close_Video()
+        {
+            for (int i = 0; i < Globals.MAX_CAMERA; i++)
+                StopCamera(i);
         }
     }
 }

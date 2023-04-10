@@ -55,7 +55,7 @@ namespace PSSystem
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Yellow;
-            this.label2.Location = new System.Drawing.Point(283, 10);
+            this.label2.Location = new System.Drawing.Point(283, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(230, 43);
             this.label2.TabIndex = 18;
@@ -64,17 +64,19 @@ namespace PSSystem
             // comboPort
             // 
             this.comboPort.FormattingEnabled = true;
-            this.comboPort.Location = new System.Drawing.Point(66, 109);
+            this.comboPort.Location = new System.Drawing.Point(66, 136);
+            this.comboPort.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboPort.Name = "comboPort";
-            this.comboPort.Size = new System.Drawing.Size(121, 20);
+            this.comboPort.Size = new System.Drawing.Size(121, 23);
             this.comboPort.TabIndex = 20;
             // 
             // btnConnect
             // 
             this.btnConnect.BackColor = System.Drawing.Color.Red;
-            this.btnConnect.Location = new System.Drawing.Point(207, 102);
+            this.btnConnect.Location = new System.Drawing.Point(207, 128);
+            this.btnConnect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(98, 33);
+            this.btnConnect.Size = new System.Drawing.Size(98, 41);
             this.btnConnect.TabIndex = 21;
             this.btnConnect.Text = "연결하기";
             this.btnConnect.UseVisualStyleBackColor = false;
@@ -82,7 +84,7 @@ namespace PSSystem
             // 
             // FormSetSerial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 416);
             this.Controls.Add(this.btnConnect);
@@ -90,6 +92,7 @@ namespace PSSystem
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.label2);
             this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormSetSerial";

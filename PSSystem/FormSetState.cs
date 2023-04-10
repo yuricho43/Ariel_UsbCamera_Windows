@@ -13,6 +13,9 @@ namespace PSSystem
 {
     public partial class FormSetState : Form
     {
+        public int gAutoEnqStarted = 0;
+        public int gCurMode = 0;    // 0~4
+        public byte[] gCmd = { (byte)0xa1, (byte)0xa2, (byte)0xa3, (byte)0xa4, (byte)0xc0 };
         public FormSetState()
         {
             InitializeComponent();
@@ -166,6 +169,33 @@ namespace PSSystem
                     }
                 });
             }
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            byte bCmd = Convert.ToByte(textBox1.Text, 16);
+
+                  GSerial.Send_Equiry_Data(bCmd);
+        }
+  private void btnAuto_Click(object sender, EventArgs e)
+        {
+            if (gAutoEnqStarted == 0) 
+            {
+                gAutoEnqStarted = 1;
+                btnAuto.Text = "자동Enq 중지";
+                timer1.Enabled = true;
+            }
+            else
+            {
+                gAutoEnqStarted = 0;
+                btnAuto.Text = "자동Enq 시작";
+                timer1.Enabled = false;
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            GSerial.Send_Equiry_Data(gCmd[gCurMode++ % 5]);
         }
     }
 }
