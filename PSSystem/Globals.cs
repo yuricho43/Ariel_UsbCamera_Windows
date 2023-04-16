@@ -29,6 +29,7 @@ namespace PSSystem
         public static int[] gIsAlive = new int[MAX_CAMERA];         // Camera 동작 상태
         public static string[] gDevices = UsbCamera.FindDevices();  // 검색된 카메라 장치
         public static int gNumCam = 0;                              // 검색된 카메라 장치 수
+        public static object gLockCamera = new object();   // Semaphore
 
         //--- received state value from board
         public static byte[,] gTempValue = new byte[MAX_CAMERA, 16];

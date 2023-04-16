@@ -19,12 +19,10 @@ namespace PSSystem
             label1.BackColor = Color.Transparent;
             label1.Left = (Globals.PANEL_WIDTH - label1.Width) / 2;
             label2.BackColor = Color.Transparent;
-            label3.BackColor = Color.Transparent;
             label4.BackColor = Color.Transparent;
             label5.BackColor = Color.Transparent;
             label6.BackColor = Color.Transparent;
             lblArc.BackColor = Color.Transparent;
-            lblFire.BackColor = Color.Transparent;
             lblVib.BackColor = Color.Transparent;
             lblSound.BackColor = Color.Transparent;
             lblTemp.BackColor = Color.Transparent;

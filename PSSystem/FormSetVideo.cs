@@ -79,18 +79,21 @@ namespace PSSystem
 
         private void StartCamera(int index)
         {
+            if (index >= Globals.gNumCam)
+                return;
+
             Globals.gThread[index] = new Thread(new ParameterizedThreadStart(CameraCallback0));
             Globals.gThread[index].Start(index);
-            CameraButton[index].Text = "Stop";
+            CameraButton[index].BackColor = Color.Lime;
         }
 
         private void StopCamera(int index)
         {
+            CameraButton[index].BackColor = Color.Gray;
             if (Globals.gIsAlive[index] == 0)
                 return;
             Globals.gIsAlive[index] = 0;
             Globals.gThread[index].Join();
-            CameraButton[index].Text = Globals.gDevices[index];
         }
 
         private void btnCam1_Click(object sender, EventArgs e)
@@ -150,9 +153,13 @@ namespace PSSystem
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            CurrentCam = (CurrentCam + 1) % Globals.gNumCam;
-            StopCamera((CurrentCam + Globals.gNumCam - 1) % Globals.gNumCam);
-            StartCamera(CurrentCam);
+            lock (Globals.gLockCamera)
+            {
+                CurrentCam = (CurrentCam + 1) % Globals.gNumCam;
+                StopCamera((CurrentCam + Globals.gNumCam - 1) % Globals.gNumCam);
+                StartCamera(CurrentCam);
+                btnNext.Text = Globals.gDevices[CurrentCam];
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)

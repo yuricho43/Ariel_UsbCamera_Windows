@@ -1,21 +1,34 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using System.Windows.Markup;
 
 namespace PSSystem
 {
+    enum CH_INDEX
+    {
+        CH_ONE = 0xb1,
+        CH_TWO = 0xb2,
+        CH_THREE = 0xb3,
+        CH_FOUR = 0xb4,
+        CH_RELAY = 0xc1
+    };
+
     public partial class FormSetState : Form
     {
         public int gAutoEnqStarted = 0;
         public int gCurMode = 0;    // 0~4
         public byte[] gCmd = { (byte)0xa1, (byte)0xa2, (byte)0xa3, (byte)0xa4, (byte)0xc0 };
+
         public FormSetState()
         {
             InitializeComponent();
@@ -26,11 +39,6 @@ namespace PSSystem
             label5.BackColor = Color.Transparent;
             label6.BackColor = Color.Transparent;
             label2.Left = (Globals.PANEL_WIDTH - label2.Width) / 2;
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -55,7 +63,7 @@ namespace PSSystem
             // xiro  : 1개 data
 
             //--- Gathering Data
-            if (data[1] == (byte) 0xb1)     // ch1
+            if (data[1] == (byte) CH_INDEX.CH_ONE)     // ch1
             {
                 for (int i = 0; i < 16; i++)
                 {
@@ -67,7 +75,7 @@ namespace PSSystem
                 Globals.gXiroValue[0] = data[36];
                 Display_Sensor_Data(0);
             }
-            else if (data[1] == (byte)0xb2)
+            else if (data[1] == (byte)CH_INDEX.CH_TWO)
             {
                 for (int i = 0; i < 16; i++)
                 {
@@ -79,7 +87,7 @@ namespace PSSystem
                 Globals.gXiroValue[1] = data[36];
                 Display_Sensor_Data(1);
             }
-            else if (data[1] == (byte)0xb3)
+            else if (data[1] == (byte)CH_INDEX.CH_THREE)
             {
                 for (int i = 0; i < 16; i++)
                 {
@@ -91,7 +99,7 @@ namespace PSSystem
                 Globals.gXiroValue[2] = data[36];
                 Display_Sensor_Data(2);
             }
-            else if (data[1] == (byte)0xb4)
+            else if (data[1] == (byte)CH_INDEX.CH_FOUR)
             {
                 for (int i = 0; i < 16; i++)
                 {
@@ -103,14 +111,19 @@ namespace PSSystem
                 Globals.gXiroValue[3] = data[36];
                 Display_Sensor_Data(3);
             }
-            else if (data[1] == (byte)0xc1)
+            else if (data[1] == (byte)CH_INDEX.CH_RELAY)
             {
                 for (int i = 0; i < 3; i++)
                 {
                     Globals.gRelayValue[i] = data[i+3];
                 }
                 Display_Sensor_Data(4);
+            } else
+            {
+                return;
             }
+
+            Check_Event_And_Data_Logging(data, data[1], len);
         }
 
         // iCh 0~3, 4   : CH1~Ch4, Relay, all
@@ -171,25 +184,38 @@ namespace PSSystem
             }
         }
 
+        private void Start_Stop_Sending_AutoEnquiry(bool bStart)
+        {
+            if (bStart)
+            {
+                gAutoEnqStarted = 1;
+                timer1.Enabled = true;
+            }
+            else
+            {
+                gAutoEnqStarted = 0;
+                timer1.Enabled = false;
+            }
+        }
+
         private void btnSend_Click(object sender, EventArgs e)
         {
             byte bCmd = Convert.ToByte(textBox1.Text, 16);
 
                   GSerial.Send_Equiry_Data(bCmd);
         }
-  private void btnAuto_Click(object sender, EventArgs e)
+
+        private void btnAuto_Click(object sender, EventArgs e)
         {
             if (gAutoEnqStarted == 0) 
             {
-                gAutoEnqStarted = 1;
+                Start_Stop_Sending_AutoEnquiry(true);
                 btnAuto.Text = "자동Enq 중지";
-                timer1.Enabled = true;
             }
             else
             {
-                gAutoEnqStarted = 0;
+                Start_Stop_Sending_AutoEnquiry(false);
                 btnAuto.Text = "자동Enq 시작";
-                timer1.Enabled = false;
             }
         }
 
@@ -197,5 +223,82 @@ namespace PSSystem
         {
             GSerial.Send_Equiry_Data(gCmd[gCurMode++ % 5]);
         }
+
+
+        // bCh = b1~b4, c1
+        void Check_Event_And_Data_Logging(byte[] data, byte bCh, int len)
+        {
+            byte[] bLog = new byte[42];        // HMS+Data(39bytes)
+            byte[] bEvent = new byte[45];      // MDHMS+type+Data(39bytes)
+            byte bType = (byte)0;
+            int iValue = 0;
+
+            //------------------------------------------------------------------
+            // Check Event (Warning, Critical)
+            if (bCh == (byte)CH_INDEX.CH_RELAY)
+                return;
+
+            // check each temperature (gWarningThreshold/gCriticalThreshold[2]) // data[2~17]
+            // check each sensors (gWarningThreshold/gCriticalThreshold[0])     // data[18~33]
+            for (int i = 0; i < 16; i++)
+            {
+                iValue = (int) data[2 + i];
+                if (iValue > Globals.gWarningThreshold[2])
+                    if (iValue > Globals.gCriticalThreshold[2])
+                    {
+                        bType |=  0x02;
+                        break;
+                    }
+                    else
+                        bType |= 0x01;
+            }
+
+            for (int i = 0; i < 16; i++)
+            {
+                iValue = (int)data[18 + i];
+                if (iValue > Globals.gWarningThreshold[0])
+                    if (iValue > Globals.gCriticalThreshold[0])
+                    {
+                        bType |= 0x20;
+                        break;
+                    }
+                    else
+                        bType |= 0x10;
+            }
+
+
+            //------------------------------------------------------------------
+            // Logging Event
+            // MDHMS type data : 상위 4bit : sensor (C해제 W해제CR WR)
+            //                   하위 4bit : temperature
+            DateTime curDate = DateTime.Now;
+            if (bType != (byte) 0)
+            {
+                string strEventFile = DateTime.Now.ToString("yyyy") + "_event.bin";
+                bEvent[0] = (byte)curDate.Month;
+                bEvent[1] = (byte)curDate.Day;
+                bEvent[2] = (byte)curDate.Hour;
+                bEvent[3] = (byte)curDate.Minute;
+                bEvent[4] = (byte)curDate.Second;
+                bEvent[5] = bType;
+                Buffer.BlockCopy(data, 0, bEvent, 6, len);
+                var ew = new BinaryWriter(File.Open(strEventFile, FileMode.OpenOrCreate));
+                ew.Write(bEvent);
+            }
+
+            //------------------------------------------------------------------
+            // Logging Data (all are 42 bytes including relay
+            // FileName: Log_YYYYMMDD.bin
+            // HMS+ DATA
+            string strLogFile = DateTime.Now.ToString("yyyyMMdd") + "_log.bin";
+            bLog[0] = (byte)curDate.Hour;
+            bLog[1] = (byte)curDate.Minute;
+            bLog[2] = (byte)curDate.Second;
+            Buffer.BlockCopy(data, 0, bLog, 3, len);
+
+            var bw = new BinaryWriter(File.Open(strLogFile, FileMode.OpenOrCreate));
+            bw.Write(bLog);
+        }
+
     }
 }
