@@ -98,11 +98,11 @@ namespace PSSystem
             Globals.gCamName = strNames.Split(',').ToArray<string>();
 
             if (strWarning == null)
-                strWarning = "59, 59, 110";
+                strWarning = "59, 59, 110, 90";
             Globals.gWarningThreshold = strWarning.Split(',').Select(x => int.Parse(x)).ToArray();
 
             if (strCritical == null)
-                strCritical = "95, 95, 120";
+                strCritical = "95, 95, 120, 100";
             Globals.gCriticalThreshold = strCritical.Split(',').Select(x => int.Parse(x)).ToArray();
 
             if (strNumSensor == null)

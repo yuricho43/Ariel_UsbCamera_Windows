@@ -50,19 +50,23 @@ namespace PSSystem
             this.textSensor = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textTempWarn = new System.Windows.Forms.TextBox();
+            this.textSoundWarn = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textFireWarn = new System.Windows.Forms.TextBox();
+            this.textSensorWarn = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textArcWarn = new System.Windows.Forms.TextBox();
+            this.textTempWarn = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textTempCrit = new System.Windows.Forms.TextBox();
+            this.textSoundCrit = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textFireCrit = new System.Windows.Forms.TextBox();
+            this.textSensorCrit = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textArcCrit = new System.Windows.Forms.TextBox();
+            this.textTempCrit = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.textXiroWarn = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textXiroCrit = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -105,16 +109,16 @@ namespace PSSystem
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(24, 70);
+            this.groupBox1.Location = new System.Drawing.Point(24, 62);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(327, 158);
+            this.groupBox1.Size = new System.Drawing.Size(327, 147);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "배전반 이름";
             // 
             // textCam4
             // 
-            this.textCam4.Location = new System.Drawing.Point(84, 118);
+            this.textCam4.Location = new System.Drawing.Point(84, 110);
             this.textCam4.Name = "textCam4";
             this.textCam4.Size = new System.Drawing.Size(216, 25);
             this.textCam4.TabIndex = 7;
@@ -122,7 +126,7 @@ namespace PSSystem
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 121);
+            this.label4.Location = new System.Drawing.Point(25, 113);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 17);
             this.label4.TabIndex = 6;
@@ -130,7 +134,7 @@ namespace PSSystem
             // 
             // textCam3
             // 
-            this.textCam3.Location = new System.Drawing.Point(84, 89);
+            this.textCam3.Location = new System.Drawing.Point(84, 82);
             this.textCam3.Name = "textCam3";
             this.textCam3.Size = new System.Drawing.Size(216, 25);
             this.textCam3.TabIndex = 5;
@@ -138,7 +142,7 @@ namespace PSSystem
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 92);
+            this.label5.Location = new System.Drawing.Point(25, 85);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 17);
             this.label5.TabIndex = 4;
@@ -146,7 +150,7 @@ namespace PSSystem
             // 
             // textCam2
             // 
-            this.textCam2.Location = new System.Drawing.Point(84, 60);
+            this.textCam2.Location = new System.Drawing.Point(84, 54);
             this.textCam2.Name = "textCam2";
             this.textCam2.Size = new System.Drawing.Size(216, 25);
             this.textCam2.TabIndex = 3;
@@ -154,7 +158,7 @@ namespace PSSystem
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 63);
+            this.label3.Location = new System.Drawing.Point(25, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 17);
             this.label3.TabIndex = 2;
@@ -163,7 +167,7 @@ namespace PSSystem
             // textCam1
             // 
             this.textCam1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textCam1.Location = new System.Drawing.Point(84, 31);
+            this.textCam1.Location = new System.Drawing.Point(84, 26);
             this.textCam1.Name = "textCam1";
             this.textCam1.Size = new System.Drawing.Size(216, 25);
             this.textCam1.TabIndex = 1;
@@ -171,7 +175,7 @@ namespace PSSystem
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 34);
+            this.label2.Location = new System.Drawing.Point(25, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 17);
             this.label2.TabIndex = 0;
@@ -198,16 +202,16 @@ namespace PSSystem
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(393, 70);
+            this.groupBox2.Location = new System.Drawing.Point(393, 62);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(327, 158);
+            this.groupBox2.Size = new System.Drawing.Size(327, 147);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "센서수, Wifi";
             // 
             // textWifiPass
             // 
-            this.textWifiPass.Location = new System.Drawing.Point(104, 111);
+            this.textWifiPass.Location = new System.Drawing.Point(104, 110);
             this.textWifiPass.Name = "textWifiPass";
             this.textWifiPass.Size = new System.Drawing.Size(196, 25);
             this.textWifiPass.TabIndex = 5;
@@ -215,7 +219,7 @@ namespace PSSystem
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 114);
+            this.label7.Location = new System.Drawing.Point(25, 113);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 17);
             this.label7.TabIndex = 4;
@@ -223,7 +227,7 @@ namespace PSSystem
             // 
             // textWifiName
             // 
-            this.textWifiName.Location = new System.Drawing.Point(104, 69);
+            this.textWifiName.Location = new System.Drawing.Point(104, 68);
             this.textWifiName.Name = "textWifiName";
             this.textWifiName.Size = new System.Drawing.Size(196, 25);
             this.textWifiName.TabIndex = 3;
@@ -231,7 +235,7 @@ namespace PSSystem
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 72);
+            this.label8.Location = new System.Drawing.Point(25, 71);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 17);
             this.label8.TabIndex = 2;
@@ -239,7 +243,7 @@ namespace PSSystem
             // 
             // textSensor
             // 
-            this.textSensor.Location = new System.Drawing.Point(104, 31);
+            this.textSensor.Location = new System.Drawing.Point(104, 26);
             this.textSensor.Name = "textSensor";
             this.textSensor.Size = new System.Drawing.Size(196, 25);
             this.textSensor.TabIndex = 1;
@@ -247,7 +251,7 @@ namespace PSSystem
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(25, 34);
+            this.label9.Location = new System.Drawing.Point(25, 29);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 17);
             this.label9.TabIndex = 0;
@@ -255,133 +259,169 @@ namespace PSSystem
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textTempWarn);
+            this.groupBox3.Controls.Add(this.textXiroWarn);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.textSoundWarn);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.textFireWarn);
+            this.groupBox3.Controls.Add(this.textSensorWarn);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.textArcWarn);
+            this.groupBox3.Controls.Add(this.textTempWarn);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(24, 236);
+            this.groupBox3.Location = new System.Drawing.Point(24, 216);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(327, 127);
+            this.groupBox3.Size = new System.Drawing.Size(327, 150);
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "경고 값";
             // 
-            // textTempWarn
+            // textSoundWarn
             // 
-            this.textTempWarn.Location = new System.Drawing.Point(84, 89);
-            this.textTempWarn.Name = "textTempWarn";
-            this.textTempWarn.Size = new System.Drawing.Size(216, 25);
-            this.textTempWarn.TabIndex = 5;
+            this.textSoundWarn.Location = new System.Drawing.Point(84, 85);
+            this.textSoundWarn.Name = "textSoundWarn";
+            this.textSoundWarn.Size = new System.Drawing.Size(216, 25);
+            this.textSoundWarn.TabIndex = 5;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 92);
+            this.label6.Location = new System.Drawing.Point(25, 88);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 17);
+            this.label6.Size = new System.Drawing.Size(42, 17);
             this.label6.TabIndex = 4;
-            this.label6.Text = "온도:";
+            this.label6.Text = "소음 :";
             // 
-            // textFireWarn
+            // textSensorWarn
             // 
-            this.textFireWarn.Location = new System.Drawing.Point(84, 60);
-            this.textFireWarn.Name = "textFireWarn";
-            this.textFireWarn.Size = new System.Drawing.Size(216, 25);
-            this.textFireWarn.TabIndex = 3;
+            this.textSensorWarn.Location = new System.Drawing.Point(84, 58);
+            this.textSensorWarn.Name = "textSensorWarn";
+            this.textSensorWarn.Size = new System.Drawing.Size(216, 25);
+            this.textSensorWarn.TabIndex = 3;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(25, 63);
+            this.label10.Location = new System.Drawing.Point(25, 61);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 17);
+            this.label10.Size = new System.Drawing.Size(42, 17);
             this.label10.TabIndex = 2;
-            this.label10.Text = "화재:";
+            this.label10.Text = "센서 :";
             // 
-            // textArcWarn
+            // textTempWarn
             // 
-            this.textArcWarn.Location = new System.Drawing.Point(84, 31);
-            this.textArcWarn.Name = "textArcWarn";
-            this.textArcWarn.Size = new System.Drawing.Size(216, 25);
-            this.textArcWarn.TabIndex = 1;
+            this.textTempWarn.Location = new System.Drawing.Point(84, 31);
+            this.textTempWarn.Name = "textTempWarn";
+            this.textTempWarn.Size = new System.Drawing.Size(216, 25);
+            this.textTempWarn.TabIndex = 1;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(25, 34);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 17);
+            this.label11.Size = new System.Drawing.Size(42, 17);
             this.label11.TabIndex = 0;
-            this.label11.Text = "아크:";
+            this.label11.Text = "온도 :";
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textTempCrit);
+            this.groupBox4.Controls.Add(this.textXiroCrit);
+            this.groupBox4.Controls.Add(this.label16);
+            this.groupBox4.Controls.Add(this.textSoundCrit);
             this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.textFireCrit);
+            this.groupBox4.Controls.Add(this.textSensorCrit);
             this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.textArcCrit);
+            this.groupBox4.Controls.Add(this.textTempCrit);
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(393, 236);
+            this.groupBox4.Location = new System.Drawing.Point(393, 216);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(327, 127);
+            this.groupBox4.Size = new System.Drawing.Size(327, 150);
             this.groupBox4.TabIndex = 22;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "사고 값";
             // 
-            // textTempCrit
+            // textSoundCrit
             // 
-            this.textTempCrit.Location = new System.Drawing.Point(84, 89);
-            this.textTempCrit.Name = "textTempCrit";
-            this.textTempCrit.Size = new System.Drawing.Size(216, 25);
-            this.textTempCrit.TabIndex = 5;
+            this.textSoundCrit.Location = new System.Drawing.Point(84, 85);
+            this.textSoundCrit.Name = "textSoundCrit";
+            this.textSoundCrit.Size = new System.Drawing.Size(216, 25);
+            this.textSoundCrit.TabIndex = 5;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(25, 92);
+            this.label12.Location = new System.Drawing.Point(25, 88);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(37, 17);
+            this.label12.Size = new System.Drawing.Size(42, 17);
             this.label12.TabIndex = 4;
-            this.label12.Text = "온도:";
+            this.label12.Text = "소음 :";
             // 
-            // textFireCrit
+            // textSensorCrit
             // 
-            this.textFireCrit.Location = new System.Drawing.Point(84, 60);
-            this.textFireCrit.Name = "textFireCrit";
-            this.textFireCrit.Size = new System.Drawing.Size(216, 25);
-            this.textFireCrit.TabIndex = 3;
+            this.textSensorCrit.Location = new System.Drawing.Point(84, 58);
+            this.textSensorCrit.Name = "textSensorCrit";
+            this.textSensorCrit.Size = new System.Drawing.Size(216, 25);
+            this.textSensorCrit.TabIndex = 3;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(25, 63);
+            this.label13.Location = new System.Drawing.Point(25, 61);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(37, 17);
+            this.label13.Size = new System.Drawing.Size(42, 17);
             this.label13.TabIndex = 2;
-            this.label13.Text = "화재:";
+            this.label13.Text = "센서 :";
             // 
-            // textArcCrit
+            // textTempCrit
             // 
-            this.textArcCrit.Location = new System.Drawing.Point(84, 31);
-            this.textArcCrit.Name = "textArcCrit";
-            this.textArcCrit.Size = new System.Drawing.Size(216, 25);
-            this.textArcCrit.TabIndex = 1;
+            this.textTempCrit.Location = new System.Drawing.Point(84, 31);
+            this.textTempCrit.Name = "textTempCrit";
+            this.textTempCrit.Size = new System.Drawing.Size(216, 25);
+            this.textTempCrit.TabIndex = 1;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(25, 34);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(37, 17);
+            this.label14.Size = new System.Drawing.Size(42, 17);
             this.label14.TabIndex = 0;
-            this.label14.Text = "아크:";
+            this.label14.Text = "온도 :";
+            // 
+            // textXiroWarn
+            // 
+            this.textXiroWarn.Location = new System.Drawing.Point(84, 112);
+            this.textXiroWarn.Name = "textXiroWarn";
+            this.textXiroWarn.Size = new System.Drawing.Size(216, 25);
+            this.textXiroWarn.TabIndex = 7;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(25, 115);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(42, 17);
+            this.label15.TabIndex = 6;
+            this.label15.Text = "진동 :";
+            // 
+            // textXiroCrit
+            // 
+            this.textXiroCrit.Location = new System.Drawing.Point(84, 112);
+            this.textXiroCrit.Name = "textXiroCrit";
+            this.textXiroCrit.Size = new System.Drawing.Size(216, 25);
+            this.textXiroCrit.TabIndex = 7;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(25, 115);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(47, 17);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "진동 : ";
             // 
             // FormSetPanel
             // 
@@ -438,18 +478,22 @@ namespace PSSystem
         private TextBox textSensor;
         private Label label9;
         private GroupBox groupBox3;
-        private TextBox textTempWarn;
+        private TextBox textSoundWarn;
         private Label label6;
-        private TextBox textFireWarn;
+        private TextBox textSensorWarn;
         private Label label10;
-        private TextBox textArcWarn;
+        private TextBox textTempWarn;
         private Label label11;
         private GroupBox groupBox4;
-        private TextBox textTempCrit;
+        private TextBox textSoundCrit;
         private Label label12;
-        private TextBox textFireCrit;
+        private TextBox textSensorCrit;
         private Label label13;
-        private TextBox textArcCrit;
+        private TextBox textTempCrit;
         private Label label14;
+        private TextBox textXiroWarn;
+        private Label label15;
+        private TextBox textXiroCrit;
+        private Label label16;
     }
 }

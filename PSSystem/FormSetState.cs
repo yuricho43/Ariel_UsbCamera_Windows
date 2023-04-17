@@ -238,13 +238,13 @@ namespace PSSystem
             if (bCh == (byte)CH_INDEX.CH_RELAY)
                 return;
 
-            // check each temperature (gWarningThreshold/gCriticalThreshold[2]) // data[2~17]
-            // check each sensors (gWarningThreshold/gCriticalThreshold[0])     // data[18~33]
+            // check each temperature (gWarningThreshold/gCriticalThreshold[0]) // data[2~17]
+            // check each sensors (gWarningThreshold/gCriticalThreshold[1])     // data[18~33]
             for (int i = 0; i < 16; i++)
             {
                 iValue = (int) data[2 + i];
-                if (iValue > Globals.gWarningThreshold[2])
-                    if (iValue > Globals.gCriticalThreshold[2])
+                if (iValue > Globals.gWarningThreshold[0])
+                    if (iValue > Globals.gCriticalThreshold[0])
                     {
                         bType |=  0x02;
                         break;
@@ -256,8 +256,8 @@ namespace PSSystem
             for (int i = 0; i < 16; i++)
             {
                 iValue = (int)data[18 + i];
-                if (iValue > Globals.gWarningThreshold[0])
-                    if (iValue > Globals.gCriticalThreshold[0])
+                if (iValue > Globals.gWarningThreshold[1])
+                    if (iValue > Globals.gCriticalThreshold[1])
                     {
                         bType |= 0x20;
                         break;

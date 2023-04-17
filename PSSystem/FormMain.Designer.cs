@@ -59,9 +59,9 @@ namespace PSSystem
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label4.Location = new System.Drawing.Point(132, 282);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 45);
+            this.label4.Size = new System.Drawing.Size(114, 45);
             this.label4.TabIndex = 20;
-            this.label4.Text = "진동: ";
+            this.label4.Text = "진동 : ";
             // 
             // label2
             // 

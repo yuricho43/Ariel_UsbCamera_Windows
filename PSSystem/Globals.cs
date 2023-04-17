@@ -40,7 +40,7 @@ namespace PSSystem
 
         //--- configuration (환경 설정파일)
         public static string[] gCamName = new string[MAX_CAMERA];   // 카메라 이름
-        public static int[] gWarningThreshold = new int[5];         // 위험 경계치
+        public static int[] gWarningThreshold = new int[5];         // 위험 경계치 (온도, 센서, 소음, 진동)
         public static int[] gCriticalThreshold = new int[5];        // 사고 경계치
         public static int gNumSensor;                               // 센서 수 ?
         public static string[] gWifi = new string[3];               // SSID, PASS

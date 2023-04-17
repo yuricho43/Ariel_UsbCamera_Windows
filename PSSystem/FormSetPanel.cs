@@ -46,14 +46,16 @@ namespace PSSystem
             textWifiPass.Text = Globals.gWifi[1];
 
             //--- Warnings
-            textArcWarn.Text = Globals.gWarningThreshold[0].ToString();
-            textFireWarn.Text = Globals.gWarningThreshold[1].ToString();
-            textTempWarn.Text = Globals.gWarningThreshold[2].ToString();
+            textTempWarn.Text = Globals.gWarningThreshold[0].ToString();
+            textSensorWarn.Text = Globals.gWarningThreshold[1].ToString();
+            textSoundWarn.Text = Globals.gWarningThreshold[2].ToString();
+            textXiroWarn.Text = Globals.gWarningThreshold[3].ToString();
 
             //--- Criticals
-            textArcCrit.Text = Globals.gCriticalThreshold[0].ToString();
-            textFireCrit.Text = Globals.gCriticalThreshold[1].ToString();
-            textTempCrit.Text = Globals.gCriticalThreshold[2].ToString();
+            textTempCrit.Text = Globals.gCriticalThreshold[0].ToString();
+            textSensorCrit.Text = Globals.gCriticalThreshold[1].ToString();
+            textSoundCrit.Text = Globals.gCriticalThreshold[2].ToString();
+            textXiroCrit.Text = Globals.gCriticalThreshold[3].ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -69,14 +71,16 @@ namespace PSSystem
             Globals.gWifi[1] = textWifiPass.Text;
 
             //--- Warnings
-            Globals.gWarningThreshold[0] = int.Parse(textArcWarn.Text);
-            Globals.gWarningThreshold[1] = int.Parse(textFireWarn.Text);
-            Globals.gWarningThreshold[2] = int.Parse(textTempWarn.Text);
+            Globals.gWarningThreshold[0] = int.Parse(textTempWarn.Text);
+            Globals.gWarningThreshold[1] = int.Parse(textSensorWarn.Text);
+            Globals.gWarningThreshold[2] = int.Parse(textSoundWarn.Text);
+            Globals.gWarningThreshold[3] = int.Parse(textXiroWarn.Text);
 
             //--- Criticals
-            Globals.gCriticalThreshold[0] = int.Parse(textArcCrit.Text);
-            Globals.gCriticalThreshold[1] = int.Parse(textFireCrit.Text);
-            Globals.gCriticalThreshold[2] = int.Parse(textTempCrit.Text);
+            Globals.gCriticalThreshold[0] = int.Parse(textTempCrit.Text);
+            Globals.gCriticalThreshold[1] = int.Parse(textSensorCrit.Text);
+            Globals.gCriticalThreshold[2] = int.Parse(textSoundCrit.Text);
+            Globals.gCriticalThreshold[3] = int.Parse(textXiroCrit.Text);
 
             Globals.Write_Configuration();
         }
