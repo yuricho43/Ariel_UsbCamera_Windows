@@ -228,8 +228,8 @@ namespace PSSystem
         // bCh = b1~b4, c1
         void Check_Event_And_Data_Logging(byte[] data, byte bCh, int len)
         {
-            byte[] bLog = new byte[42];        // HMS+Data(39bytes)
-            byte[] bEvent = new byte[45];      // MDHMS+type+Data(39bytes)
+            byte[] bLog = new byte[42];        // HMS+Data(39bytes)        = 42bytes
+            byte[] bEvent = new byte[45];      // MDHMS+type+Data(39bytes) = 45bytes
             byte bType = (byte)0;
             int iValue = 0;
 
@@ -240,6 +240,10 @@ namespace PSSystem
 
             // check each temperature (gWarningThreshold/gCriticalThreshold[0]) // data[2~17]
             // check each sensors (gWarningThreshold/gCriticalThreshold[1])     // data[18~33]
+            // check each sounds (gWarningThreshold/gCriticalThreshold[2])      // data[34~35]
+            // check xiro ((gWarningThreshold/gCriticalThreshold[3])            // data[36]
+
+            // type1 : critical or warning. two bit for each value (xiro, sound, sensor, temp)
             for (int i = 0; i < 16; i++)
             {
                 iValue = (int) data[2 + i];
@@ -259,18 +263,21 @@ namespace PSSystem
                 if (iValue > Globals.gWarningThreshold[1])
                     if (iValue > Globals.gCriticalThreshold[1])
                     {
-                        bType |= 0x20;
+                        bType |= 0x08;
                         break;
                     }
                     else
-                        bType |= 0x10;
+                        bType |= 0x04;
             }
 
 
             //------------------------------------------------------------------
             // Logging Event
-            // MDHMS type data : 상위 4bit : sensor (C해제 W해제CR WR)
+            // MDHMS type data : 상위 4bit : sensor (C해제 W해제 CR WR)
             //                   하위 4bit : temperature
+            //--- 이전의 Warning/Critical/Normal 값을 기억하고 있다가, 변경되면 Event 기록
+
+            // if (prevbType != currentbType) : 
             DateTime curDate = DateTime.Now;
             if (bType != (byte) 0)
             {
