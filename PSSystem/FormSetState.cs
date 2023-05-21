@@ -28,6 +28,7 @@ namespace PSSystem
         public int gAutoEnqStarted = 0;
         public int gCurMode = 0;    // 0~4
         public byte[] gCmd = { (byte)0xa1, (byte)0xa2, (byte)0xa3, (byte)0xa4, (byte)0xc0 };
+        public byte[] bPrevEventType  = { (byte)0, (byte)0, (byte)0, (byte)0 } ;
 
         public FormSetState()
         {
@@ -47,71 +48,36 @@ namespace PSSystem
                 Globals.ChangeForm((int)FORM_INDEX.NO_FORM_MAIN);
         }
 
-        /*      STX     Index   온도     센서    사운드  자이로 CS    ETX       (39 bytes)
-            1번	0x02	0xb1	16byte	16byte	2byte	1byte Ex-Or	0x03
-            2번	0x02	0xb2	16byte	16byte	2byte	1byte Ex-Or	0x03
-            3번	0x02	0xb3	16byte	16byte	2byte	1byte Ex-Or	0x03
-            4번	0x02	0xb4	16byte	16byte	2byte	1byte Ex-Or	0x03
-
-        	    STX	    index	Header	Data1	Data1	Data1	CS	    ETX   (8bytes)
-          릴레이	0x02	0xc1	0x01	1byte	1byte	1byte	Ex-Or	0x03
+        /* ix    0         1      2      34      66     68    70    71
+         *      STX     Index   온도     센서    사운드  자이로 CS    ETX   (39 bytes ==> 2 + 32 + 32 + 2 + 2 + 2 = 72)
+          센서	0x02	0xb1~b4	32byte	32byte	2byte	2byte Ex-Or	0x03
+         
+           ix    0         1      2      3                    6       7
+        	    STX	    index	Header	Data1	Data1	Data1 CS	ETX   (8bytes)
+          릴레이	0x02	0xc1	0x01	1byte	1byte	1byte Ex-Or	0x03
         */
         public void ParseSensorData(byte[] data, int len)
         {
-            // temp, sensor : 16개 data
-            // sound : 2개 data
-            // xiro  : 1개 data
+            // temp, sensor : 32bytes data
+            // sound : 2byte data
+            // xiro  : 2byte data
 
             //--- Gathering Data
-            if (data[1] == (byte) CH_INDEX.CH_ONE)     // ch1
+            if (data[1] >= (byte) 0xb1 && data[1] <= (byte) 0xb4)
             {
-                for (int i = 0; i < 16; i++)
+                int iCh = (int)(data[1] - (byte)0xb1);
+
+                for (int i = 0; i < 32; i++)
                 {
-                    Globals.gTempValue[0, i] = data[i + 2];             // 온도
-                    Globals.gSensorValue[0, i] = data[i + 2 + 16];      // 센서
+                    Globals.gTempValue[iCh, i] = data[i + 2];             // 온도
+                    Globals.gSensorValue[iCh, i] = data[i + 2 + 32];      // 센서
                 }
-                Globals.gSoundValue[0, 0] = data[34];
-                Globals.gSoundValue[0, 1] = data[35];
-                Globals.gXiroValue[0] = data[36];
-                Display_Sensor_Data(0);
-            }
-            else if (data[1] == (byte)CH_INDEX.CH_TWO)
-            {
-                for (int i = 0; i < 16; i++)
-                {
-                    Globals.gTempValue[1, i] = data[i + 2];
-                    Globals.gSensorValue[1, i] = data[i + 2 + 16];      // 센서
-                }
-                Globals.gSoundValue[1, 0] = data[34];
-                Globals.gSoundValue[1, 1] = data[35];
-                Globals.gXiroValue[1] = data[36];
-                Display_Sensor_Data(1);
-            }
-            else if (data[1] == (byte)CH_INDEX.CH_THREE)
-            {
-                for (int i = 0; i < 16; i++)
-                {
-                    Globals.gTempValue[2, i] = data[i + 2];
-                    Globals.gSensorValue[2, i] = data[i + 2 + 16];      // 센서
-                }
-                Globals.gSoundValue[2, 0] = data[34];
-                Globals.gSoundValue[2, 1] = data[35];
-                Globals.gXiroValue[2] = data[36];
-                Display_Sensor_Data(2);
-            }
-            else if (data[1] == (byte)CH_INDEX.CH_FOUR)
-            {
-                for (int i = 0; i < 16; i++)
-                {
-                    Globals.gTempValue[3, i] = data[i + 2];
-                    Globals.gSensorValue[3, i] = data[i + 2 + 16];      // 센서
-                }
-                Globals.gSoundValue[3, 0] = data[34];
-                Globals.gSoundValue[3, 1] = data[35];
-                Globals.gXiroValue[3] = data[36];
-                Display_Sensor_Data(3);
-            }
-            else if (data[1] == (byte)CH_INDEX.CH_RELAY)
+                Globals.gSoundValue[iCh, 0] = data[66];
+                Globals.gSoundValue[iCh, 1] = data[67];
+                Globals.gXiroValue[iCh, 0] = data[68];
+                Globals.gXiroValue[iCh, 1] = data[69];
+                Display_Sensor_Data(iCh);
+            } else if (data[1] == (byte)CH_INDEX.CH_RELAY)
             {
                 for (int i = 0; i < 3; i++)
                 {
@@ -129,15 +95,19 @@ namespace PSSystem
         // iCh 0~3, 4   : CH1~Ch4, Relay, all
         public void Display_Sensor_Data(int iCh)
         {
-            if (iCh >= 0 && iCh <=3)       //  Dispaly 온도, 센서, 사운드, 자이로
+            if (iCh >= 0 && iCh <=3)       //  Display 온도, 센서, 사운드, 자이로
             {
+                ushort uValue = 0;
+                short sValue = 0;
+
                 listView1.Invoke((MethodInvoker)delegate ()
                 {
                     // 온도
                     ListViewItem item = listView1.Items[iCh];
-                    for (int i = 1; i <= 16; i++)
+                    for (int i = 0; i < 16; i++)
                     {
-                        item.SubItems[i].Text = Globals.gTempValue[iCh, i - 1].ToString();
+                        sValue = Globals.GetShortValueFrom2bytes(Globals.gTempValue[iCh, 2*i], Globals.gTempValue[iCh, 2*i+1]);
+                        item.SubItems[i+1].Text = sValue.ToString("X4");
                     }
                 });
 
@@ -145,9 +115,10 @@ namespace PSSystem
                 listView2.Invoke((MethodInvoker)delegate ()
                 {
                     ListViewItem item = listView2.Items[iCh];
-                    for (int i = 1; i <= 16; i++)
+                    for (int i = 0; i < 16; i++)
                     {
-                        item.SubItems[i].Text = Globals.gSensorValue[iCh, i - 1].ToString();
+                        uValue = (ushort)((ushort)(Globals.gSensorValue[iCh, 2 * i] * 256) + Globals.gSensorValue[iCh, 2 * i + 1]);
+                        item.SubItems[i+1].Text = uValue.ToString("X4");
                     }
                 });
 
@@ -155,20 +126,16 @@ namespace PSSystem
                 listView3.Invoke((MethodInvoker)delegate ()
                 {
                     ListViewItem item = listView3.Items[iCh];
-                    for (int i = 1; i <= 2; i++)
-                    {
-                        item.SubItems[i].Text = Globals.gSoundValue[iCh, i - 1].ToString();
-                    }
+                    uValue = (ushort)((ushort)(Globals.gSoundValue[iCh, 0] * 256) + Globals.gSensorValue[iCh, 1]);
+                    item.SubItems[1].Text = uValue.ToString("X4"); ;
                 });
 
                 // 자이로
                 listView4.Invoke((MethodInvoker)delegate ()
                 {
                     ListViewItem item = listView4.Items[iCh];
-                    for (int i = 1; i <= 1; i++)
-                    {
-                        item.SubItems[i].Text = Globals.gXiroValue[iCh].ToString();
-                    }
+                    uValue = (ushort)((ushort)(Globals.gXiroValue[iCh, 0] * 256) + Globals.gXiroValue[iCh, 1]);
+                    item.SubItems[1].Text = uValue.ToString("X4"); ;
                 });
             } else if (iCh == 4)    // Relay
             {
@@ -228,8 +195,8 @@ namespace PSSystem
         // bCh = b1~b4, c1
         void Check_Event_And_Data_Logging(byte[] data, byte bCh, int len)
         {
-            byte[] bLog = new byte[42];        // HMS+Data(39bytes)        = 42bytes
-            byte[] bEvent = new byte[45];      // MDHMS+type+Data(39bytes) = 45bytes
+            byte[] bLog   = new byte[75];   // HMS+Data(72bytes)        = 75bytes
+            byte[] bEvent = new byte[78];   // MDHMS+type+Data(72bytes) = 78bytes
             byte bType = (byte)0;
             int iValue = 0;
 
@@ -238,15 +205,20 @@ namespace PSSystem
             if (bCh == (byte)CH_INDEX.CH_RELAY)
                 return;
 
-            // check each temperature (gWarningThreshold/gCriticalThreshold[0]) // data[2~17]
-            // check each sensors (gWarningThreshold/gCriticalThreshold[1])     // data[18~33]
-            // check each sounds (gWarningThreshold/gCriticalThreshold[2])      // data[34~35]
-            // check xiro ((gWarningThreshold/gCriticalThreshold[3])            // data[36]
+            // check each temperature (gWarningThreshold/gCriticalThreshold[0])  // data[2~33]
+            // check each sensors     (gWarningThreshold/gCriticalThreshold[1])  // data[34~65]
+            // check each sounds      (gWarningThreshold/gCriticalThreshold[2])  // data[66~67]
+            // check      xiro        ((gWarningThreshold/gCriticalThreshold[3]) // data[68~69]
 
-            // type1 : critical or warning. two bit for each value (xiro, sound, sensor, temp)
+            // bType : critical or warning. two bit for each value
+            //     (xiro, sound, sensor, temp)
+            //  bit 76    54     32      10
+            //     0xC0   0x30   0x0C    0x03
+            //=== Temp
+            bType &= 0xFC;
             for (int i = 0; i < 16; i++)
             {
-                iValue = (int) data[2 + i];
+                iValue = (int)((ushort)(data[2+2*i] * 256) + data[2+2*i+1]);
                 if (iValue > Globals.gWarningThreshold[0])
                     if (iValue > Globals.gCriticalThreshold[0])
                     {
@@ -257,9 +229,11 @@ namespace PSSystem
                         bType |= 0x01;
             }
 
+            //=== Sensor
+            bType &= 0xF3;
             for (int i = 0; i < 16; i++)
             {
-                iValue = (int)data[18 + i];
+                iValue = (int)((ushort)(data[34 + 2 * i] * 256) + data[34 + 2 * i + 1]);
                 if (iValue > Globals.gWarningThreshold[1])
                     if (iValue > Globals.gCriticalThreshold[1])
                     {
@@ -270,31 +244,64 @@ namespace PSSystem
                         bType |= 0x04;
             }
 
+            //=== Sound
+            iValue = (int)((ushort)(data[66] * 256) + data[67]);
+            bType &= 0xCF;
+            if (iValue > Globals.gWarningThreshold[2])
+            {
+                if (iValue > Globals.gCriticalThreshold[2])
+                {
+                    bType |= 0x10;
+                }
+                else
+                    bType |= 0x20;
+            }
+
+            //=== Xiro
+            iValue = (int)((ushort)(data[68] * 256) + data[69]);
+            bType &= 0x3F;
+            if (iValue > Globals.gWarningThreshold[3])
+            {
+                if (iValue > Globals.gCriticalThreshold[3])
+                {
+                    bType |= 0x40;
+                }
+                else
+                    bType |= 0x80;
+            }
+
 
             //------------------------------------------------------------------
             // Logging Event
             // MDHMS type data : 상위 4bit : sensor (C해제 W해제 CR WR)
             //                   하위 4bit : temperature
             //--- 이전의 Warning/Critical/Normal 값을 기억하고 있다가, 변경되면 Event 기록
-
-            // if (prevbType != currentbType) : 
             DateTime curDate = DateTime.Now;
-            if (bType != (byte) 0)
+            int ix = (int) (bCh - (byte)0xb1);
+            if (ix < 0 || ix > 3)
+                return;
+
+            if (bPrevEventType[ix] != bType)
             {
-                string strEventFile = DateTime.Now.ToString("yyyy") + "_event.bin";
-                bEvent[0] = (byte)curDate.Month;
-                bEvent[1] = (byte)curDate.Day;
-                bEvent[2] = (byte)curDate.Hour;
-                bEvent[3] = (byte)curDate.Minute;
-                bEvent[4] = (byte)curDate.Second;
-                bEvent[5] = bType;
-                Buffer.BlockCopy(data, 0, bEvent, 6, len);
-                var ew = new BinaryWriter(File.Open(strEventFile, FileMode.OpenOrCreate));
-                ew.Write(bEvent);
+                {
+                    string strEventFile = DateTime.Now.ToString("yyyy") + "_event.bin";
+                    bEvent[0] = (byte)curDate.Month;
+                    bEvent[1] = (byte)curDate.Day;
+                    bEvent[2] = (byte)curDate.Hour;
+                    bEvent[3] = (byte)curDate.Minute;
+                    bEvent[4] = (byte)curDate.Second;
+                    bEvent[5] = bType;
+                    Buffer.BlockCopy(data, 0, bEvent, 6, len);
+                    using (BinaryWriter ew = new BinaryWriter(File.Open(strEventFile, FileMode.Append)))
+                    {
+                        ew.Write(bEvent);
+                    }
+                }
+                bPrevEventType[ix] = bType;
             }
 
             //------------------------------------------------------------------
-            // Logging Data (all are 42 bytes including relay
+            // Logging Data (all are 75 bytes including relay
             // FileName: Log_YYYYMMDD.bin
             // HMS+ DATA
             string strLogFile = DateTime.Now.ToString("yyyyMMdd") + "_log.bin";
@@ -303,8 +310,10 @@ namespace PSSystem
             bLog[2] = (byte)curDate.Second;
             Buffer.BlockCopy(data, 0, bLog, 3, len);
 
-            var bw = new BinaryWriter(File.Open(strLogFile, FileMode.OpenOrCreate));
-            bw.Write(bLog);
+            using (BinaryWriter bw = new BinaryWriter(File.Open(strLogFile, FileMode.Append)))
+            {
+                bw.Write(bLog);
+            }
         }
 
     }

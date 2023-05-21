@@ -140,30 +140,31 @@ namespace PSSystem
         }
 
         //--- Received Sensor or Relay Data
-        /*      STX     Index   온도     센서    사운드  자이로 CS    ETX       (39 bytes)
-            1번	0x02	0xb1	16byte	16byte	2byte	1byte Ex-Or	0x03
-            2번	0x02	0xb2	16byte	16byte	2byte	1byte Ex-Or	0x03
-            3번	0x02	0xb3	16byte	16byte	2byte	1byte Ex-Or	0x03
-            4번	0x02	0xb4	16byte	16byte	2byte	1byte Ex-Or	0x03
-
-        	    STX	    index	Header	Data1	Data1	Data1	CS	    ETX   (8bytes)
-          릴레이	0x02	0xc1	0x01	1byte	1byte	1byte	Ex-Or	0x03
+        /* ix    0         1      2      34      66     68    70    71
+         *      STX     Index   온도     센서    사운드  자이로 CS    ETX   (39 bytes ==> 2 + 32 + 32 + 2 + 2 + 2 = 72)
+          센서	0x02	0xb1~b4	32byte	32byte	2byte	2byte Ex-Or	0x03
+         
+           ix    0         1      2      3                    6       7
+        	    STX	    index	Header	Data1	Data1	Data1 CS	ETX   (8bytes)
+          릴레이	0x02	0xc1	0x01	1byte	1byte	1byte Ex-Or	0x03
         */
         public static void Process_Received_Data(byte[] data, int iLength)
         {
             Array.Copy(data, 0, gByteRemained, gByteRemainedLength, iLength);
             gByteRemainedLength += iLength;
 
-            //--- find Response STX ~ ETX : 39 or 6 bytes;
-            byte stx = (byte)2;
-            //byte etx = (byte)3;
-            byte bIndex = (byte)0;
-            int len = 0;
-            byte[] dataSensor = new byte[48];
+            //--- find Response STX ~ ETX : 72 or 8 bytes;
+            byte stx = (byte) 2;
+            byte etx = (byte) 3;
+            byte bIndex = (byte) 0;
+            int  len = 0;
+
+            byte[] dataSensor = new byte[72];
 
             while (gByteRemainedLength >= 8)
             {
                 int sindex = -1;
+
                 //--- find stx, index;
                 for (int i = 0; i < (gByteRemainedLength-2); i++)
                     if (gByteRemained[i] == stx && gIndexes.Contains(gByteRemained[i + 1]))
@@ -172,29 +173,30 @@ namespace PSSystem
                         break;
                     }
 
-                if (sindex < 0)
-                {  // not found
+                if (sindex < 0)  // stx is not found
+                {  
                     Buffer.BlockCopy(gByteRemained, gByteRemainedLength - 2, gByteRemained, 0, 2);
                     gByteRemainedLength = 2;
                     return;
                 }
 
                 bIndex = gByteRemained[sindex + 1];
-                if (bIndex == (byte) 0xc1)
+                if (bIndex == (byte) 0xc1) // check if remained >=8
                 {
                     if (gByteRemainedLength < (sindex+8))
                     {
                         return;
                     }
                     len = 8;  
-                    // check if remained >=39
-                } else
+                    
+                }
+                else // check if remained >=72
                 {
-                    if (gByteRemainedLength < (sindex + 39))
+                    if (gByteRemainedLength < (sindex + 72))
                     {
                         return;
                     }
-                    len = 39;
+                    len = 72;
                 }
 
                 Buffer.BlockCopy(gByteRemained, sindex, dataSensor, 0, len);

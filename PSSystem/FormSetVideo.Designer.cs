@@ -42,11 +42,16 @@ namespace PSSystem
             this.btnHome = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.grpDeco = new System.Windows.Forms.GroupBox();
+            this.chkLineDeco = new System.Windows.Forms.CheckBox();
+            this.chkTempDeco = new System.Windows.Forms.CheckBox();
+            this.chkSensorDeco = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.grpDeco.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox4
@@ -182,18 +187,63 @@ namespace PSSystem
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(24, 18);
+            this.pictureBox5.Location = new System.Drawing.Point(70, 18);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(640, 386);
+            this.pictureBox5.Size = new System.Drawing.Size(520, 390);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 17;
             this.pictureBox5.TabStop = false;
+            // 
+            // grpDeco
+            // 
+            this.grpDeco.Controls.Add(this.chkSensorDeco);
+            this.grpDeco.Controls.Add(this.chkTempDeco);
+            this.grpDeco.Controls.Add(this.chkLineDeco);
+            this.grpDeco.ForeColor = System.Drawing.Color.Black;
+            this.grpDeco.Location = new System.Drawing.Point(700, 73);
+            this.grpDeco.Name = "grpDeco";
+            this.grpDeco.Size = new System.Drawing.Size(88, 102);
+            this.grpDeco.TabIndex = 18;
+            this.grpDeco.TabStop = false;
+            this.grpDeco.Text = "Display";
+            // 
+            // chkLineDeco
+            // 
+            this.chkLineDeco.AutoSize = true;
+            this.chkLineDeco.Location = new System.Drawing.Point(6, 26);
+            this.chkLineDeco.Name = "chkLineDeco";
+            this.chkLineDeco.Size = new System.Drawing.Size(49, 19);
+            this.chkLineDeco.TabIndex = 0;
+            this.chkLineDeco.Text = "Line";
+            this.chkLineDeco.UseVisualStyleBackColor = true;
+            // 
+            // chkTempDeco
+            // 
+            this.chkTempDeco.AutoSize = true;
+            this.chkTempDeco.Location = new System.Drawing.Point(6, 51);
+            this.chkTempDeco.Name = "chkTempDeco";
+            this.chkTempDeco.Size = new System.Drawing.Size(50, 19);
+            this.chkTempDeco.TabIndex = 1;
+            this.chkTempDeco.Text = "온도";
+            this.chkTempDeco.UseVisualStyleBackColor = true;
+            // 
+            // chkSensorDeco
+            // 
+            this.chkSensorDeco.AutoSize = true;
+            this.chkSensorDeco.Location = new System.Drawing.Point(6, 77);
+            this.chkSensorDeco.Name = "chkSensorDeco";
+            this.chkSensorDeco.Size = new System.Drawing.Size(50, 19);
+            this.chkSensorDeco.TabIndex = 2;
+            this.chkSensorDeco.Text = "센서";
+            this.chkSensorDeco.UseVisualStyleBackColor = true;
             // 
             // FormSetVideo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 416);
+            this.Controls.Add(this.grpDeco);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.label1);
@@ -218,6 +268,8 @@ namespace PSSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.grpDeco.ResumeLayout(false);
+            this.grpDeco.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,5 +289,9 @@ namespace PSSystem
         private Button btnHome;
         private Button btnNext;
         private PictureBox pictureBox5;
+        private GroupBox grpDeco;
+        private CheckBox chkSensorDeco;
+        private CheckBox chkTempDeco;
+        private CheckBox chkLineDeco;
     }
 }

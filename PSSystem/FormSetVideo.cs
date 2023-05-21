@@ -2,6 +2,7 @@
 using System;
 using System.Drawing;
 using System.Threading;
+using System.Web.ModelBinding;
 using System.Windows.Forms;
 
 namespace PSSystem
@@ -67,8 +68,12 @@ namespace PSSystem
             while (Globals.gIsAlive[ix] == 1)
             {
                 Globals.gVideoList[ix].Read(Globals.gFrame[ix]);
-                Draw4x4Lines(ix);
-                Cv2.PutText (Globals.gFrame[ix], strMessage, new OpenCvSharp.Point(10, 250), HersheyFonts.HersheyComplex, 0.7, Scalar.White, 1);
+                
+                if (chkLineDeco.Checked)
+                    Draw4x4Lines(ix);
+
+                DisplayTextData(ix, chkTempDeco.Checked, chkSensorDeco.Checked);
+
                 if (CameraMode == 0)
                     ShowImage(OpenCvSharp.Extensions.BitmapConverter.ToBitmap(Globals.gFrame[ix]), ix);
                 else
@@ -80,15 +85,54 @@ namespace PSSystem
             Globals.gVideoList[ix] = null;
         }
 
+        private void DisplayTextData(int ix, bool bTemp, bool bSensor)
+        {
+            int width = Globals.gFrame[ix].Width;
+            int height = Globals.gFrame[ix].Height;
+            int xpos = 0;
+            int ypos = 0;
+            short isValue = 0;
+
+            if (bTemp)
+            {
+                for (int i = 0; i < 16; i++)
+                {
+                    xpos = (i % 4) * width / 4 + 10;
+                    ypos = (i / 4) * height / 4 + 20;
+                    isValue = Globals.GetShortValueFrom2bytes(Globals.gTempValue[ix, 2 * i], Globals.gTempValue[ix, 2 * i + 1]);
+                    Cv2.PutText(Globals.gFrame[ix], isValue.ToString(), new OpenCvSharp.Point(xpos, ypos), HersheyFonts.HersheyComplex, 0.5, Scalar.Red, 1);
+                }
+            }
+
+            if (bSensor)
+            {
+                for (int i = 0; i < 16; i++)
+                {
+                    xpos = (i % 4) * width / 4 + 10;
+                    ypos = (i / 4) * height / 4 + 35;
+                    isValue = Globals.GetShortValueFrom2bytes(Globals.gSensorValue[ix, 2 * i], Globals.gSensorValue[ix, 2 * i + 1]);
+                    Cv2.PutText(Globals.gFrame[ix], isValue.ToString(), new OpenCvSharp.Point(xpos, ypos), HersheyFonts.HersheyComplex, 0.5, Scalar.Yellow, 1);
+                }
+            }
+        }
+
+
         private void Draw4x4Lines(int ix)
         {
-            int width = 640/4;
-            int height = 390/4;
+            int width = Globals.gFrame[ix].Width/ 4;
+            int height = Globals.gFrame[ix].Height/ 4;
 
             for (int i = 0; i < 5; i++)
             {
-                Cv2.Line(Globals.gFrame[ix], width * i, 0, width * i, height * 4, Scalar.White, 1, LineTypes.AntiAlias);
-                Cv2.Line(Globals.gFrame[ix], 0, height*i, width*4, height * i, Scalar.White, 1, LineTypes.AntiAlias);
+                if (i < 4) {
+                    Cv2.Line(Globals.gFrame[ix], width * i, 0, width * i, height * 4, Scalar.White, 1, LineTypes.AntiAlias);
+                    Cv2.Line(Globals.gFrame[ix], 0, height * i, width * 4, height * i, Scalar.White, 1, LineTypes.AntiAlias);
+                }
+                else
+                {
+                    Cv2.Line(Globals.gFrame[ix], width * i-1, 0, width * i-1, height * 4, Scalar.White, 1, LineTypes.AntiAlias);
+                    Cv2.Line(Globals.gFrame[ix], 0, height * i-1, width * 4, height * i-1, Scalar.White, 1, LineTypes.AntiAlias);
+                }
             }
         }
         /***********************************************************************************************************
@@ -218,6 +262,7 @@ namespace PSSystem
                 pictureBox4.Visible = true;
                 pictureBox5.Visible = false;
                 btnNext.Visible = false;
+                grpDeco.Visible = false;
             }
             else
             {
@@ -231,6 +276,7 @@ namespace PSSystem
                 pictureBox4.Visible = false;
                 pictureBox5.Visible = true;
                 btnNext.Visible = true;
+                grpDeco.Visible = true;
             }
         }
 

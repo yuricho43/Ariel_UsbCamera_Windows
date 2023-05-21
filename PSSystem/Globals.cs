@@ -32,11 +32,11 @@ namespace PSSystem
         public static object gLockCamera = new object();   // Semaphore
 
         //--- received state value from board
-        public static byte[,] gTempValue = new byte[MAX_CAMERA, 16];
-        public static byte[,] gSensorValue = new byte[MAX_CAMERA, 16];
-        public static byte[,] gSoundValue = new byte[MAX_CAMERA, 2];
-        public static byte[]  gXiroValue = new byte[MAX_CAMERA];
-        public static byte[] gRelayValue = new byte[3];
+        public static byte[,] gTempValue   = new byte[MAX_CAMERA, 32];
+        public static byte[,] gSensorValue = new byte[MAX_CAMERA, 32];
+        public static byte[,] gSoundValue = new byte[MAX_CAMERA,2];
+        public static byte[,] gXiroValue  = new byte[MAX_CAMERA,2];
+        public static byte[] gRelayValue   = new byte[3];
 
         //--- configuration (환경 설정파일)
         public static string[] gCamName = new string[MAX_CAMERA];   // 카메라 이름
@@ -82,6 +82,13 @@ namespace PSSystem
             SetSetting("WifiValue", strWifi);
             SetSetting("ComPort", gComPort);
             SetSetting("OtherConfig", strOther);
+        }
+
+        public static short GetShortValueFrom2bytes(byte b1, byte b2)
+        {
+            short sValue = 0;
+            sValue = (short)((ushort)(b1 * 256) + b2);
+            return sValue;
         }
     }
 }
