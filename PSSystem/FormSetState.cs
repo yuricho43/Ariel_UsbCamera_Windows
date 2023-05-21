@@ -126,7 +126,7 @@ namespace PSSystem
                 listView3.Invoke((MethodInvoker)delegate ()
                 {
                     ListViewItem item = listView3.Items[iCh];
-                    uValue = (ushort)((ushort)(Globals.gSoundValue[iCh, 0] * 256) + Globals.gSensorValue[iCh, 1]);
+                    uValue = (ushort)((ushort)(Globals.gSoundValue[iCh, 0] * 256) + Globals.gSoundValue[iCh, 1]);
                     item.SubItems[1].Text = uValue.ToString("X4"); ;
                 });
 

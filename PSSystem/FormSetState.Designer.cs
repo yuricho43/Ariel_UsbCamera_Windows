@@ -257,7 +257,6 @@ namespace PSSystem
             this.label3 = new System.Windows.Forms.Label();
             this.listView3 = new System.Windows.Forms.ListView();
             this.columnHeader36 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
             this.listView4 = new System.Windows.Forms.ListView();
             this.columnHeader53 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -554,8 +553,7 @@ namespace PSSystem
             // 
             this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             columnHeader35,
-            this.columnHeader36,
-            this.columnHeader37});
+            this.columnHeader36});
             this.listView3.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listView3.GridLines = true;
             this.listView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
@@ -568,7 +566,7 @@ namespace PSSystem
             this.listView3.Location = new System.Drawing.Point(56, 245);
             this.listView3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(137, 80);
+            this.listView3.Size = new System.Drawing.Size(98, 80);
             this.listView3.TabIndex = 31;
             this.listView3.UseCompatibleStateImageBehavior = false;
             this.listView3.View = System.Windows.Forms.View.Details;
@@ -576,10 +574,6 @@ namespace PSSystem
             // columnHeader36
             // 
             this.columnHeader36.Width = 40;
-            // 
-            // columnHeader37
-            // 
-            this.columnHeader37.Width = 40;
             // 
             // label4
             // 
@@ -789,7 +783,6 @@ namespace PSSystem
         private Label label3;
         private ListView listView3;
         private ColumnHeader columnHeader36;
-        private ColumnHeader columnHeader37;
         private Label label4;
         private ListView listView4;
         private ColumnHeader columnHeader53;
