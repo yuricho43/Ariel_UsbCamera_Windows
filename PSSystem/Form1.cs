@@ -78,7 +78,8 @@ namespace PSSystem
             lblDate.BackColor = Color.Transparent;
 
             // For Debug Message
-            // Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_DEBUG].Show();
+            if (Globals.gOtherConfig[0] == 1)
+                Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_DEBUG].Show();
 
             Size = new Size(800, 480);
         }
@@ -92,7 +93,8 @@ namespace PSSystem
             string strNumSensor = Globals.GetSetting("NumberOfSensor");
             string strWifi = Globals.GetSetting("WifiValue");
             string strCom = Globals.GetSetting("COMPort");
-
+            string strOther = Globals.GetSetting("OtherConfig");
+            
             if (strNames == null)
                 strNames = "ID001,ID002,ID003,ID004";
             Globals.gCamName = strNames.Split(',').ToArray<string>();
@@ -116,6 +118,10 @@ namespace PSSystem
             if (strCom == null)
                 strCom = "COM3";
             Globals.gComPort = strCom;
+
+            if (strOther == null)
+                strOther = "0,0,0,0";
+            Globals.gOtherConfig = strOther.Split(',').Select(x => int.Parse(x)).ToArray();
         }
 
         static public void ShowControls()
@@ -155,7 +161,8 @@ namespace PSSystem
         public void Process_Received__Data(byte [] dataSensor, int len)
         {
             // Display Log Data
-            // ((FormSetDebug) Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_DEBUG]).Display_Binary_Data(dataSensor, len);
+            if (Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_DEBUG].Visible)
+                ((FormSetDebug) Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_DEBUG]).Display_Binary_Data(dataSensor, len);
 
             //--- Parse and Save to Global variables.
             ((FormSetState)Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_STATE]).ParseSensorData(dataSensor, len);

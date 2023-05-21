@@ -45,7 +45,7 @@ namespace PSSystem
         public static int gNumSensor;                               // 센서 수 ?
         public static string[] gWifi = new string[3];               // SSID, PASS
         public static string gComPort;                              // 통신 포트 (COM2, COM3, ...)
-        
+        public static int[] gOtherConfig = new int[4];              // Reserved. [0] = DebugWindowShow  
         public static void ChangeForm(int index)
         {
             Globals.gFormList[index].Show();
@@ -73,6 +73,7 @@ namespace PSSystem
             string strWarning = String.Join(",", gWarningThreshold);
             string strCritical = String.Join(",", gCriticalThreshold);
             string strWifi = String.Join(",", gWifi);
+            string strOther = String.Join(",", gOtherConfig);
 
             SetSetting("ChannelName", strNames);
             SetSetting("WarningThreshold", strWarning);
@@ -80,6 +81,7 @@ namespace PSSystem
             SetSetting("NumberOfSensor", gNumSensor.ToString());
             SetSetting("WifiValue", strWifi);
             SetSetting("ComPort", gComPort);
+            SetSetting("OtherConfig", strOther);
         }
     }
 }

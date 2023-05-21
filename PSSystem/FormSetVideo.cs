@@ -53,6 +53,7 @@ namespace PSSystem
         private void CameraCallback0(object param)
         {
             int ix = (int)param;
+            string strMessage = "TEST MESSAGE";
             Globals.gFrame[ix] = new Mat();
             Globals.gVideoList[ix] = new VideoCapture(ix, VideoCaptureAPIs.DSHOW);
 
@@ -66,6 +67,8 @@ namespace PSSystem
             while (Globals.gIsAlive[ix] == 1)
             {
                 Globals.gVideoList[ix].Read(Globals.gFrame[ix]);
+                Draw4x4Lines(ix);
+                Cv2.PutText (Globals.gFrame[ix], strMessage, new OpenCvSharp.Point(10, 250), HersheyFonts.HersheyComplex, 0.7, Scalar.White, 1);
                 if (CameraMode == 0)
                     ShowImage(OpenCvSharp.Extensions.BitmapConverter.ToBitmap(Globals.gFrame[ix]), ix);
                 else
@@ -77,6 +80,36 @@ namespace PSSystem
             Globals.gVideoList[ix] = null;
         }
 
+        private void Draw4x4Lines(int ix)
+        {
+            int width = 640/4;
+            int height = 390/4;
+
+            for (int i = 0; i < 5; i++)
+            {
+                Cv2.Line(Globals.gFrame[ix], width * i, 0, width * i, height * 4, Scalar.White, 1, LineTypes.AntiAlias);
+                Cv2.Line(Globals.gFrame[ix], 0, height*i, width*4, height * i, Scalar.White, 1, LineTypes.AntiAlias);
+            }
+        }
+        /***********************************************************************************************************
+            Cv2.Line(draw, 10, 10, 630, 10, Scalar.Red, 10, LineTypes.AntiAlias);
+            Cv2.Line(draw, new Point(10, 30), new Point(630, 30), Scalar.Orange, 10, LineTypes.AntiAlias);
+
+            Cv2.Circle(draw, 30, 70, 20, Scalar.Yellow, 10, LineTypes.AntiAlias);
+            Cv2.Circle(draw, new Point(90, 70), 25, Scalar.Green, -1, LineTypes.AntiAlias);
+
+            Cv2.Rectangle(draw, new Rect(130, 50, 40, 40), Scalar.Blue, 10, LineTypes.AntiAlias);
+            Cv2.Rectangle(draw, new Point(185, 45), new Point(235, 95), Scalar.Navy, -1, LineTypes.AntiAlias);
+
+            Cv2.Ellipse(draw, new RotatedRect(new Point2f(290,70),new Size2f(75,45),0), Scalar.BlueViolet, 10, LineTypes.AntiAlias);
+            Cv2.Ellipse(draw, new Point(10, 150), new Size(50, 50), -90, 0, 100, Scalar.Tomato, -1, LineTypes.AntiAlias);
+
+            Cv2.PutText(draw, "DrawingTest", new Point(10, 250), HersheyFonts.HersheyComplex, 2, Scalar.White, 5, LineTypes.AntiAlias);
+
+            Cv2.ImShow("Drawing", draw);
+            Cv2.WaitKey(0);
+            Cv2.DestroyAllWindows();
+        **************************************************************************************************/
         private void StartCamera(int index)
         {
             if (index >= Globals.gNumCam)
@@ -153,6 +186,9 @@ namespace PSSystem
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            if (Globals.gNumCam <= 0)       // avoid zero divide
+                return;
+
             lock (Globals.gLockCamera)
             {
                 CurrentCam = (CurrentCam + 1) % Globals.gNumCam;
