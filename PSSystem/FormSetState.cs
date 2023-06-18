@@ -7,10 +7,12 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using System.Windows.Markup;
+using static OpenCvSharp.ConnectedComponents;
 
 namespace PSSystem
 {
@@ -29,6 +31,8 @@ namespace PSSystem
         public int gCurMode = 0;    // 0~4
         public byte[] gCmd = { (byte)0xa1, (byte)0xa2, (byte)0xa3, (byte)0xa4, (byte)0xc0 };
         public byte[] bPrevEventType  = { (byte)0, (byte)0, (byte)0, (byte)0 } ;
+        public NeoQueue gQueueEvent = new NeoQueue(2048);
+        public NeoQueue gQueueLog = new NeoQueue(2048);
 
         public FormSetState()
         {
@@ -40,6 +44,14 @@ namespace PSSystem
             label5.BackColor = Color.Transparent;
             label6.BackColor = Color.Transparent;
             label2.Left = (Globals.PANEL_WIDTH - label2.Width) / 2;
+
+            //--- Create Logging Thread
+            //    - Check Queue and Save 
+            gQueueEvent.Initialize();
+            gQueueLog.Initialize();
+
+            Thread t1 = new Thread(new ThreadStart(LogAndEventWrite));
+            t1.Start();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -195,9 +207,10 @@ namespace PSSystem
         // bCh = b1~b4, c1
         void Check_Event_And_Data_Logging(byte[] data, byte bCh, int len)
         {
-            byte[] bLog   = new byte[75];   // HMS+Data(72bytes)        = 75bytes
+            byte[] bLog   = new byte[78];   // HMS+Data(72bytes)        = 75bytes + 3
             byte[] bEvent = new byte[78];   // MDHMS+type+Data(72bytes) = 78bytes
             byte bType = (byte)0;
+            int IDataSize = 78;
             int iValue = 0;
 
             //------------------------------------------------------------------
@@ -281,22 +294,20 @@ namespace PSSystem
             if (ix < 0 || ix > 3)
                 return;
 
+            bEvent[0] = (byte)curDate.Month;
+            bEvent[1] = (byte)curDate.Day;
+            bEvent[2] = (byte)curDate.Hour;
+            bEvent[3] = (byte)curDate.Minute;
+            bEvent[4] = (byte)curDate.Second;
+            bEvent[5] = bType;                  // On Log, no meaning
+            Buffer.BlockCopy(data, 0, bEvent, 6, len);      // total length = 6 + data
+
             if (bPrevEventType[ix] != bType)
             {
-                {
-                    string strEventFile = DateTime.Now.ToString("yyyy") + "_event.bin";
-                    bEvent[0] = (byte)curDate.Month;
-                    bEvent[1] = (byte)curDate.Day;
-                    bEvent[2] = (byte)curDate.Hour;
-                    bEvent[3] = (byte)curDate.Minute;
-                    bEvent[4] = (byte)curDate.Second;
-                    bEvent[5] = bType;
-                    Buffer.BlockCopy(data, 0, bEvent, 6, len);
-                    using (BinaryWriter ew = new BinaryWriter(File.Open(strEventFile, FileMode.Append)))
-                    {
-                        ew.Write(bEvent);
-                    }
-                }
+                if (gQueueEvent.GetFreeSize() < (IDataSize))
+                    gQueueEvent.FlushData( (UInt32)IDataSize);
+
+                gQueueEvent.PutData(bEvent, (UInt32)IDataSize);
                 bPrevEventType[ix] = bType;
             }
 
@@ -304,15 +315,44 @@ namespace PSSystem
             // Logging Data (all are 75 bytes including relay
             // FileName: Log_YYYYMMDD.bin
             // HMS+ DATA
-            string strLogFile = DateTime.Now.ToString("yyyyMMdd") + "_log.bin";
-            bLog[0] = (byte)curDate.Hour;
-            bLog[1] = (byte)curDate.Minute;
-            bLog[2] = (byte)curDate.Second;
-            Buffer.BlockCopy(data, 0, bLog, 3, len);
+            if (gQueueLog.GetFreeSize() < (IDataSize))
+                gQueueLog.FlushData((UInt32)IDataSize);
 
-            using (BinaryWriter bw = new BinaryWriter(File.Open(strLogFile, FileMode.Append)))
+            gQueueLog.PutData(bEvent, (UInt32)IDataSize);
+        }
+
+        void LogAndEventWrite()
+        {
+            byte[] bTemp = new byte[2048];
+            int iiSize = 0;
+
+            while (true) 
             {
-                bw.Write(bLog);
+                // write Event
+                iiSize = (int) gQueueEvent.GetFillSize();
+                if (iiSize > 0)
+                {
+                    string strLogFile = DateTime.Now.ToString("yyyy") + "_events.bin";
+                    gQueueEvent.GetData(bTemp, (uint) iiSize);
+                    using (BinaryWriter bw = new BinaryWriter(File.Open(strLogFile, FileMode.Append)))
+                    {
+                        bw.Write(bTemp, 0, iiSize);
+                    }
+                }
+
+                // write Event
+                iiSize = (int)gQueueLog.GetFillSize();
+                if (iiSize > 0)
+                {
+                    string strLogFile = DateTime.Now.ToString("yyyyMMdd") + "_log.bin";
+                    gQueueLog.GetData(bTemp, (uint)iiSize);
+                    using (BinaryWriter bw = new BinaryWriter(File.Open(strLogFile, FileMode.Append)))
+                    {
+                        bw.Write(bTemp, 0, iiSize);
+                    }
+                }
+
+                Thread.Sleep(10);
             }
         }
 
