@@ -32,11 +32,14 @@ namespace PSSystem
         {
             this.btnHome = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnText = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // btnHome
             // 
-            this.btnHome.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnHome.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnHome.ForeColor = System.Drawing.Color.Black;
             this.btnHome.Location = new System.Drawing.Point(725, 359);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -59,14 +62,38 @@ namespace PSSystem
             this.label2.TabIndex = 22;
             this.label2.Text = "저장 데이타 검색";
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnDate,
+            this.columnText});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(12, 57);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(686, 347);
+            this.listView1.TabIndex = 24;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnDate
+            // 
+            this.columnDate.Text = "날짜";
+            this.columnDate.Width = 100;
+            // 
+            // columnText
+            // 
+            this.columnText.Text = "데이타";
+            this.columnText.Width = 500;
+            // 
             // FormSetData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 416);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.label2);
-            this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormSetData";
@@ -80,5 +107,8 @@ namespace PSSystem
 
         private Button btnHome;
         private Label label2;
+        private ListView listView1;
+        private ColumnHeader columnDate;
+        private ColumnHeader columnText;
     }
 }

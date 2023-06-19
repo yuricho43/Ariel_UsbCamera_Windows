@@ -1,18 +1,9 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Web.UI.WebControls;
+//using System.Web.UI.WebControls;
 using System.Windows.Forms;
-using System.Windows.Markup;
-using static OpenCvSharp.ConnectedComponents;
 
 namespace PSSystem
 {
@@ -207,7 +198,7 @@ namespace PSSystem
         // bCh = b1~b4, c1
         void Check_Event_And_Data_Logging(byte[] data, byte bCh, int len)
         {
-            byte[] bLog   = new byte[78];   // HMS+Data(72bytes)        = 75bytes + 3
+            byte[] bLog   = new byte[78];   // HMSMS+type+Data(72bytes) = 78bytes
             byte[] bEvent = new byte[78];   // MDHMS+type+Data(72bytes) = 78bytes
             byte bType = (byte)0;
             int IDataSize = 78;
@@ -216,6 +207,11 @@ namespace PSSystem
             //------------------------------------------------------------------
             // Check Event (Warning, Critical)
             if (bCh == (byte)CH_INDEX.CH_RELAY)
+                return;
+
+            DateTime curDate = DateTime.Now;
+            int ix = (int)(bCh - (byte)0xb1);
+            if (ix < 0 || ix > 3)
                 return;
 
             // check each temperature (gWarningThreshold/gCriticalThreshold[0])  // data[2~33]
@@ -289,10 +285,6 @@ namespace PSSystem
             // MDHMS type data : 상위 4bit : sensor (C해제 W해제 CR WR)
             //                   하위 4bit : temperature
             //--- 이전의 Warning/Critical/Normal 값을 기억하고 있다가, 변경되면 Event 기록
-            DateTime curDate = DateTime.Now;
-            int ix = (int) (bCh - (byte)0xb1);
-            if (ix < 0 || ix > 3)
-                return;
 
             bEvent[0] = (byte)curDate.Month;
             bEvent[1] = (byte)curDate.Day;
