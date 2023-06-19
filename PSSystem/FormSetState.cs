@@ -324,7 +324,7 @@ namespace PSSystem
                 iiSize = (int) gQueueEvent.GetFillSize();
                 if (iiSize > 0)
                 {
-                    string strLogFile = DateTime.Now.ToString("yyyy") + "_events.bin";
+                    string strLogFile = DateTime.Now.ToString("yyyyMM") + "_events.bin";
                     gQueueEvent.GetData(bTemp, (uint) iiSize);
                     using (BinaryWriter bw = new BinaryWriter(File.Open(strLogFile, FileMode.Append)))
                     {
