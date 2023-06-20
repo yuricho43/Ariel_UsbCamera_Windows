@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PSSystem
 {
-    internal class SupportEtc
+    public class SupportEtc
     {
 
         //=== binary data를 string으로 변환하는 함수
@@ -22,10 +22,20 @@ namespace PSSystem
             return strResult;
         }
 
+        public string ConvertHexArrayToString2(byte[] data, int offset, int len)
+        {
+            byte[] byteArray = new byte[len];
+            Buffer.BlockCopy(data, offset, byteArray, 0, len);
+
+            string strResult = System.BitConverter.ToString(byteArray);
+            strResult = strResult.Replace("-", " ");
+            return strResult;
+        }
+
         //=== hex sring을 byte array로 변환하는 함수
         //    example : string "03 3E 34 27"
         //              byte[4] = 03 3E 34  27
-       
+
         public static byte[] ConvertHexStringToByteArray2(string hexString)
         {
             byte[] StrByte = Encoding.UTF8.GetBytes(hexString);

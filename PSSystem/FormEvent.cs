@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace PSSystem
 {
     public partial class FormEvent : Form
     {
+        SupportEtc support = new SupportEtc();
+
         public FormEvent()
         {
             InitializeComponent();
@@ -32,23 +35,58 @@ namespace PSSystem
             string strEvent;
             string strData;
 
-            for (int i = 0; i < 50; i++)
+            int year = dtDate.Value.Year;
+            int month = dtDate.Value.Month;
+            int day = dtDate.Value.Day;
+            string filename = year.ToString("0000") + month.ToString("00") + "_events.bin";
+            if (!File.Exists(filename))
             {
-                //--- read 78 bytes
+                MessageBox.Show("There is no event file", "No Event");
+                return; // show message of non-exist
+            }
+
+            FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            byte[] readData;
+
+            int iCount = 0;
+
+            while (true)
+            {
+                //--- read 78 bytes // month, day, hour, min, sec, event type + 72 bytes
+                readData = br.ReadBytes(78);
+                if (readData.Length < 78)
+                    break;
+
                 //--- pickup time : hh:mm:ss
                 //--- change to hex string
-                strDate = "2023.06.01 12:24:36";
+                strDate = year.ToString() + "." + readData[0].ToString("00") + "." + readData[1].ToString("00") + " "
+                    + readData[2].ToString("00") + ":" + readData[3].ToString("00") + ":" + readData[4].ToString("00");
+                strEvent = GetEventString(readData[5]);
+                strData = support.ConvertHexArrayToString2(readData, 6, 72);
                 ListViewItem item = new ListViewItem(strDate);
                 listView1.Items.Add(item);
+                item.SubItems.Add(strEvent);
+                item.SubItems.Add(strData);
 
-                item.SubItems.Add("Temp Critical");
-                item.SubItems.Add(i.ToString() + " 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26");
+                if (iCount++ > 30)
+                    break;
             }
+            br.Close();
+            fs.Close();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
+        }
+
+        private string GetEventString(byte bEvent)
+        {
+            // TEMP/SENSOR/SOUND/XIRO NORMAL/WARNING/CRITICAL
+            // "TW SC SN XN"
+            string strReturn = "TW SC SN XN";
+            return strReturn;
         }
     }
 }

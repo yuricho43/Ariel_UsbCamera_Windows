@@ -302,7 +302,7 @@ namespace PSSystem
             // 
             // btnHome
             // 
-            this.btnHome.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnHome.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnHome.ForeColor = System.Drawing.Color.Black;
             this.btnHome.Location = new System.Drawing.Point(725, 359);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -328,7 +328,7 @@ namespace PSSystem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(14, 69);
             this.label1.Name = "label1";
@@ -356,7 +356,7 @@ namespace PSSystem
             this.columnHeader15,
             this.columnHeader16,
             this.columnHeader17});
-            this.listView1.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.listView1.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listView1.HideSelection = false;
@@ -457,7 +457,7 @@ namespace PSSystem
             this.columnHeader32,
             this.columnHeader33,
             this.columnHeader34});
-            this.listView2.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.listView2.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listView2.GridLines = true;
             this.listView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listView2.HideSelection = false;
@@ -541,7 +541,7 @@ namespace PSSystem
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(14, 157);
             this.label3.Name = "label3";
@@ -554,7 +554,7 @@ namespace PSSystem
             this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             columnHeader35,
             this.columnHeader36});
-            this.listView3.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.listView3.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listView3.GridLines = true;
             this.listView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listView3.HideSelection = false;
@@ -578,7 +578,7 @@ namespace PSSystem
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(7, 245);
             this.label4.Name = "label4";
@@ -591,7 +591,7 @@ namespace PSSystem
             this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             columnHeader52,
             this.columnHeader53});
-            this.listView4.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.listView4.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listView4.GridLines = true;
             this.listView4.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listView4.HideSelection = false;
@@ -615,7 +615,7 @@ namespace PSSystem
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(314, 245);
             this.label5.Name = "label5";
@@ -628,7 +628,7 @@ namespace PSSystem
             this.listView5.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             columnHeader38,
             this.columnHeader39});
-            this.listView5.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.listView5.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listView5.GridLines = true;
             this.listView5.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listView5.HideSelection = false;
@@ -651,7 +651,7 @@ namespace PSSystem
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(599, 245);
             this.label6.Name = "label6";
@@ -661,7 +661,7 @@ namespace PSSystem
             // 
             // btnSend
             // 
-            this.btnSend.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSend.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSend.ForeColor = System.Drawing.Color.Black;
             this.btnSend.Location = new System.Drawing.Point(56, 333);
             this.btnSend.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -684,7 +684,7 @@ namespace PSSystem
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(198, 338);
             this.label7.Name = "label7";
@@ -694,7 +694,7 @@ namespace PSSystem
             // 
             // btnAuto
             // 
-            this.btnAuto.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnAuto.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnAuto.ForeColor = System.Drawing.Color.Black;
             this.btnAuto.Location = new System.Drawing.Point(56, 369);
             this.btnAuto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -731,7 +731,7 @@ namespace PSSystem
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.label2);
-            this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormSetState";
