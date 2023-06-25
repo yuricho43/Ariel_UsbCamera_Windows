@@ -43,9 +43,9 @@ namespace PSSystem
             this.btnNext = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.grpDeco = new System.Windows.Forms.GroupBox();
-            this.chkLineDeco = new System.Windows.Forms.CheckBox();
-            this.chkTempDeco = new System.Windows.Forms.CheckBox();
             this.chkSensorDeco = new System.Windows.Forms.CheckBox();
+            this.chkTempDeco = new System.Windows.Forms.CheckBox();
+            this.chkLineDeco = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -208,15 +208,15 @@ namespace PSSystem
             this.grpDeco.TabStop = false;
             this.grpDeco.Text = "Display";
             // 
-            // chkLineDeco
+            // chkSensorDeco
             // 
-            this.chkLineDeco.AutoSize = true;
-            this.chkLineDeco.Location = new System.Drawing.Point(6, 26);
-            this.chkLineDeco.Name = "chkLineDeco";
-            this.chkLineDeco.Size = new System.Drawing.Size(49, 19);
-            this.chkLineDeco.TabIndex = 0;
-            this.chkLineDeco.Text = "Line";
-            this.chkLineDeco.UseVisualStyleBackColor = true;
+            this.chkSensorDeco.AutoSize = true;
+            this.chkSensorDeco.Location = new System.Drawing.Point(6, 77);
+            this.chkSensorDeco.Name = "chkSensorDeco";
+            this.chkSensorDeco.Size = new System.Drawing.Size(79, 19);
+            this.chkSensorDeco.TabIndex = 2;
+            this.chkSensorDeco.Text = "아크/화재";
+            this.chkSensorDeco.UseVisualStyleBackColor = true;
             // 
             // chkTempDeco
             // 
@@ -228,15 +228,15 @@ namespace PSSystem
             this.chkTempDeco.Text = "온도";
             this.chkTempDeco.UseVisualStyleBackColor = true;
             // 
-            // chkSensorDeco
+            // chkLineDeco
             // 
-            this.chkSensorDeco.AutoSize = true;
-            this.chkSensorDeco.Location = new System.Drawing.Point(6, 77);
-            this.chkSensorDeco.Name = "chkSensorDeco";
-            this.chkSensorDeco.Size = new System.Drawing.Size(50, 19);
-            this.chkSensorDeco.TabIndex = 2;
-            this.chkSensorDeco.Text = "센서";
-            this.chkSensorDeco.UseVisualStyleBackColor = true;
+            this.chkLineDeco.AutoSize = true;
+            this.chkLineDeco.Location = new System.Drawing.Point(6, 26);
+            this.chkLineDeco.Name = "chkLineDeco";
+            this.chkLineDeco.Size = new System.Drawing.Size(49, 19);
+            this.chkLineDeco.TabIndex = 0;
+            this.chkLineDeco.Text = "Line";
+            this.chkLineDeco.UseVisualStyleBackColor = true;
             // 
             // FormSetVideo
             // 

@@ -24,5 +24,17 @@ namespace PSSystem
             if (Globals.gCurrentIndex != (int)FORM_INDEX.NO_FORM_MAIN)
                 Globals.ChangeForm((int)FORM_INDEX.NO_FORM_MAIN);
         }
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            byte bRelay = 0;
+
+            for (int i = 0; i < 8; i++) {
+                if (checkList1.GetItemChecked(i))
+                    bRelay |= (byte)(0x01 << i);
+            }
+
+            GSerial.Send_Equiry_Data(0xc0, bRelay);
+        }
     }
 }

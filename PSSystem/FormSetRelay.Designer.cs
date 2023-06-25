@@ -32,6 +32,8 @@ namespace PSSystem
         {
             this.btnHome = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.checkList1 = new System.Windows.Forms.CheckedListBox();
+            this.btnTest = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnHome
@@ -58,15 +60,49 @@ namespace PSSystem
             this.label2.TabIndex = 24;
             this.label2.Text = "릴레이 접점 테스트";
             // 
+            // checkList1
+            // 
+            this.checkList1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.checkList1.FormattingEnabled = true;
+            this.checkList1.Items.AddRange(new object[] {
+            "릴레이 1",
+            "릴레이 2",
+            "릴레이 3",
+            "릴레이 4",
+            "릴레이 5",
+            "릴레이 6",
+            "릴레이 7",
+            "릴레이 8",
+            "릴레이 9",
+            "릴레이 10",
+            "릴레이 11"});
+            this.checkList1.Location = new System.Drawing.Point(146, 91);
+            this.checkList1.MultiColumn = true;
+            this.checkList1.Name = "checkList1";
+            this.checkList1.Size = new System.Drawing.Size(490, 88);
+            this.checkList1.TabIndex = 26;
+            // 
+            // btnTest
+            // 
+            this.btnTest.Location = new System.Drawing.Point(146, 243);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(115, 38);
+            this.btnTest.TabIndex = 27;
+            this.btnTest.Text = "릴레이 테스트";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
             // FormSetRelay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 416);
+            this.Controls.Add(this.btnTest);
+            this.Controls.Add(this.checkList1);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ForeColor = System.Drawing.Color.Yellow;
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormSetRelay";
@@ -80,5 +116,7 @@ namespace PSSystem
 
         private Button btnHome;
         private Label label2;
+        private CheckedListBox checkList1;
+        private Button btnTest;
     }
 }

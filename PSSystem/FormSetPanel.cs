@@ -44,18 +44,27 @@ namespace PSSystem
             textSensor.Text = Globals.gNumSensor.ToString();
             textWifiName.Text = Globals.gWifi[0];
             textWifiPass.Text = Globals.gWifi[1];
+            textPhoneNumber.Text = Globals.gWifi[2];
+            textSNSString.Text = Globals.gWifi[3];
 
             //--- Warnings
             textTempWarn.Text = Globals.gWarningThreshold[0].ToString();
             textSensorWarn.Text = Globals.gWarningThreshold[1].ToString();
             textSoundWarn.Text = Globals.gWarningThreshold[2].ToString();
             textXiroWarn.Text = Globals.gWarningThreshold[3].ToString();
+            textFireWarn.Text = Globals.gWarningThreshold[4].ToString();
 
             //--- Criticals
             textTempCrit.Text = Globals.gCriticalThreshold[0].ToString();
             textSensorCrit.Text = Globals.gCriticalThreshold[1].ToString();
             textSoundCrit.Text = Globals.gCriticalThreshold[2].ToString();
             textXiroCrit.Text = Globals.gCriticalThreshold[3].ToString();
+            textFireCrit.Text = Globals.gCriticalThreshold[4].ToString();
+
+            //--- Others
+            textPeriod.Text = Globals.gOtherConfig[1].ToString();
+            checkLogging.Checked =  Globals.gOtherConfig[2] == 0 ? false : true;
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -69,20 +78,35 @@ namespace PSSystem
             Globals.gNumSensor = int.Parse(textSensor.Text);
             Globals.gWifi[0] = textWifiName.Text;
             Globals.gWifi[1] = textWifiPass.Text;
+            Globals.gWifi[2] = textPhoneNumber.Text;
+            Globals.gWifi[3] = textSNSString.Text;
 
             //--- Warnings
             Globals.gWarningThreshold[0] = int.Parse(textTempWarn.Text);
             Globals.gWarningThreshold[1] = int.Parse(textSensorWarn.Text);
             Globals.gWarningThreshold[2] = int.Parse(textSoundWarn.Text);
             Globals.gWarningThreshold[3] = int.Parse(textXiroWarn.Text);
+            Globals.gWarningThreshold[4] = int.Parse(textFireWarn.Text);
 
             //--- Criticals
             Globals.gCriticalThreshold[0] = int.Parse(textTempCrit.Text);
             Globals.gCriticalThreshold[1] = int.Parse(textSensorCrit.Text);
             Globals.gCriticalThreshold[2] = int.Parse(textSoundCrit.Text);
             Globals.gCriticalThreshold[3] = int.Parse(textXiroCrit.Text);
+            Globals.gCriticalThreshold[4] = int.Parse(textFireCrit.Text);
+
+            //--- Others
+            Globals.gOtherConfig[1] = int.Parse(textPeriod.Text);
+            if (Globals.gOtherConfig[1] < 200)
+                Globals.gOtherConfig[1] = 200;
+            if (Globals.gOtherConfig[1] > 2000)
+                Globals.gOtherConfig[1] = 2000;
+            textPeriod.Text = Globals.gOtherConfig[1].ToString();
+            Globals.gOtherConfig[2] = checkLogging.Checked ? 1 : 0;
 
             Globals.Write_Configuration();
+
+            ((FormMain)Globals.gFormList[(int)FORM_INDEX.NO_FORM_MAIN]).ShowMainChannel();
         }
     }
 }

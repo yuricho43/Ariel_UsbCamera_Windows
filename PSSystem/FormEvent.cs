@@ -53,9 +53,9 @@ namespace PSSystem
 
             while (true)
             {
-                //--- read 78 bytes // month, day, hour, min, sec, event type + 72 bytes
-                readData = br.ReadBytes(78);
-                if (readData.Length < 78)
+                //--- read 79 bytes // month, day, hour, min, sec, event type(2) + 72 bytes
+                readData = br.ReadBytes(79);
+                if (readData.Length < 79)
                     break;
 
                 //--- pickup time : hh:mm:ss

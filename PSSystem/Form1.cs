@@ -100,11 +100,11 @@ namespace PSSystem
             Globals.gCamName = strNames.Split(',').ToArray<string>();
 
             if (strWarning == null)
-                strWarning = "59, 59, 110, 90";
+                strWarning = "59, 59, 110, 90, 59";  //온도, 센서, 소음, 진동, 화재
             Globals.gWarningThreshold = strWarning.Split(',').Select(x => int.Parse(x)).ToArray();
 
             if (strCritical == null)
-                strCritical = "95, 95, 120, 100";
+                strCritical = "95, 95, 120, 100, 95";
             Globals.gCriticalThreshold = strCritical.Split(',').Select(x => int.Parse(x)).ToArray();
 
             if (strNumSensor == null)
@@ -112,7 +112,7 @@ namespace PSSystem
             Globals.gNumSensor = int.Parse(strNumSensor);
 
             if (strWifi == null)
-                strWifi = "WIFI-SSD,WIFI-PASS";
+                strWifi = "WIFI-SSD,WIFI-PASS, 01022221111, 알람발생";
             Globals.gWifi = strWifi.Split(',').ToArray<string>();
 
             if (strCom == null)
@@ -120,8 +120,13 @@ namespace PSSystem
             Globals.gComPort = strCom;
 
             if (strOther == null)
-                strOther = "0,0,0,0";
+                strOther = "0,200,1,0";
             Globals.gOtherConfig = strOther.Split(',').Select(x => int.Parse(x)).ToArray();
+            if (Globals.gOtherConfig[1] < 200)
+                Globals.gOtherConfig[1] = 200;
+            if (Globals.gOtherConfig[1] > 2000)
+                Globals.gOtherConfig[1] = 2000;
+
         }
 
         static public void ShowControls()

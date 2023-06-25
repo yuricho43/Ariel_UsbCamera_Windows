@@ -98,9 +98,9 @@ namespace PSSystem
                 for (int i = 0; i < 16; i++)
                 {
                     xpos = (i % 4) * width / 4 + 10;
-                    ypos = (i / 4) * height / 4 + 20;
+                    ypos = (i / 4) * height / 4 + 40;
                     isValue = Globals.GetShortValueFrom2bytes(Globals.gTempValue[ix, 2 * i], Globals.gTempValue[ix, 2 * i + 1]);
-                    Cv2.PutText(Globals.gFrame[ix], isValue.ToString(), new OpenCvSharp.Point(xpos, ypos), HersheyFonts.HersheyComplex, 0.5, Scalar.Red, 1);
+                    Cv2.PutText(Globals.gFrame[ix], isValue.ToString(), new OpenCvSharp.Point(xpos, ypos), HersheyFonts.HersheyComplex, 1.5, Scalar.Red, 1);
                 }
             }
 
@@ -109,9 +109,9 @@ namespace PSSystem
                 for (int i = 0; i < 16; i++)
                 {
                     xpos = (i % 4) * width / 4 + 10;
-                    ypos = (i / 4) * height / 4 + 35;
+                    ypos = (i / 4) * height / 4 + 80;
                     isValue = Globals.GetShortValueFrom2bytes(Globals.gSensorValue[ix, 2 * i], Globals.gSensorValue[ix, 2 * i + 1]);
-                    Cv2.PutText(Globals.gFrame[ix], isValue.ToString(), new OpenCvSharp.Point(xpos, ypos), HersheyFonts.HersheyComplex, 0.5, Scalar.Yellow, 1);
+                    Cv2.PutText(Globals.gFrame[ix], isValue.ToString(), new OpenCvSharp.Point(xpos, ypos), HersheyFonts.HersheyComplex, 1.5, Scalar.Yellow, 1);
                 }
             }
         }

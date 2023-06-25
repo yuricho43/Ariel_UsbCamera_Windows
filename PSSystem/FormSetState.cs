@@ -21,7 +21,7 @@ namespace PSSystem
         public int gAutoEnqStarted = 0;
         public int gCurMode = 0;    // 0~4
         public byte[] gCmd = { (byte)0xa1, (byte)0xa2, (byte)0xa3, (byte)0xa4, (byte)0xc0 };
-        public byte[] bPrevEventType  = { (byte)0, (byte)0, (byte)0, (byte)0 } ;
+        public int[] iPrevEventType  = { 0, 0, 0, 0, 0} ;
         public NeoQueue gQueueEvent = new NeoQueue(2048);
         public NeoQueue gQueueLog = new NeoQueue(2048);
 
@@ -159,7 +159,8 @@ namespace PSSystem
             if (bStart)
             {
                 gAutoEnqStarted = 1;
-                timer1.Enabled = true;
+                timer1.Enabled = true;    
+                timer1.Interval = Globals.gOtherConfig[1];
             }
             else
             {
@@ -171,8 +172,7 @@ namespace PSSystem
         private void btnSend_Click(object sender, EventArgs e)
         {
             byte bCmd = Convert.ToByte(textBox1.Text, 16);
-
-                  GSerial.Send_Equiry_Data(bCmd);
+            GSerial.Send_Equiry_Data(bCmd, 0x00);
         }
 
         private void btnAuto_Click(object sender, EventArgs e)
@@ -191,17 +191,17 @@ namespace PSSystem
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            GSerial.Send_Equiry_Data(gCmd[gCurMode++ % 5]);
+            GSerial.Send_Equiry_Data(gCmd[gCurMode++ % 5], 0);
         }
 
 
         // bCh = b1~b4, c1
         void Check_Event_And_Data_Logging(byte[] data, byte bCh, int len)
         {
-            byte[] bLog   = new byte[78];   // HMSMS+type+Data(72bytes) = 78bytes
-            byte[] bEvent = new byte[78];   // MDHMS+type+Data(72bytes) = 78bytes
-            byte bType = (byte)0;
-            int IDataSize = 78;
+            byte[] bLog   = new byte[79];   // HMSMS+type(2)+Data(72bytes) = 79bytes
+            byte[] bEvent = new byte[79];   // MDHMS+type(2)+Data(72bytes) = 79bytes
+            int iType = 0;
+            int IDataSize = 79;
             int iValue = 0;
 
             //------------------------------------------------------------------
@@ -219,64 +219,64 @@ namespace PSSystem
             // check each sounds      (gWarningThreshold/gCriticalThreshold[2])  // data[66~67]
             // check      xiro        ((gWarningThreshold/gCriticalThreshold[3]) // data[68~69]
 
-            // bType : critical or warning. two bit for each value
-            //     (xiro, sound, sensor, temp)
-            //  bit 76    54     32      10
-            //     0xC0   0x30   0x0C    0x03
+            // iType : critical or warning. two bit for each value
+            //     (fire, xiro, sound, sensor, temp)
+            //  bit  98     76    54     32      10
+            //     0x300   0xC0  0x30   0x0C    0x03
             //=== Temp
-            bType &= 0xFC;
+            iType &= 0xFFC;
             for (int i = 0; i < 16; i++)
             {
                 iValue = (int)((ushort)(data[2+2*i] * 256) + data[2+2*i+1]);
                 if (iValue > Globals.gWarningThreshold[0])
                     if (iValue > Globals.gCriticalThreshold[0])
                     {
-                        bType |=  0x02;
+                        iType |=  0x02;
                         break;
                     }
                     else
-                        bType |= 0x01;
+                        iType |= 0x01;
             }
 
-            //=== Sensor
-            bType &= 0xF3;
+            //=== Sensor (Arc)
+            iType &= 0xFF3;
             for (int i = 0; i < 16; i++)
             {
                 iValue = (int)((ushort)(data[34 + 2 * i] * 256) + data[34 + 2 * i + 1]);
                 if (iValue > Globals.gWarningThreshold[1])
                     if (iValue > Globals.gCriticalThreshold[1])
                     {
-                        bType |= 0x08;
+                        iType |= 0x08;
                         break;
                     }
                     else
-                        bType |= 0x04;
+                        iType |= 0x04;
             }
 
             //=== Sound
             iValue = (int)((ushort)(data[66] * 256) + data[67]);
-            bType &= 0xCF;
+            iType &= 0xFCF;
             if (iValue > Globals.gWarningThreshold[2])
             {
                 if (iValue > Globals.gCriticalThreshold[2])
                 {
-                    bType |= 0x10;
+                    iType |= 0x10;
                 }
                 else
-                    bType |= 0x20;
+                    iType |= 0x20;
             }
 
             //=== Xiro
             iValue = (int)((ushort)(data[68] * 256) + data[69]);
-            bType &= 0x3F;
+            iType &= 0xF3F;
             if (iValue > Globals.gWarningThreshold[3])
             {
                 if (iValue > Globals.gCriticalThreshold[3])
                 {
-                    bType |= 0x40;
+                    iType |= 0x40;
                 }
                 else
-                    bType |= 0x80;
+                    iType |= 0x80;
             }
 
 
@@ -291,16 +291,17 @@ namespace PSSystem
             bEvent[2] = (byte)curDate.Hour;
             bEvent[3] = (byte)curDate.Minute;
             bEvent[4] = (byte)curDate.Second;
-            bEvent[5] = bType;                  // On Log, no meaning
-            Buffer.BlockCopy(data, 0, bEvent, 6, len);      // total length = 6 + data
+            bEvent[5] = (byte)((iType & 0xFF00) >> 8);                  // On Log, no meaning
+            bEvent[6] = (byte)(iType & 0xFF);               
+            Buffer.BlockCopy(data, 0, bEvent, 7, len);      // total length = 7 + data
 
-            if (bPrevEventType[ix] != bType)
+            if (iPrevEventType[ix] != iType)
             {
                 if (gQueueEvent.GetFreeSize() < (IDataSize))
                     gQueueEvent.FlushData( (UInt32)IDataSize);
 
                 gQueueEvent.PutData(bEvent, (UInt32)IDataSize);
-                bPrevEventType[ix] = bType;
+                iPrevEventType[ix] = iType;
             }
 
             //------------------------------------------------------------------
@@ -332,15 +333,18 @@ namespace PSSystem
                     }
                 }
 
-                // write Event
-                iiSize = (int)gQueueLog.GetFillSize();
-                if (iiSize > 0)
+                if (Globals.gOtherConfig[2] != 0)
                 {
-                    string strLogFile = DateTime.Now.ToString("yyyyMMdd") + "_log.bin";
-                    gQueueLog.GetData(bTemp, (uint)iiSize);
-                    using (BinaryWriter bw = new BinaryWriter(File.Open(strLogFile, FileMode.Append)))
+                    // write Data
+                    iiSize = (int)gQueueLog.GetFillSize();
+                    if (iiSize > 0)
                     {
-                        bw.Write(bTemp, 0, iiSize);
+                        string strLogFile = DateTime.Now.ToString("yyyyMMdd") + "_log.bin";
+                        gQueueLog.GetData(bTemp, (uint)iiSize);
+                        using (BinaryWriter bw = new BinaryWriter(File.Open(strLogFile, FileMode.Append)))
+                        {
+                            bw.Write(bTemp, 0, iiSize);
+                        }
                     }
                 }
 

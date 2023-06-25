@@ -108,7 +108,7 @@ namespace PSSystem
         }
 
         //--- bIndex = a1~a4, c0 (보드에 데이타 요청)
-        public static void Send_Equiry_Data(byte bIndex)
+        public static void Send_Equiry_Data(byte bIndex, byte bData)
         {
             //--- send data : STX index    header data checksum ETX    // 6 byte
             //                02  a1~a4/c0 0x01,  0x00  xor     03
@@ -119,7 +119,7 @@ namespace PSSystem
             bSendData[0] = 0x02;
             bSendData[1] = bIndex;
             bSendData[2] = 0x01;    // header
-            bSendData[3] = 0x00;    // Data
+            bSendData[3] = bData;    // Data
             bSendData[4] = GetCheckSum(bSendData, 1, 3);
             bSendData[5] = 0x03;
             Send_Serial_Data_Binary(bSendData, 6);

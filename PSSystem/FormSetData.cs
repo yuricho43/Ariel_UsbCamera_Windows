@@ -50,11 +50,11 @@ namespace PSSystem
 
             for (int i = 0; i < iNum; i++)
             {
-                //--- read 78 bytes
+                //--- read 79 bytes
                 //--- pickup time : hh:mm:ss
                 //--- change to hex string
-                readData = gBr.ReadBytes(78);
-                if (readData.Length < 78)
+                readData = gBr.ReadBytes(79);
+                if (readData.Length < 79)
                     break;
 
                 //--- pickup time : hh:mm:ss

@@ -33,19 +33,19 @@ namespace PSSystem
 
         //--- received state value from board
         public static byte[,] gTempValue   = new byte[MAX_CAMERA, 32];
-        public static byte[,] gSensorValue = new byte[MAX_CAMERA, 32];
+        public static byte[,] gSensorValue = new byte[MAX_CAMERA, 32];      // Arc + Fire
         public static byte[,] gSoundValue = new byte[MAX_CAMERA,2];
         public static byte[,] gXiroValue  = new byte[MAX_CAMERA,2];
         public static byte[] gRelayValue   = new byte[3];
 
         //--- configuration (환경 설정파일)
         public static string[] gCamName = new string[MAX_CAMERA];   // 카메라 이름
-        public static int[] gWarningThreshold = new int[5];         // 위험 경계치 (온도, 센서, 소음, 진동)
+        public static int[] gWarningThreshold = new int[5];         // 위험 경계치 (온도, 센서, 소음, 진동, 화재)
         public static int[] gCriticalThreshold = new int[5];        // 사고 경계치
         public static int gNumSensor;                               // 센서 수 ?
-        public static string[] gWifi = new string[3];               // SSID, PASS
+        public static string[] gWifi = new string[4];               // SSID, PASS, Phone#, SNS
         public static string gComPort;                              // 통신 포트 (COM2, COM3, ...)
-        public static int[] gOtherConfig = new int[4];              // Reserved. [0] = DebugWindowShow  
+        public static int[] gOtherConfig = new int[4];              // Reserved. [0] = DebugWindowShow, 1: enquiry period, 2:data logging
         public static void ChangeForm(int index)
         {
             Globals.gFormList[index].Show();
