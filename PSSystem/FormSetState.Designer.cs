@@ -36,7 +36,7 @@ namespace PSSystem
             System.Windows.Forms.ColumnHeader columnHeader35;
             System.Windows.Forms.ColumnHeader columnHeader52;
             System.Windows.Forms.ColumnHeader columnHeader38;
-            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "CH1",
             "0",
             "0",
@@ -54,7 +54,7 @@ namespace PSSystem
             "0",
             "0",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "CH2",
             "0",
             "0",
@@ -72,7 +72,7 @@ namespace PSSystem
             "0",
             "0",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "CH3",
             "0",
             "0",
@@ -90,7 +90,7 @@ namespace PSSystem
             "0",
             "0",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "CH4",
             "0",
             "0",
@@ -108,7 +108,7 @@ namespace PSSystem
             "0",
             "0",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "CH1",
             "0",
             "0",
@@ -126,7 +126,7 @@ namespace PSSystem
             "0",
             "0",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
             "CH2",
             "0",
             "0",
@@ -144,7 +144,7 @@ namespace PSSystem
             "0",
             "0",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
             "CH3",
             "0",
             "0",
@@ -162,7 +162,7 @@ namespace PSSystem
             "0",
             "0",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
             "CH4",
             "0",
             "0",
@@ -180,41 +180,41 @@ namespace PSSystem
             "0",
             "0",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
             "CH1",
             "0",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem29 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
             "CH2",
             "0",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem30 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
             "CH3",
             "0",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem31 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
             "CH4",
             "0",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem32 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
             "CH1",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem33 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
             "CH2",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem34 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
             "CH3",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem35 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
             "CH4",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem36 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
             "Data1",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem37 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
             "Data2",
             "0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem38 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem(new string[] {
             "Data3",
             "0"}, -1);
             this.btnHome = new System.Windows.Forms.Button();
@@ -361,11 +361,11 @@ namespace PSSystem
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem20,
-            listViewItem21,
-            listViewItem22,
-            listViewItem23});
-            this.listView1.Location = new System.Drawing.Point(57, 69);
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4});
+            this.listView1.Location = new System.Drawing.Point(80, 69);
             this.listView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(697, 80);
@@ -462,11 +462,11 @@ namespace PSSystem
             this.listView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listView2.HideSelection = false;
             this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem24,
-            listViewItem25,
-            listViewItem26,
-            listViewItem27});
-            this.listView2.Location = new System.Drawing.Point(57, 157);
+            listViewItem5,
+            listViewItem6,
+            listViewItem7,
+            listViewItem8});
+            this.listView2.Location = new System.Drawing.Point(80, 157);
             this.listView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(697, 80);
@@ -545,9 +545,9 @@ namespace PSSystem
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(14, 157);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 17);
+            this.label3.Size = new System.Drawing.Size(66, 17);
             this.label3.TabIndex = 28;
-            this.label3.Text = "센서";
+            this.label3.Text = "화재/아크";
             // 
             // listView3
             // 
@@ -559,11 +559,11 @@ namespace PSSystem
             this.listView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listView3.HideSelection = false;
             this.listView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem28,
-            listViewItem29,
-            listViewItem30,
-            listViewItem31});
-            this.listView3.Location = new System.Drawing.Point(56, 245);
+            listViewItem9,
+            listViewItem10,
+            listViewItem11,
+            listViewItem12});
+            this.listView3.Location = new System.Drawing.Point(79, 245);
             this.listView3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView3.Name = "listView3";
             this.listView3.Size = new System.Drawing.Size(98, 80);
@@ -582,9 +582,9 @@ namespace PSSystem
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(7, 245);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 17);
+            this.label4.Size = new System.Drawing.Size(34, 17);
             this.label4.TabIndex = 30;
-            this.label4.Text = "사운드";
+            this.label4.Text = "소음";
             // 
             // listView4
             // 
@@ -596,10 +596,10 @@ namespace PSSystem
             this.listView4.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listView4.HideSelection = false;
             this.listView4.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem32,
-            listViewItem33,
-            listViewItem34,
-            listViewItem35});
+            listViewItem13,
+            listViewItem14,
+            listViewItem15,
+            listViewItem16});
             this.listView4.Location = new System.Drawing.Point(362, 245);
             this.listView4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView4.Name = "listView4";
@@ -619,9 +619,9 @@ namespace PSSystem
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(314, 245);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 17);
+            this.label5.Size = new System.Drawing.Size(34, 17);
             this.label5.TabIndex = 32;
-            this.label5.Text = "자이로";
+            this.label5.Text = "진동";
             // 
             // listView5
             // 
@@ -633,9 +633,9 @@ namespace PSSystem
             this.listView5.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listView5.HideSelection = false;
             this.listView5.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem36,
-            listViewItem37,
-            listViewItem38});
+            listViewItem17,
+            listViewItem18,
+            listViewItem19});
             this.listView5.Location = new System.Drawing.Point(647, 245);
             this.listView5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView5.Name = "listView5";

@@ -43,23 +43,23 @@ namespace PSSystem
             this.lblVib = new System.Windows.Forms.Label();
             this.lblArc = new System.Windows.Forms.Label();
             this.grp2 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblFire2 = new System.Windows.Forms.Label();
+            this.lblTemp2 = new System.Windows.Forms.Label();
+            this.lblSound2 = new System.Windows.Forms.Label();
+            this.lblVib2 = new System.Windows.Forms.Label();
+            this.lblArc2 = new System.Windows.Forms.Label();
             this.grp4 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblFire4 = new System.Windows.Forms.Label();
+            this.lblTemp4 = new System.Windows.Forms.Label();
+            this.lblSound4 = new System.Windows.Forms.Label();
+            this.lblVib4 = new System.Windows.Forms.Label();
+            this.lblArc4 = new System.Windows.Forms.Label();
             this.grp3 = new System.Windows.Forms.GroupBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.lblFire3 = new System.Windows.Forms.Label();
+            this.lblTemp3 = new System.Windows.Forms.Label();
+            this.lblSound3 = new System.Windows.Forms.Label();
+            this.lblVib3 = new System.Windows.Forms.Label();
+            this.lblArc3 = new System.Windows.Forms.Label();
             this.grp1.SuspendLayout();
             this.grp2.SuspendLayout();
             this.grp4.SuspendLayout();
@@ -108,7 +108,7 @@ namespace PSSystem
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 45);
             this.label5.TabIndex = 21;
-            this.label5.Text = "음파 : ";
+            this.label5.Text = "소음 : ";
             // 
             // label6
             // 
@@ -204,11 +204,11 @@ namespace PSSystem
             // 
             // grp2
             // 
-            this.grp2.Controls.Add(this.label7);
-            this.grp2.Controls.Add(this.label8);
-            this.grp2.Controls.Add(this.label9);
-            this.grp2.Controls.Add(this.label10);
-            this.grp2.Controls.Add(this.label11);
+            this.grp2.Controls.Add(this.lblFire2);
+            this.grp2.Controls.Add(this.lblTemp2);
+            this.grp2.Controls.Add(this.lblSound2);
+            this.grp2.Controls.Add(this.lblVib2);
+            this.grp2.Controls.Add(this.lblArc2);
             this.grp2.ForeColor = System.Drawing.Color.White;
             this.grp2.Location = new System.Drawing.Point(333, 57);
             this.grp2.Name = "grp2";
@@ -217,68 +217,68 @@ namespace PSSystem
             this.grp2.TabStop = false;
             this.grp2.Text = "CH 2";
             // 
-            // label7
+            // lblFire2
             // 
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label7.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(7, 87);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(118, 31);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "정상 (56) ";
+            this.lblFire2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblFire2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblFire2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblFire2.Location = new System.Drawing.Point(7, 87);
+            this.lblFire2.Name = "lblFire2";
+            this.lblFire2.Size = new System.Drawing.Size(118, 31);
+            this.lblFire2.TabIndex = 34;
+            this.lblFire2.Text = "정상 (56) ";
             // 
-            // label8
+            // lblTemp2
             // 
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label8.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(7, 252);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(118, 31);
-            this.label8.TabIndex = 33;
-            this.label8.Text = "위험 (88)";
+            this.lblTemp2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTemp2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTemp2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTemp2.Location = new System.Drawing.Point(7, 252);
+            this.lblTemp2.Name = "lblTemp2";
+            this.lblTemp2.Size = new System.Drawing.Size(118, 31);
+            this.lblTemp2.TabIndex = 33;
+            this.lblTemp2.Text = "위험 (88)";
             // 
-            // label9
+            // lblSound2
             // 
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label9.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(7, 197);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(118, 31);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "경고 (78)";
+            this.lblSound2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblSound2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblSound2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblSound2.Location = new System.Drawing.Point(7, 197);
+            this.lblSound2.Name = "lblSound2";
+            this.lblSound2.Size = new System.Drawing.Size(118, 31);
+            this.lblSound2.TabIndex = 32;
+            this.lblSound2.Text = "경고 (78)";
             // 
-            // label10
+            // lblVib2
             // 
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label10.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label10.Location = new System.Drawing.Point(7, 142);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(118, 31);
-            this.label10.TabIndex = 31;
-            this.label10.Text = "정상 (45)";
+            this.lblVib2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblVib2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblVib2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblVib2.Location = new System.Drawing.Point(7, 142);
+            this.lblVib2.Name = "lblVib2";
+            this.lblVib2.Size = new System.Drawing.Size(118, 31);
+            this.lblVib2.TabIndex = 31;
+            this.lblVib2.Text = "정상 (45)";
             // 
-            // label11
+            // lblArc2
             // 
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label11.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label11.Location = new System.Drawing.Point(7, 32);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(118, 31);
-            this.label11.TabIndex = 30;
-            this.label11.Text = "정상 (44)";
+            this.lblArc2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblArc2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblArc2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblArc2.Location = new System.Drawing.Point(7, 32);
+            this.lblArc2.Name = "lblArc2";
+            this.lblArc2.Size = new System.Drawing.Size(118, 31);
+            this.lblArc2.TabIndex = 30;
+            this.lblArc2.Text = "정상 (44)";
             // 
             // grp4
             // 
-            this.grp4.Controls.Add(this.label12);
-            this.grp4.Controls.Add(this.label13);
-            this.grp4.Controls.Add(this.label14);
-            this.grp4.Controls.Add(this.label15);
-            this.grp4.Controls.Add(this.label16);
+            this.grp4.Controls.Add(this.lblFire4);
+            this.grp4.Controls.Add(this.lblTemp4);
+            this.grp4.Controls.Add(this.lblSound4);
+            this.grp4.Controls.Add(this.lblVib4);
+            this.grp4.Controls.Add(this.lblArc4);
             this.grp4.ForeColor = System.Drawing.Color.White;
             this.grp4.Location = new System.Drawing.Point(619, 57);
             this.grp4.Name = "grp4";
@@ -287,68 +287,68 @@ namespace PSSystem
             this.grp4.TabStop = false;
             this.grp4.Text = "CH 4";
             // 
-            // label12
+            // lblFire4
             // 
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label12.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label12.Location = new System.Drawing.Point(7, 87);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(118, 31);
-            this.label12.TabIndex = 34;
-            this.label12.Text = "정상 (56) ";
+            this.lblFire4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblFire4.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblFire4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblFire4.Location = new System.Drawing.Point(7, 87);
+            this.lblFire4.Name = "lblFire4";
+            this.lblFire4.Size = new System.Drawing.Size(118, 31);
+            this.lblFire4.TabIndex = 34;
+            this.lblFire4.Text = "정상 (56) ";
             // 
-            // label13
+            // lblTemp4
             // 
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label13.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label13.Location = new System.Drawing.Point(7, 252);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(118, 31);
-            this.label13.TabIndex = 33;
-            this.label13.Text = "위험 (88)";
+            this.lblTemp4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTemp4.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTemp4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTemp4.Location = new System.Drawing.Point(7, 252);
+            this.lblTemp4.Name = "lblTemp4";
+            this.lblTemp4.Size = new System.Drawing.Size(118, 31);
+            this.lblTemp4.TabIndex = 33;
+            this.lblTemp4.Text = "위험 (88)";
             // 
-            // label14
+            // lblSound4
             // 
-            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label14.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label14.Location = new System.Drawing.Point(7, 197);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(118, 31);
-            this.label14.TabIndex = 32;
-            this.label14.Text = "경고 (78)";
+            this.lblSound4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblSound4.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblSound4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblSound4.Location = new System.Drawing.Point(7, 197);
+            this.lblSound4.Name = "lblSound4";
+            this.lblSound4.Size = new System.Drawing.Size(118, 31);
+            this.lblSound4.TabIndex = 32;
+            this.lblSound4.Text = "경고 (78)";
             // 
-            // label15
+            // lblVib4
             // 
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label15.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label15.Location = new System.Drawing.Point(7, 142);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(118, 31);
-            this.label15.TabIndex = 31;
-            this.label15.Text = "정상 (45)";
+            this.lblVib4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblVib4.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblVib4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblVib4.Location = new System.Drawing.Point(7, 142);
+            this.lblVib4.Name = "lblVib4";
+            this.lblVib4.Size = new System.Drawing.Size(118, 31);
+            this.lblVib4.TabIndex = 31;
+            this.lblVib4.Text = "정상 (45)";
             // 
-            // label16
+            // lblArc4
             // 
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label16.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label16.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label16.Location = new System.Drawing.Point(7, 32);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(118, 31);
-            this.label16.TabIndex = 30;
-            this.label16.Text = "정상 (44)";
+            this.lblArc4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblArc4.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblArc4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblArc4.Location = new System.Drawing.Point(7, 32);
+            this.lblArc4.Name = "lblArc4";
+            this.lblArc4.Size = new System.Drawing.Size(118, 31);
+            this.lblArc4.TabIndex = 30;
+            this.lblArc4.Text = "정상 (44)";
             // 
             // grp3
             // 
-            this.grp3.Controls.Add(this.label17);
-            this.grp3.Controls.Add(this.label18);
-            this.grp3.Controls.Add(this.label19);
-            this.grp3.Controls.Add(this.label20);
-            this.grp3.Controls.Add(this.label21);
+            this.grp3.Controls.Add(this.lblFire3);
+            this.grp3.Controls.Add(this.lblTemp3);
+            this.grp3.Controls.Add(this.lblSound3);
+            this.grp3.Controls.Add(this.lblVib3);
+            this.grp3.Controls.Add(this.lblArc3);
             this.grp3.ForeColor = System.Drawing.Color.White;
             this.grp3.Location = new System.Drawing.Point(476, 57);
             this.grp3.Name = "grp3";
@@ -357,60 +357,60 @@ namespace PSSystem
             this.grp3.TabStop = false;
             this.grp3.Text = "CH 3";
             // 
-            // label17
+            // lblFire3
             // 
-            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label17.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label17.Location = new System.Drawing.Point(7, 87);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(118, 31);
-            this.label17.TabIndex = 34;
-            this.label17.Text = "정상 (56) ";
+            this.lblFire3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblFire3.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblFire3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblFire3.Location = new System.Drawing.Point(7, 87);
+            this.lblFire3.Name = "lblFire3";
+            this.lblFire3.Size = new System.Drawing.Size(118, 31);
+            this.lblFire3.TabIndex = 34;
+            this.lblFire3.Text = "정상 (56) ";
             // 
-            // label18
+            // lblTemp3
             // 
-            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label18.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label18.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label18.Location = new System.Drawing.Point(7, 252);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(118, 31);
-            this.label18.TabIndex = 33;
-            this.label18.Text = "위험 (88)";
+            this.lblTemp3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTemp3.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTemp3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTemp3.Location = new System.Drawing.Point(7, 252);
+            this.lblTemp3.Name = "lblTemp3";
+            this.lblTemp3.Size = new System.Drawing.Size(118, 31);
+            this.lblTemp3.TabIndex = 33;
+            this.lblTemp3.Text = "위험 (88)";
             // 
-            // label19
+            // lblSound3
             // 
-            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label19.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label19.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label19.Location = new System.Drawing.Point(7, 197);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(118, 31);
-            this.label19.TabIndex = 32;
-            this.label19.Text = "경고 (78)";
+            this.lblSound3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblSound3.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblSound3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblSound3.Location = new System.Drawing.Point(7, 197);
+            this.lblSound3.Name = "lblSound3";
+            this.lblSound3.Size = new System.Drawing.Size(118, 31);
+            this.lblSound3.TabIndex = 32;
+            this.lblSound3.Text = "경고 (78)";
             // 
-            // label20
+            // lblVib3
             // 
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label20.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label20.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label20.Location = new System.Drawing.Point(7, 142);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(118, 31);
-            this.label20.TabIndex = 31;
-            this.label20.Text = "정상 (45)";
+            this.lblVib3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblVib3.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblVib3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblVib3.Location = new System.Drawing.Point(7, 142);
+            this.lblVib3.Name = "lblVib3";
+            this.lblVib3.Size = new System.Drawing.Size(118, 31);
+            this.lblVib3.TabIndex = 31;
+            this.lblVib3.Text = "정상 (45)";
             // 
-            // label21
+            // lblArc3
             // 
-            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label21.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label21.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label21.Location = new System.Drawing.Point(7, 32);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(118, 31);
-            this.label21.TabIndex = 30;
-            this.label21.Text = "정상 (44)";
+            this.lblArc3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblArc3.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblArc3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblArc3.Location = new System.Drawing.Point(7, 32);
+            this.lblArc3.Name = "lblArc3";
+            this.lblArc3.Size = new System.Drawing.Size(118, 31);
+            this.lblArc3.TabIndex = 30;
+            this.lblArc3.Text = "정상 (44)";
             // 
             // FormMain
             // 
@@ -459,22 +459,22 @@ namespace PSSystem
         private Label lblVib;
         private Label lblArc;
         private GroupBox grp2;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private Label label10;
-        private Label label11;
+        private Label lblFire2;
+        private Label lblTemp2;
+        private Label lblSound2;
+        private Label lblVib2;
+        private Label lblArc2;
         private GroupBox grp4;
-        private Label label12;
-        private Label label13;
-        private Label label14;
-        private Label label15;
-        private Label label16;
+        private Label lblFire4;
+        private Label lblTemp4;
+        private Label lblSound4;
+        private Label lblVib4;
+        private Label lblArc4;
         private GroupBox grp3;
-        private Label label17;
-        private Label label18;
-        private Label label19;
-        private Label label20;
-        private Label label21;
+        private Label lblFire3;
+        private Label lblTemp3;
+        private Label lblSound3;
+        private Label lblVib3;
+        private Label lblArc3;
     }
 }

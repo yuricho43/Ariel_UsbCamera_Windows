@@ -27,14 +27,15 @@ namespace PSSystem
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-            byte bRelay = 0;
+            ushort uRelay = 0;
 
-            for (int i = 0; i < 8; i++) {
+            for (int i = 0; i < 11; i++) {
                 if (checkList1.GetItemChecked(i))
-                    bRelay |= (byte)(0x01 << i);
+                {
+                    uRelay |=  (ushort) (1 << i);
+                } 
             }
-
-            GSerial.Send_Equiry_Data(0xc0, bRelay);
+            GSerial.Send_Equiry_Data((byte)(uRelay >> 8), (byte)(uRelay & 0xFF));
         }
     }
 }

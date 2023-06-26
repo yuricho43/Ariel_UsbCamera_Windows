@@ -43,6 +43,10 @@ namespace PSSystem
             this.label2 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textSNSString = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textPhoneNumber = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.textWifiPass = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textWifiName = new System.Windows.Forms.TextBox();
@@ -50,6 +54,15 @@ namespace PSSystem
             this.textSensor = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textFireCrit = new System.Windows.Forms.TextBox();
+            this.textXiroCrit = new System.Windows.Forms.TextBox();
+            this.textSoundCrit = new System.Windows.Forms.TextBox();
+            this.textSensorCrit = new System.Windows.Forms.TextBox();
+            this.textTempCrit = new System.Windows.Forms.TextBox();
+            this.textFireWarn = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.textXiroWarn = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.textSoundWarn = new System.Windows.Forms.TextBox();
@@ -59,22 +72,9 @@ namespace PSSystem
             this.textTempWarn = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textPhoneNumber = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textSNSString = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textFireWarn = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textFireCrit = new System.Windows.Forms.TextBox();
-            this.textXiroCrit = new System.Windows.Forms.TextBox();
-            this.textSoundCrit = new System.Windows.Forms.TextBox();
-            this.textSensorCrit = new System.Windows.Forms.TextBox();
-            this.textTempCrit = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textPeriod = new System.Windows.Forms.TextBox();
             this.checkLogging = new System.Windows.Forms.CheckBox();
+            this.textPeriod = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -222,6 +222,39 @@ namespace PSSystem
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "센서수, Wifi";
             // 
+            // textSNSString
+            // 
+            this.textSNSString.Location = new System.Drawing.Point(125, 110);
+            this.textSNSString.Name = "textSNSString";
+            this.textSNSString.Size = new System.Drawing.Size(196, 25);
+            this.textSNSString.TabIndex = 9;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(25, 113);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(50, 17);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "문자열:";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textPhoneNumber
+            // 
+            this.textPhoneNumber.Location = new System.Drawing.Point(125, 82);
+            this.textPhoneNumber.Name = "textPhoneNumber";
+            this.textPhoneNumber.Size = new System.Drawing.Size(196, 25);
+            this.textPhoneNumber.TabIndex = 7;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(25, 85);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(73, 17);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "전화번호 : ";
+            // 
             // textWifiPass
             // 
             this.textWifiPass.Location = new System.Drawing.Point(125, 54);
@@ -297,6 +330,75 @@ namespace PSSystem
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(231, 2);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(47, 17);
+            this.label22.TabIndex = 24;
+            this.label22.Text = "사고값";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(112, 2);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(47, 17);
+            this.label21.TabIndex = 23;
+            this.label21.Text = "경고값";
+            // 
+            // textFireCrit
+            // 
+            this.textFireCrit.Location = new System.Drawing.Point(207, 49);
+            this.textFireCrit.Name = "textFireCrit";
+            this.textFireCrit.Size = new System.Drawing.Size(92, 25);
+            this.textFireCrit.TabIndex = 14;
+            // 
+            // textXiroCrit
+            // 
+            this.textXiroCrit.Location = new System.Drawing.Point(207, 76);
+            this.textXiroCrit.Name = "textXiroCrit";
+            this.textXiroCrit.Size = new System.Drawing.Size(92, 25);
+            this.textXiroCrit.TabIndex = 13;
+            // 
+            // textSoundCrit
+            // 
+            this.textSoundCrit.Location = new System.Drawing.Point(207, 103);
+            this.textSoundCrit.Name = "textSoundCrit";
+            this.textSoundCrit.Size = new System.Drawing.Size(92, 25);
+            this.textSoundCrit.TabIndex = 12;
+            // 
+            // textSensorCrit
+            // 
+            this.textSensorCrit.Location = new System.Drawing.Point(207, 22);
+            this.textSensorCrit.Name = "textSensorCrit";
+            this.textSensorCrit.Size = new System.Drawing.Size(92, 25);
+            this.textSensorCrit.TabIndex = 11;
+            // 
+            // textTempCrit
+            // 
+            this.textTempCrit.Location = new System.Drawing.Point(207, 130);
+            this.textTempCrit.Name = "textTempCrit";
+            this.textTempCrit.Size = new System.Drawing.Size(92, 25);
+            this.textTempCrit.TabIndex = 10;
+            // 
+            // textFireWarn
+            // 
+            this.textFireWarn.Location = new System.Drawing.Point(85, 49);
+            this.textFireWarn.Name = "textFireWarn";
+            this.textFireWarn.Size = new System.Drawing.Size(95, 25);
+            this.textFireWarn.TabIndex = 9;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(25, 52);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(42, 17);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "화재 :";
+            // 
             // textXiroWarn
             // 
             this.textXiroWarn.Location = new System.Drawing.Point(85, 76);
@@ -327,7 +429,7 @@ namespace PSSystem
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 17);
             this.label6.TabIndex = 4;
-            this.label6.Text = "음파 :";
+            this.label6.Text = "소음 :";
             // 
             // textSensorWarn
             // 
@@ -375,124 +477,6 @@ namespace PSSystem
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "기타 설정";
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(25, 25);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(197, 17);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "데이타 요청 주기 (200~2000) :";
-            // 
-            // textPhoneNumber
-            // 
-            this.textPhoneNumber.Location = new System.Drawing.Point(125, 82);
-            this.textPhoneNumber.Name = "textPhoneNumber";
-            this.textPhoneNumber.Size = new System.Drawing.Size(196, 25);
-            this.textPhoneNumber.TabIndex = 7;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(25, 85);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(73, 17);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "전화번호 : ";
-            // 
-            // textSNSString
-            // 
-            this.textSNSString.Location = new System.Drawing.Point(125, 110);
-            this.textSNSString.Name = "textSNSString";
-            this.textSNSString.Size = new System.Drawing.Size(196, 25);
-            this.textSNSString.TabIndex = 9;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(25, 113);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(50, 17);
-            this.label18.TabIndex = 8;
-            this.label18.Text = "문자열:";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // textFireWarn
-            // 
-            this.textFireWarn.Location = new System.Drawing.Point(85, 49);
-            this.textFireWarn.Name = "textFireWarn";
-            this.textFireWarn.Size = new System.Drawing.Size(95, 25);
-            this.textFireWarn.TabIndex = 9;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(25, 52);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(42, 17);
-            this.label19.TabIndex = 8;
-            this.label19.Text = "화재 :";
-            // 
-            // textFireCrit
-            // 
-            this.textFireCrit.Location = new System.Drawing.Point(207, 49);
-            this.textFireCrit.Name = "textFireCrit";
-            this.textFireCrit.Size = new System.Drawing.Size(92, 25);
-            this.textFireCrit.TabIndex = 14;
-            // 
-            // textXiroCrit
-            // 
-            this.textXiroCrit.Location = new System.Drawing.Point(207, 76);
-            this.textXiroCrit.Name = "textXiroCrit";
-            this.textXiroCrit.Size = new System.Drawing.Size(92, 25);
-            this.textXiroCrit.TabIndex = 13;
-            // 
-            // textSoundCrit
-            // 
-            this.textSoundCrit.Location = new System.Drawing.Point(207, 103);
-            this.textSoundCrit.Name = "textSoundCrit";
-            this.textSoundCrit.Size = new System.Drawing.Size(92, 25);
-            this.textSoundCrit.TabIndex = 12;
-            // 
-            // textSensorCrit
-            // 
-            this.textSensorCrit.Location = new System.Drawing.Point(207, 22);
-            this.textSensorCrit.Name = "textSensorCrit";
-            this.textSensorCrit.Size = new System.Drawing.Size(92, 25);
-            this.textSensorCrit.TabIndex = 11;
-            // 
-            // textTempCrit
-            // 
-            this.textTempCrit.Location = new System.Drawing.Point(207, 130);
-            this.textTempCrit.Name = "textTempCrit";
-            this.textTempCrit.Size = new System.Drawing.Size(92, 25);
-            this.textTempCrit.TabIndex = 10;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(112, 2);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(47, 17);
-            this.label21.TabIndex = 23;
-            this.label21.Text = "경고값";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(231, 2);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(47, 17);
-            this.label22.TabIndex = 24;
-            this.label22.Text = "사고값";
-            // 
-            // textPeriod
-            // 
-            this.textPeriod.Location = new System.Drawing.Point(228, 17);
-            this.textPeriod.Name = "textPeriod";
-            this.textPeriod.Size = new System.Drawing.Size(92, 25);
-            this.textPeriod.TabIndex = 12;
-            // 
             // checkLogging
             // 
             this.checkLogging.AutoSize = true;
@@ -502,6 +486,22 @@ namespace PSSystem
             this.checkLogging.TabIndex = 13;
             this.checkLogging.Text = "데이타 로깅";
             this.checkLogging.UseVisualStyleBackColor = true;
+            // 
+            // textPeriod
+            // 
+            this.textPeriod.Location = new System.Drawing.Point(228, 17);
+            this.textPeriod.Name = "textPeriod";
+            this.textPeriod.Size = new System.Drawing.Size(92, 25);
+            this.textPeriod.TabIndex = 12;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(25, 25);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(197, 17);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "데이타 요청 주기 (200~2000) :";
             // 
             // FormSetPanel
             // 

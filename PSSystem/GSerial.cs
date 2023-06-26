@@ -111,7 +111,7 @@ namespace PSSystem
         public static void Send_Equiry_Data(byte bIndex, byte bData)
         {
             //--- send data : STX index    header data checksum ETX    // 6 byte
-            //                02  a1~a4/c0 0x01,  0x00  xor     03
+            //                02  a1~a4/c1  0x01,  0x00  xor     03
             //                STX c1  0x01 data1 data2 data3 checksum ETX           // 8 bytes
 
 
@@ -125,6 +125,22 @@ namespace PSSystem
             Send_Serial_Data_Binary(bSendData, 6);
         }
 
+        public static void Send_Enquiry_Relay(byte bHeader, byte bData)
+        {
+            //--- send data : STX index    header data checksum ETX    // 6 byte
+            //                02  c0  0x0x,  0x0x  xor     03
+            //                STX c1  0x01 data1 data2 data3 checksum ETX           // 8 bytes
+
+
+            byte[] bSendData = new byte[16];
+            bSendData[0] = 0x02;
+            bSendData[1] = (byte) 0xc0;
+            bSendData[2] = bHeader;    // header
+            bSendData[3] = bData;    // Data
+            bSendData[4] = GetCheckSum(bSendData, 1, 3);
+            bSendData[5] = 0x03;
+            Send_Serial_Data_Binary(bSendData, 6);
+        }
 
         public static void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {

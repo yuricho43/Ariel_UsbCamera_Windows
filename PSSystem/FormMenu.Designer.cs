@@ -99,15 +99,14 @@ namespace PSSystem
             this.btnSensor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSensor.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSensor.ForeColor = System.Drawing.Color.White;
-            this.btnSensor.Location = new System.Drawing.Point(444, 283);
+            this.btnSensor.Location = new System.Drawing.Point(444, 227);
             this.btnSensor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSensor.Name = "btnSensor";
             this.btnSensor.Size = new System.Drawing.Size(199, 40);
             this.btnSensor.TabIndex = 3;
-            this.btnSensor.Text = "(사용안함-센서)";
+            this.btnSensor.Text = "8. 그래프보기";
             this.btnSensor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSensor.UseVisualStyleBackColor = false;
-            this.btnSensor.Visible = false;
             this.btnSensor.Click += new System.EventHandler(this.btnSensor_Click);
             // 
             // btnRelay
@@ -132,7 +131,7 @@ namespace PSSystem
             this.btnWifi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWifi.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnWifi.ForeColor = System.Drawing.Color.White;
-            this.btnWifi.Location = new System.Drawing.Point(444, 227);
+            this.btnWifi.Location = new System.Drawing.Point(444, 283);
             this.btnWifi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnWifi.Name = "btnWifi";
             this.btnWifi.Size = new System.Drawing.Size(199, 40);

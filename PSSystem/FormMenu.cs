@@ -38,7 +38,7 @@ namespace PSSystem
 
         private void btnSensor_Click(object sender, EventArgs e)
         {
-            //Globals.ChangeForm((int)FORM_INDEX.NO_FORM_SET_NUMSENSOR);
+            Globals.ChangeForm((int)FORM_INDEX.NO_FORM_SET_NUMSENSOR);
         }
 
         private void btnRelay_Click(object sender, EventArgs e)
