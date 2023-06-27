@@ -238,19 +238,36 @@ namespace PSSystem
                         iType |= 0x01;
             }
 
-            //=== Sensor (Arc)
-            iType &= 0xFF3;
+            //=== Sensor (Fire & Arc)
+            //    Fire1 Arc1 Fire2 Arc2 ... Fire8 Arc8
+            iType &= 0x0F3;
             for (int i = 0; i < 16; i++)
             {
                 iValue = (int)((ushort)(data[34 + 2 * i] * 256) + data[34 + 2 * i + 1]);
-                if (iValue > Globals.gWarningThreshold[1])
-                    if (iValue > Globals.gCriticalThreshold[1])
-                    {
-                        iType |= 0x08;
-                        break;
-                    }
-                    else
-                        iType |= 0x04;
+
+                if ( (i % 2) == 0)  // Fire
+                {
+                    if (iValue > Globals.gWarningThreshold[4])
+                        if (iValue > Globals.gCriticalThreshold[4])
+                        {
+                            iType |= 0x200;
+                            break;
+                        }
+                        else
+                            iType |= 0x100;
+                }
+                else                // Arc
+                {
+
+                    if (iValue > Globals.gWarningThreshold[1])
+                        if (iValue > Globals.gCriticalThreshold[1])
+                        {
+                            iType |= 0x08;
+                            break;
+                        }
+                        else
+                            iType |= 0x04;
+                }
             }
 
             //=== Sound
@@ -295,6 +312,8 @@ namespace PSSystem
             bEvent[6] = (byte)(iType & 0xFF);               
             Buffer.BlockCopy(data, 0, bEvent, 7, len);      // total length = 7 + data
 
+            //--- 이벤트가 발생했거나 클리어 되었으면, 메인 화면으로 변경정보를 보낸다.
+            //    1) 데이타도 같이 보내서 평균값계산하게 하고, 오류난 곳 위치도 파악하게 한다.
             if (iPrevEventType[ix] != iType)
             {
                 if (gQueueEvent.GetFreeSize() < (IDataSize))
@@ -302,6 +321,9 @@ namespace PSSystem
 
                 gQueueEvent.PutData(bEvent, (UInt32)IDataSize);
                 iPrevEventType[ix] = iType;
+
+                // Call Main Panel Function
+                // NotifyEvent(iEventType, bEvent);
             }
 
             //------------------------------------------------------------------
@@ -333,7 +355,7 @@ namespace PSSystem
                     }
                 }
 
-                if (Globals.gOtherConfig[2] != 0)
+                if (Globals.gOtherConfig[2] != 0)       // Log Enabled
                 {
                     // write Data
                     iiSize = (int)gQueueLog.GetFillSize();
