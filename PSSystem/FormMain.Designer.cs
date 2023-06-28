@@ -80,7 +80,7 @@ namespace PSSystem
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Malgun Gothic", 24F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label4.Location = new System.Drawing.Point(65, 185);
             this.label4.Name = "label4";
@@ -91,7 +91,7 @@ namespace PSSystem
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Malgun Gothic", 24F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(65, 75);
             this.label2.Name = "label2";
@@ -102,7 +102,7 @@ namespace PSSystem
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("Malgun Gothic", 24F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label5.Location = new System.Drawing.Point(65, 240);
             this.label5.Name = "label5";
@@ -113,7 +113,7 @@ namespace PSSystem
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
+            this.label6.Font = new System.Drawing.Font("Malgun Gothic", 24F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label6.Location = new System.Drawing.Point(65, 295);
             this.label6.Name = "label6";
@@ -124,7 +124,7 @@ namespace PSSystem
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Malgun Gothic", 24F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(65, 130);
             this.label3.Name = "label3";
@@ -150,7 +150,7 @@ namespace PSSystem
             // lblFire
             // 
             this.lblFire.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblFire.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblFire.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblFire.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblFire.Location = new System.Drawing.Point(7, 87);
             this.lblFire.Name = "lblFire";
@@ -161,7 +161,7 @@ namespace PSSystem
             // lblTemp
             // 
             this.lblTemp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTemp.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTemp.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblTemp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblTemp.Location = new System.Drawing.Point(7, 252);
             this.lblTemp.Name = "lblTemp";
@@ -172,7 +172,7 @@ namespace PSSystem
             // lblSound
             // 
             this.lblSound.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblSound.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblSound.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblSound.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblSound.Location = new System.Drawing.Point(7, 197);
             this.lblSound.Name = "lblSound";
@@ -183,7 +183,7 @@ namespace PSSystem
             // lblVib
             // 
             this.lblVib.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblVib.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblVib.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblVib.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblVib.Location = new System.Drawing.Point(7, 142);
             this.lblVib.Name = "lblVib";
@@ -194,7 +194,7 @@ namespace PSSystem
             // lblArc
             // 
             this.lblArc.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblArc.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblArc.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblArc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblArc.Location = new System.Drawing.Point(7, 32);
             this.lblArc.Name = "lblArc";
@@ -220,7 +220,7 @@ namespace PSSystem
             // lblFire2
             // 
             this.lblFire2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblFire2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblFire2.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblFire2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblFire2.Location = new System.Drawing.Point(7, 87);
             this.lblFire2.Name = "lblFire2";
@@ -231,7 +231,7 @@ namespace PSSystem
             // lblTemp2
             // 
             this.lblTemp2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTemp2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTemp2.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblTemp2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblTemp2.Location = new System.Drawing.Point(7, 252);
             this.lblTemp2.Name = "lblTemp2";
@@ -242,7 +242,7 @@ namespace PSSystem
             // lblSound2
             // 
             this.lblSound2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblSound2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblSound2.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblSound2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblSound2.Location = new System.Drawing.Point(7, 197);
             this.lblSound2.Name = "lblSound2";
@@ -253,7 +253,7 @@ namespace PSSystem
             // lblVib2
             // 
             this.lblVib2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblVib2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblVib2.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblVib2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblVib2.Location = new System.Drawing.Point(7, 142);
             this.lblVib2.Name = "lblVib2";
@@ -264,7 +264,7 @@ namespace PSSystem
             // lblArc2
             // 
             this.lblArc2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblArc2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblArc2.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblArc2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblArc2.Location = new System.Drawing.Point(7, 32);
             this.lblArc2.Name = "lblArc2";
@@ -290,7 +290,7 @@ namespace PSSystem
             // lblFire4
             // 
             this.lblFire4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblFire4.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblFire4.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblFire4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblFire4.Location = new System.Drawing.Point(7, 87);
             this.lblFire4.Name = "lblFire4";
@@ -301,7 +301,7 @@ namespace PSSystem
             // lblTemp4
             // 
             this.lblTemp4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTemp4.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTemp4.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblTemp4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblTemp4.Location = new System.Drawing.Point(7, 252);
             this.lblTemp4.Name = "lblTemp4";
@@ -312,7 +312,7 @@ namespace PSSystem
             // lblSound4
             // 
             this.lblSound4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblSound4.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblSound4.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblSound4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblSound4.Location = new System.Drawing.Point(7, 197);
             this.lblSound4.Name = "lblSound4";
@@ -323,7 +323,7 @@ namespace PSSystem
             // lblVib4
             // 
             this.lblVib4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblVib4.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblVib4.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblVib4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblVib4.Location = new System.Drawing.Point(7, 142);
             this.lblVib4.Name = "lblVib4";
@@ -334,7 +334,7 @@ namespace PSSystem
             // lblArc4
             // 
             this.lblArc4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblArc4.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblArc4.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblArc4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblArc4.Location = new System.Drawing.Point(7, 32);
             this.lblArc4.Name = "lblArc4";
@@ -360,7 +360,7 @@ namespace PSSystem
             // lblFire3
             // 
             this.lblFire3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblFire3.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblFire3.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblFire3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblFire3.Location = new System.Drawing.Point(7, 87);
             this.lblFire3.Name = "lblFire3";
@@ -371,7 +371,7 @@ namespace PSSystem
             // lblTemp3
             // 
             this.lblTemp3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTemp3.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTemp3.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblTemp3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblTemp3.Location = new System.Drawing.Point(7, 252);
             this.lblTemp3.Name = "lblTemp3";
@@ -382,7 +382,7 @@ namespace PSSystem
             // lblSound3
             // 
             this.lblSound3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblSound3.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblSound3.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblSound3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblSound3.Location = new System.Drawing.Point(7, 197);
             this.lblSound3.Name = "lblSound3";
@@ -393,7 +393,7 @@ namespace PSSystem
             // lblVib3
             // 
             this.lblVib3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblVib3.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblVib3.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblVib3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblVib3.Location = new System.Drawing.Point(7, 142);
             this.lblVib3.Name = "lblVib3";
@@ -404,7 +404,7 @@ namespace PSSystem
             // lblArc3
             // 
             this.lblArc3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblArc3.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblArc3.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblArc3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblArc3.Location = new System.Drawing.Point(7, 32);
             this.lblArc3.Name = "lblArc3";
@@ -428,13 +428,12 @@ namespace PSSystem
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMain";
             this.Text = "FormMain";
             this.Shown += new System.EventHandler(this.FormMain_Shown);
-            this.Enter += new System.EventHandler(this.FormMain_Enter);
             this.grp1.ResumeLayout(false);
             this.grp2.ResumeLayout(false);
             this.grp4.ResumeLayout(false);

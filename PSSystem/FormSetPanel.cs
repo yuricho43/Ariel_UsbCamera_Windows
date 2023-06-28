@@ -48,18 +48,18 @@ namespace PSSystem
             textSNSString.Text = Globals.gWifi[3];
 
             //--- Warnings
-            textTempWarn.Text = Globals.gWarningThreshold[0].ToString();
-            textSensorWarn.Text = Globals.gWarningThreshold[1].ToString();
-            textSoundWarn.Text = Globals.gWarningThreshold[2].ToString();
-            textXiroWarn.Text = Globals.gWarningThreshold[3].ToString();
-            textFireWarn.Text = Globals.gWarningThreshold[4].ToString();
+            textSensorWarn.Text = Globals.gWarningThreshold[0].ToString();
+            textFireWarn.Text = Globals.gWarningThreshold[1].ToString();
+            textXiroWarn.Text = Globals.gWarningThreshold[2].ToString();
+            textSoundWarn.Text = Globals.gWarningThreshold[3].ToString();
+            textTempWarn.Text = Globals.gWarningThreshold[4].ToString();
 
             //--- Criticals
-            textTempCrit.Text = Globals.gCriticalThreshold[0].ToString();
-            textSensorCrit.Text = Globals.gCriticalThreshold[1].ToString();
-            textSoundCrit.Text = Globals.gCriticalThreshold[2].ToString();
-            textXiroCrit.Text = Globals.gCriticalThreshold[3].ToString();
-            textFireCrit.Text = Globals.gCriticalThreshold[4].ToString();
+            textSensorCrit.Text = Globals.gCriticalThreshold[0].ToString();
+            textFireCrit.Text = Globals.gCriticalThreshold[1].ToString();
+            textXiroCrit.Text = Globals.gCriticalThreshold[2].ToString();
+            textSoundCrit.Text = Globals.gCriticalThreshold[3].ToString();
+            textTempCrit.Text = Globals.gCriticalThreshold[4].ToString();
 
             //--- Others
             textPeriod.Text = Globals.gOtherConfig[1].ToString();

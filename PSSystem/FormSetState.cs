@@ -110,7 +110,7 @@ namespace PSSystem
                     for (int i = 0; i < 16; i++)
                     {
                         sValue = Globals.GetShortValueFrom2bytes(Globals.gTempValue[iCh, 2*i], Globals.gTempValue[iCh, 2*i+1]);
-                        item.SubItems[i+1].Text = sValue.ToString("X4");
+                        item.SubItems[i+1].Text = sValue.ToString();
                     }
                 });
 
@@ -121,7 +121,7 @@ namespace PSSystem
                     for (int i = 0; i < 16; i++)
                     {
                         uValue = (ushort)((ushort)(Globals.gSensorValue[iCh, 2 * i] * 256) + Globals.gSensorValue[iCh, 2 * i + 1]);
-                        item.SubItems[i+1].Text = uValue.ToString("X4");
+                        item.SubItems[i+1].Text = uValue.ToString();
                     }
                 });
 
@@ -130,7 +130,7 @@ namespace PSSystem
                 {
                     ListViewItem item = listView3.Items[iCh];
                     uValue = (ushort)((ushort)(Globals.gSoundValue[iCh, 0] * 256) + Globals.gSoundValue[iCh, 1]);
-                    item.SubItems[1].Text = uValue.ToString("X4"); ;
+                    item.SubItems[1].Text = uValue.ToString(); ;
                 });
 
                 // 자이로
@@ -138,7 +138,7 @@ namespace PSSystem
                 {
                     ListViewItem item = listView4.Items[iCh];
                     uValue = (ushort)((ushort)(Globals.gXiroValue[iCh, 0] * 256) + Globals.gXiroValue[iCh, 1]);
-                    item.SubItems[1].Text = uValue.ToString("X4"); ;
+                    item.SubItems[1].Text = uValue.ToString(); ;
                 });
             } else if (iCh == 4)    // Relay
             {
@@ -195,7 +195,8 @@ namespace PSSystem
         }
 
 
-        // bCh = b1~b4, c1
+        // bCh = b1~b4, c1  (ix=1)
+        // data : from STX to ETX
         void Check_Event_And_Data_Logging(byte[] data, byte bCh, int len)
         {
             byte[] bLog   = new byte[79];   // HMSMS+type(2)+Data(72bytes) = 79bytes
@@ -214,41 +215,43 @@ namespace PSSystem
             if (ix < 0 || ix > 3)
                 return;
 
-            // check each temperature (gWarningThreshold/gCriticalThreshold[0])  // data[2~33]
-            // check each sensors     (gWarningThreshold/gCriticalThreshold[1])  // data[34~65]
-            // check each sounds      (gWarningThreshold/gCriticalThreshold[2])  // data[66~67]
-            // check      xiro        ((gWarningThreshold/gCriticalThreshold[3]) // data[68~69]
+            // check each temperature (gWarningThreshold/gCriticalThreshold[4])  // data[2~33]
+            // check each sensors/fire (gWarningThreshold/gCriticalThreshold[0/1])  // data[34~65]
+            // check each sounds      (gWarningThreshold/gCriticalThreshold[3])  // data[66~67]
+            // check      xiro        ((gWarningThreshold/gCriticalThreshold[2]) // data[68~69]
 
             // iType : critical or warning. two bit for each value
-            //     (fire, xiro, sound, sensor, temp)
+            //     (arc,  fire, vib, sound,     temp)
             //  bit  98     76    54     32      10
             //     0x300   0xC0  0x30   0x0C    0x03
-            //=== Temp
-            iType &= 0xFFC;
-            for (int i = 0; i < 16; i++)
-            {
-                iValue = (int)((ushort)(data[2+2*i] * 256) + data[2+2*i+1]);
-                if (iValue > Globals.gWarningThreshold[0])
-                    if (iValue > Globals.gCriticalThreshold[0])
-                    {
-                        iType |=  0x02;
-                        break;
-                    }
-                    else
-                        iType |= 0x01;
-            }
 
             //=== Sensor (Fire & Arc)
             //    Fire1 Arc1 Fire2 Arc2 ... Fire8 Arc8
-            iType &= 0x0F3;
+            iType &= 0x03F;
+            Globals.gAvgValue[bCh, 0] = 0;  // Arc
+            Globals.gAvgValue[bCh, 1] = 0;  // Fire
             for (int i = 0; i < 16; i++)
             {
                 iValue = (int)((ushort)(data[34 + 2 * i] * 256) + data[34 + 2 * i + 1]);
 
                 if ( (i % 2) == 0)  // Fire
                 {
-                    if (iValue > Globals.gWarningThreshold[4])
-                        if (iValue > Globals.gCriticalThreshold[4])
+                    Globals.gAvgValue[bCh, 1] += iValue;
+                    if (iValue > Globals.gWarningThreshold[1])
+                        if (iValue > Globals.gCriticalThreshold[1])
+                        {
+                            iType |= 0x80;
+                            break;
+                        }
+                        else
+                            iType |= 0x40;
+                }
+                else                // Arc
+                {
+                    Globals.gAvgValue[bCh, 0] += iValue;
+
+                    if (iValue > Globals.gWarningThreshold[0])
+                        if (iValue > Globals.gCriticalThreshold[0])
                         {
                             iType |= 0x200;
                             break;
@@ -256,46 +259,55 @@ namespace PSSystem
                         else
                             iType |= 0x100;
                 }
-                else                // Arc
-                {
-
-                    if (iValue > Globals.gWarningThreshold[1])
-                        if (iValue > Globals.gCriticalThreshold[1])
-                        {
-                            iType |= 0x08;
-                            break;
-                        }
-                        else
-                            iType |= 0x04;
-                }
             }
+            Globals.gAvgValue[bCh, 0] = Globals.gAvgValue[bCh, 0] / 8;
+            Globals.gAvgValue[bCh, 1] = Globals.gAvgValue[bCh, 1] / 8;
 
-            //=== Sound
-            iValue = (int)((ushort)(data[66] * 256) + data[67]);
+            //=== Xiro(Vib)
+            iValue = (int)((ushort)(data[68] * 256) + data[69]);
+            Globals.gAvgValue[bCh, 2] = iValue;
             iType &= 0xFCF;
             if (iValue > Globals.gWarningThreshold[2])
             {
                 if (iValue > Globals.gCriticalThreshold[2])
                 {
-                    iType |= 0x10;
+                    iType |= 0x20;
                 }
                 else
-                    iType |= 0x20;
+                    iType |= 0x10;
             }
 
-            //=== Xiro
-            iValue = (int)((ushort)(data[68] * 256) + data[69]);
-            iType &= 0xF3F;
+            //=== Sound
+            iValue = (int)((ushort)(data[66] * 256) + data[67]);
+            Globals.gAvgValue[bCh, 3] = iValue;
+            iType &= 0xFF3;
             if (iValue > Globals.gWarningThreshold[3])
             {
                 if (iValue > Globals.gCriticalThreshold[3])
                 {
-                    iType |= 0x40;
+                    iType |= 0x08;
                 }
                 else
-                    iType |= 0x80;
+                    iType |= 0x04;
             }
 
+            //=== Temp
+            iType &= 0xFFC;
+            Globals.gAvgValue[bCh, 4] = 0;
+            for (int i = 0; i < 16; i++)
+            {
+                iValue = (int)((ushort)(data[2 + 2 * i] * 256) + data[2 + 2 * i + 1]);
+                Globals.gAvgValue[bCh, 4] += iValue;
+                if (iValue > Globals.gWarningThreshold[4])
+                    if (iValue > Globals.gCriticalThreshold[4])
+                    {
+                        iType |= 0x02;
+                        break;
+                    }
+                    else
+                        iType |= 0x01;
+            }
+            Globals.gAvgValue[bCh, 4] = Globals.gAvgValue[bCh, 4] / 16;
 
             //------------------------------------------------------------------
             // Logging Event
@@ -323,7 +335,7 @@ namespace PSSystem
                 iPrevEventType[ix] = iType;
 
                 // Call Main Panel Function
-                // NotifyEvent(iEventType, bEvent);
+                ((FormMain) Globals.gFormList[(int)FORM_INDEX.NO_FORM_MAIN]).NotifyEvent(iType, ix);
             }
 
             //------------------------------------------------------------------

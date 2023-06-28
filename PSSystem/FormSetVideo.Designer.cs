@@ -97,7 +97,7 @@ namespace PSSystem
             // btnCam1
             // 
             this.btnCam1.BackColor = System.Drawing.Color.Gray;
-            this.btnCam1.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCam1.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCam1.Location = new System.Drawing.Point(0, 84);
             this.btnCam1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCam1.Name = "btnCam1";
@@ -110,7 +110,7 @@ namespace PSSystem
             // btnCam2
             // 
             this.btnCam2.BackColor = System.Drawing.Color.Gray;
-            this.btnCam2.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCam2.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCam2.Location = new System.Drawing.Point(718, 84);
             this.btnCam2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCam2.Name = "btnCam2";
@@ -123,7 +123,7 @@ namespace PSSystem
             // btnCam3
             // 
             this.btnCam3.BackColor = System.Drawing.Color.Gray;
-            this.btnCam3.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCam3.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCam3.Location = new System.Drawing.Point(0, 291);
             this.btnCam3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCam3.Name = "btnCam3";
@@ -136,7 +136,7 @@ namespace PSSystem
             // btnCam4
             // 
             this.btnCam4.BackColor = System.Drawing.Color.Gray;
-            this.btnCam4.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCam4.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCam4.Location = new System.Drawing.Point(718, 291);
             this.btnCam4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCam4.Name = "btnCam4";
@@ -160,7 +160,7 @@ namespace PSSystem
             // 
             // btnHome
             // 
-            this.btnHome.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnHome.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnHome.ForeColor = System.Drawing.Color.Black;
             this.btnHome.Location = new System.Drawing.Point(725, 359);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -174,7 +174,7 @@ namespace PSSystem
             // 
             // btnNext
             // 
-            this.btnNext.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnNext.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnNext.ForeColor = System.Drawing.Color.Black;
             this.btnNext.Location = new System.Drawing.Point(700, 21);
             this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -227,6 +227,7 @@ namespace PSSystem
             this.chkTempDeco.TabIndex = 1;
             this.chkTempDeco.Text = "온도";
             this.chkTempDeco.UseVisualStyleBackColor = true;
+            this.chkTempDeco.CheckedChanged += new System.EventHandler(this.chkTempDeco_CheckedChanged);
             // 
             // chkLineDeco
             // 
@@ -256,7 +257,7 @@ namespace PSSystem
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox5);
-            this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormSetVideo";

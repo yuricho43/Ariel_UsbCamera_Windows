@@ -293,5 +293,10 @@ namespace PSSystem
             for (int i = 0; i < Globals.MAX_CAMERA; i++)
                 StopCamera(i);
         }
+
+        private void chkTempDeco_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
