@@ -92,7 +92,14 @@ namespace PSSystem
                 return; // show message of non-exist
             }
 
-            gFs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+            if (File.Exists("temp_log.bin"))
+                File.Delete("temp_log.bin");
+            lock (Globals.gLockLog)
+            {
+                File.Copy(filename, "temp_log.bin");
+            }
+
+            gFs = new FileStream("temp_log.bin", FileMode.Open, FileAccess.Read);
             gBr = new BinaryReader(gFs);
 
         }

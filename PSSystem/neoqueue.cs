@@ -21,12 +21,12 @@ namespace PSSystem
         public NeoQueue(UInt32 usize)
         {
             m_pbBuf = new byte[usize];
-            m_dwSize = 0;
             m_dwHead = 0;
             m_dwTail = 0;
             m_dwState = 0;
             m_dwSize = usize;
             m_ullCurrentPos = 0;
+            m_bEOS = false;
         }
 
         public void Initialize()
@@ -286,6 +286,7 @@ namespace PSSystem
             if (dwBytesToCopy == 0)
                 return 0;
 
+            //--- GetOutBuf
             UInt32 dwFill, dwSizeToEnd;
 
             //--- wait data fill
@@ -295,12 +296,13 @@ namespace PSSystem
             if (dwFill < dwBytesToCopy)
                 return 0;
             
+            //--- data exist 
             lock(m_cs)
             {
                 dwSizeToEnd = m_dwSize - m_dwHead;
 
                 //--- 경계까지의 data 만으로 채울 수 있으면 
-                if (dwSizeToEnd > dwBytesToCopy)
+                if (dwSizeToEnd >= dwBytesToCopy)
                 {
                     Buffer.BlockCopy(m_pbBuf, (int)m_dwHead, pbDst, 0, (int)dwBytesToCopy);
                 }
@@ -311,7 +313,7 @@ namespace PSSystem
                 }
             }
 
-            FlushData(dwSizeToEnd);
+            FlushData(dwBytesToCopy);
 
             return dwSizeToEnd;
         }

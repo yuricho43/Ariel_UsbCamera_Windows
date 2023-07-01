@@ -354,16 +354,23 @@ namespace PSSystem
                         Globals.gCurrentIndex = (int)FORM_INDEX.NO_FORM_MAIN;
                     }
                 }
+            } else
+            {
+                ((FormMain)Globals.gFormList[(int)FORM_INDEX.NO_FORM_MAIN]).NotifyEvent(iType, ix);
             }
 
             //------------------------------------------------------------------
             // Logging Data (all are 75 bytes including relay
             // FileName: Log_YYYYMMDD.bin
             // HMS+ DATA
-            if (gQueueLog.GetFreeSize() < (IDataSize))
-                gQueueLog.FlushData((UInt32)IDataSize);
 
-            gQueueLog.PutData(bEvent, (UInt32)IDataSize);
+            if (Globals.gOtherConfig[2] != 0)
+            {
+                if (gQueueLog.GetFreeSize() < (IDataSize))
+                    gQueueLog.FlushData((UInt32)IDataSize);
+
+                gQueueLog.PutData(bEvent, (UInt32)IDataSize);
+            }
         }
 
         void LogAndEventWrite()
@@ -379,11 +386,15 @@ namespace PSSystem
                 {
                     string strLogFile = DateTime.Now.ToString("yyyyMM") + "_events.bin";
                     gQueueEvent.GetData(bTemp, (uint) iiSize);
-                    using (BinaryWriter bw = new BinaryWriter(File.Open(strLogFile, FileMode.Append)))
+                    lock (Globals.gLockEvent)
                     {
-                        bw.Write(bTemp, 0, iiSize);
+                        using (BinaryWriter bw = new BinaryWriter(File.Open(strLogFile, FileMode.Append)))
+                        {
+                            bw.Write(bTemp, 0, iiSize);
+                        }
                     }
                 }
+                iiSize = (int)gQueueEvent.GetFillSize();
 
                 if (Globals.gOtherConfig[2] != 0)       // Log Enabled
                 {
@@ -393,9 +404,12 @@ namespace PSSystem
                     {
                         string strLogFile = DateTime.Now.ToString("yyyyMMdd") + "_log.bin";
                         gQueueLog.GetData(bTemp, (uint)iiSize);
-                        using (BinaryWriter bw = new BinaryWriter(File.Open(strLogFile, FileMode.Append)))
+                        lock(Globals.gLockLog)
                         {
-                            bw.Write(bTemp, 0, iiSize);
+                            using (BinaryWriter bw = new BinaryWriter(File.Open(strLogFile, FileMode.Append)))
+                            {
+                                bw.Write(bTemp, 0, iiSize);
+                            }
                         }
                     }
                 }
