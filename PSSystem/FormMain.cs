@@ -128,22 +128,29 @@ namespace PSSystem
                 if ((iEventType & iComp1[i]) == iComp1[i])
                 {
                     txtColor = Color.Red;
-                    txtValue = "사고 (" + Globals.gAvgValue[ix, i].ToString() + ")";
+                    txtValue = "사고"; // (" + Globals.gAvgValue[ix, i].ToString() + ")";
                 }
                 else if ((iEventType & iComp2[i]) == iComp2[i])
                 {
                     txtColor = Color.Orange;
-                    txtValue = "위험 (" + Globals.gAvgValue[ix, i].ToString() + ")";
+                    txtValue = "위험"; // (" + Globals.gAvgValue[ix, i].ToString() + ")";
                 }
                 else
                 {
                     txtColor = Color.White;
-                    txtValue = "정상 (" + Globals.gAvgValue[ix, i].ToString() + ")";
+                    txtValue = "정상"; // (" + Globals.gAvgValue[ix, i].ToString() + ")";
                 }
 
-                lState[ix, i].ForeColor = txtColor;
-                lState[ix, i].Text = txtValue;
-
+                if (lState[ix, i].InvokeRequired)
+                {
+                    lState[ix, i].Invoke(new MethodInvoker(delegate { lState[ix, i].ForeColor = txtColor; }));
+                    lState[ix, i].Invoke(new MethodInvoker(delegate { lState[ix, i].Text = txtValue; }));
+                }
+                else
+                {
+                    lState[ix, i].ForeColor = txtColor;
+                    lState[ix, i].Text = txtValue;
+                }
             }
 
         }

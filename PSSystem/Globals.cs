@@ -38,6 +38,10 @@ namespace PSSystem
         public static byte[,] gXiroValue  = new byte[MAX_CAMERA,2];
         public static byte[] gRelayValue   = new byte[3];
         public static int[,] gAvgValue = new int[MAX_CAMERA, 5];    // 위험 경계치 (온도, 아크, 소음, 진동, 화재)
+        public static short[,] gTemp16 = new short[MAX_CAMERA, 16];
+        public static short[,] gSensor16 = new short[MAX_CAMERA, 16];      // Arc + Fire
+        public static short[] gSound16 = new short[MAX_CAMERA];
+        public static short[] gXiro16 = new short[MAX_CAMERA];
 
         //--- configuration (환경 설정파일)
         public static string[] gCamName = new string[MAX_CAMERA];   // 카메라 이름

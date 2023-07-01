@@ -147,6 +147,14 @@ namespace PSSystem
             if (serialPort1.BytesToRead <= 0)
                 return;
 
+            if (serialPort1.BytesToRead > 256)
+            {
+                // flush and return;
+                byte[] data1 = new byte[serialPort1.BytesToRead];
+                serialPort1.Read(data1, 0, serialPort1.BytesToRead);
+                return;
+            }
+
             byte[] data = new byte[256];
             lock (gLockObject)
             {
