@@ -371,6 +371,10 @@ namespace PSSystem
 
                 gQueueLog.PutData(bEvent, (UInt32)IDataSize);
             }
+
+            //--- Display Graph
+            ((FormSetNumSensor)Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_NUMSENSOR]).AddPoint(ix);
+
         }
 
         void LogAndEventWrite()
