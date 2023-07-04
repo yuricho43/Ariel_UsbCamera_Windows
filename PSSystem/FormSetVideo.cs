@@ -238,7 +238,7 @@ namespace PSSystem
                 CurrentCam = (CurrentCam + 1) % Globals.gNumCam;
                 StopCamera((CurrentCam + Globals.gNumCam - 1) % Globals.gNumCam);
                 StartCamera(CurrentCam);
-                btnNext.Text = Globals.gDevices[CurrentCam];
+                btnNext.Text = Globals.gCamName[CurrentCam]; // Globals.gDevices[CurrentCam];
             }
         }
 

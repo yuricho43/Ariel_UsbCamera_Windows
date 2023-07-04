@@ -189,7 +189,7 @@ namespace PSSystem
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            GSerial.Send_Equiry_Data(gCmd[gCurMode++ % 5], 0);
+            GSerial.Send_Equiry_Data(gCmd[gCurMode++ % 4], 0);      // relay는 제외
         }
 
 

@@ -120,6 +120,9 @@ namespace PSSystem
             int [] iComp1 = { 0x200, 0x80, 0x20, 0x08, 0x02 };
             int [] iComp2 = { 0x100, 0x40, 0x10, 0x04, 0x01 };
 
+            int RelayN = 0;     // 사고. 특정 channel의 arc/fire/temp 사고 인경우
+            int Relay9 = 0;     // 경고. any channel의 arc/fire/temp 사고인 경우
+            int Relay10 = 0;    // 사고. any channel의 arc/fire/temp 사고인 경우
 
             //--- check arc(0)/fire(1)/xiro(2)/sound(3)/temp(4)
             for (int i = 0; i < 5; i++)
@@ -129,11 +132,21 @@ namespace PSSystem
                 {
                     txtColor = Color.Red;
                     txtValue = "사고";// + " (" + Globals.gAvgValue[ix, i].ToString() + ")";
+
+                    if (i == 0 || i == 1 || i == 4)     // Arc. Relay 1~4: 각 채널의 Arc 또는 
+                    {
+                        RelayN = 1;
+                        Relay10 = 1;
+                    }
                 }
                 else if ((iEventType & iComp2[i]) == iComp2[i])
                 {
                     txtColor = Color.Orange;
                     txtValue = "위험";// + " (" + Globals.gAvgValue[ix, i].ToString() + ")";
+                    if (i == 0 || i == 1 || i == 4)     // Arc. Relay 1~4: 각 채널의 Arc 또는 
+                    {
+                        Relay9 = 1;
+                    }
                 }
                 else
                 {
@@ -153,6 +166,18 @@ namespace PSSystem
                 }
             }
 
+            if (RelayN == 1)    // any one of arc, fire, temp is crictical ==> Relay X On
+            {
+                GSerial.Send_Enquiry_Relay((byte)0xc1, (byte)(ix + 1));
+            }
+            if (Relay9 == 1)    // any one of arc, fire, temp is warning ==> Relay 9 On
+            {
+                GSerial.Send_Enquiry_Relay((byte)0xc1, (byte)(9));
+            }
+            if (Relay10 == 1)    // any one of arc, fire, temp is crictical ==> Relay 10 On
+            {
+                GSerial.Send_Enquiry_Relay((byte)0xc1, (byte)(10));
+            }
         }
     }
 }

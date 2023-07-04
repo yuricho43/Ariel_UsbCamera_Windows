@@ -25,17 +25,22 @@ namespace PSSystem
                 Globals.ChangeForm((int)FORM_INDEX.NO_FORM_MAIN);
         }
 
+
+
         private void btnTest_Click(object sender, EventArgs e)
         {
             ushort uRelay = 0;
 
             for (int i = 0; i < 11; i++) {
-                if (checkList1.GetItemChecked(i))
+                if (checkList1.GetItemChecked(i))       // On
                 {
-                    uRelay |=  (ushort) (1 << i);
-                } 
+                    GSerial.Send_Enquiry_Relay((byte) 0xc1, (byte) (i+1));
+                }
+                else                                    // Off
+                {
+                    GSerial.Send_Enquiry_Relay((byte)0xc2, (byte)(i + 1));
+                }
             }
-            GSerial.Send_Equiry_Data((byte)(uRelay >> 8), (byte)(uRelay & 0xFF));
         }
     }
 }
