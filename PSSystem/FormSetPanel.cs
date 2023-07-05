@@ -65,6 +65,7 @@ namespace PSSystem
             textPeriod.Text = Globals.gOtherConfig[1].ToString();
             checkLogging.Checked =  Globals.gOtherConfig[2] == 0 ? false : true;
 
+            System.Diagnostics.Process.Start("osk.exe");
         }
 
         private void btnSave_Click(object sender, EventArgs e)
