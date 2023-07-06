@@ -31,16 +31,14 @@ namespace PSSystem
         {
             ushort uRelay = 0;
 
-            for (int i = 0; i < 11; i++) {
-                if (checkList1.GetItemChecked(i))       // On
+            for (int i = 0; i < 11; i++)
+            {
+                if (checkList1.GetItemChecked(i))
                 {
-                    GSerial.Send_Enquiry_Relay((byte) 0xc1, (byte) (i+1));
-                }
-                else                                    // Off
-                {
-                    GSerial.Send_Enquiry_Relay((byte)0xc2, (byte)(i + 1));
+                    uRelay |= (ushort)(1 << i);
                 }
             }
+            GSerial.Send_Enquiry_Relay((byte)(uRelay >> 8), (byte)(uRelay & 0xFF));
         }
     }
 }

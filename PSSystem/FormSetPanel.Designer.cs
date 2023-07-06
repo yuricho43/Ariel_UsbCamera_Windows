@@ -75,6 +75,8 @@ namespace PSSystem
             this.checkLogging = new System.Windows.Forms.CheckBox();
             this.textPeriod = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.btnWifiSend = new System.Windows.Forms.Button();
+            this.btnKeyboard = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -503,12 +505,35 @@ namespace PSSystem
             this.label13.TabIndex = 2;
             this.label13.Text = "데이타 요청 주기 (200~2000) :";
             // 
+            // btnWifiSend
+            // 
+            this.btnWifiSend.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnWifiSend.Location = new System.Drawing.Point(726, 170);
+            this.btnWifiSend.Name = "btnWifiSend";
+            this.btnWifiSend.Size = new System.Drawing.Size(63, 31);
+            this.btnWifiSend.TabIndex = 23;
+            this.btnWifiSend.Text = "WiFi전송";
+            this.btnWifiSend.UseVisualStyleBackColor = true;
+            // 
+            // btnKeyboard
+            // 
+            this.btnKeyboard.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnKeyboard.Location = new System.Drawing.Point(726, 213);
+            this.btnKeyboard.Name = "btnKeyboard";
+            this.btnKeyboard.Size = new System.Drawing.Size(63, 31);
+            this.btnKeyboard.TabIndex = 24;
+            this.btnKeyboard.Text = "키보드";
+            this.btnKeyboard.UseVisualStyleBackColor = true;
+            this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
+            // 
             // FormSetPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 416);
+            this.Controls.Add(this.btnKeyboard);
+            this.Controls.Add(this.btnWifiSend);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -584,5 +609,7 @@ namespace PSSystem
         private TextBox textTempCrit;
         private CheckBox checkLogging;
         private TextBox textPeriod;
+        private Button btnWifiSend;
+        private Button btnKeyboard;
     }
 }

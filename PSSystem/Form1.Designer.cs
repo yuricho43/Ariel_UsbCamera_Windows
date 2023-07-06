@@ -32,7 +32,7 @@
             this.serialPortMain = new System.IO.Ports.SerialPort(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblDt = new System.Windows.Forms.Label();
             this.lblModelName = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
             this.panelMiddle = new System.Windows.Forms.Panel();
@@ -43,7 +43,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.lblDate);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblDt);
             this.panel1.Controls.Add(this.lblModelName);
             this.panel1.Controls.Add(this.btnMenu);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -65,18 +65,19 @@
             this.lblDate.Text = "label3";
             this.lblDate.Visible = false;
             // 
-            // label1
+            // lblDt
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(503, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 29);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "날짜 :";
-            this.label1.Visible = false;
+            this.lblDt.AutoSize = true;
+            this.lblDt.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lblDt.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDt.ForeColor = System.Drawing.Color.White;
+            this.lblDt.Location = new System.Drawing.Point(503, 18);
+            this.lblDt.Name = "lblDt";
+            this.lblDt.Size = new System.Drawing.Size(63, 29);
+            this.lblDt.TabIndex = 2;
+            this.lblDt.Text = "날짜 :";
+            this.lblDt.Visible = false;
+            this.lblDt.DoubleClick += new System.EventHandler(this.lblDt_DoubleClick);
             // 
             // lblModelName
             // 
@@ -90,6 +91,7 @@
             this.lblModelName.TabIndex = 1;
             this.lblModelName.Text = "KENTC-23NP-P";
             this.lblModelName.Visible = false;
+            this.lblModelName.DoubleClick += new System.EventHandler(this.lblModelName_DoubleClick);
             // 
             // btnMenu
             // 
@@ -146,7 +148,7 @@
         private System.IO.Ports.SerialPort serialPortMain;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDt;
         private System.Windows.Forms.Label lblModelName;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Panel panelMiddle;

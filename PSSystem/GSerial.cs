@@ -125,7 +125,7 @@ namespace PSSystem
             Send_Serial_Data_Binary(bSendData, 6);
         }
 
-        public static void Send_Enquiry_Relay(byte bIndex, byte bData)
+        public static void Send_Enquiry_Relay(byte bHigh, byte bLow)
         {
             //--- send data : STX index    header data checksum ETX    // 6 byte
             //                02  c0  0x0x,  0x0x  xor     03
@@ -134,9 +134,9 @@ namespace PSSystem
 
             byte[] bSendData = new byte[16];
             bSendData[0] = 0x02;
-            bSendData[1] = bIndex;          // c0 (on) or c1 (off)
-            bSendData[2] = (byte) 0x01;    // header
-            bSendData[3] = bData;    // Data
+            bSendData[1] = (byte) 0xc0;          // c0 (on)
+            bSendData[2] = bHigh;    // header
+            bSendData[3] = bLow;    // Data
             bSendData[4] = GetCheckSum(bSendData, 1, 3);
             bSendData[5] = 0x03;
             Send_Serial_Data_Binary(bSendData, 6);

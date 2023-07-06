@@ -108,5 +108,10 @@ namespace PSSystem
 
             ((FormMain)Globals.gFormList[(int)FORM_INDEX.NO_FORM_MAIN]).ShowMainChannel();
         }
+
+        private void btnKeyboard_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("osk.exe");
+        }
     }
 }

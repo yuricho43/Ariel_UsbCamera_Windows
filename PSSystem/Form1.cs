@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -74,7 +75,7 @@ namespace PSSystem
             Globals.gFormList[0].Show();
             panel1.BackgroundImage = Properties.Resources.back;
             lblModelName.BackColor = Color.Transparent;
-            label1.BackColor = Color.Transparent;
+            lblDt.BackColor = Color.Transparent;
             lblDate.BackColor = Color.Transparent;
 
             // For Debug Message
@@ -138,7 +139,7 @@ namespace PSSystem
         {
             lblModelName.Visible = true;
             lblDate.Visible = true;
-            label1.Visible = true;
+            lblDt.Visible = true;
             btnMenu.Visible = true;
         }
 
@@ -180,6 +181,21 @@ namespace PSSystem
         {
             Globals.Write_Configuration();
             ((FormSetVideo)Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_VIDEO]).Close_Video();
+        }
+
+        private void lblModelName_DoubleClick(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void lblDt_DoubleClick(object sender, EventArgs e)
+        {
+            Globals.gGoMain = (Globals.gGoMain + 1) % 2;
+            if (Globals.gGoMain == 0)
+                lblDt.ForeColor = Color.LightGray;
+            else
+                lblDt.ForeColor = Color.White;
+
         }
     }
 }

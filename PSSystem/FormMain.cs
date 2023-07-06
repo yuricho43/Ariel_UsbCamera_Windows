@@ -123,6 +123,9 @@ namespace PSSystem
             int RelayN = 0;     // 사고. 특정 channel의 arc/fire/temp 사고 인경우
             int Relay9 = 0;     // 경고. any channel의 arc/fire/temp 사고인 경우
             int Relay10 = 0;    // 사고. any channel의 arc/fire/temp 사고인 경우
+            byte bHigh = 0;
+            byte bLow = 0;
+            ushort uRelay = 0;
 
             //--- check arc(0)/fire(1)/xiro(2)/sound(3)/temp(4)
             for (int i = 0; i < 5; i++)
@@ -166,17 +169,17 @@ namespace PSSystem
                 }
             }
 
-            if (RelayN == 1)    // any one of arc, fire, temp is crictical ==> Relay X On
+            if (RelayN == 1)    // any one of arc, fire, temp is crictical ==> Relay X On (Relay 1~8)
             {
-                GSerial.Send_Enquiry_Relay((byte)0xc1, (byte)(ix + 1));
+                GSerial.Send_Enquiry_Relay((byte)0x00, (byte)(1 << ix));
             }
             if (Relay9 == 1)    // any one of arc, fire, temp is warning ==> Relay 9 On
             {
-                GSerial.Send_Enquiry_Relay((byte)0xc1, (byte)(9));
+                GSerial.Send_Enquiry_Relay((byte)0x01, (byte)(0));
             }
             if (Relay10 == 1)    // any one of arc, fire, temp is crictical ==> Relay 10 On
             {
-                GSerial.Send_Enquiry_Relay((byte)0xc1, (byte)(10));
+                GSerial.Send_Enquiry_Relay((byte)0x02, (byte)(0));
             }
         }
     }

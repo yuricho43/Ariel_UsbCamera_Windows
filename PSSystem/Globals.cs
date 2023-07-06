@@ -53,6 +53,8 @@ namespace PSSystem
         public static string[] gWifi = new string[4];               // SSID, PASS, Phone#, SNS
         public static string gComPort;                              // 통신 포트 (COM2, COM3, ...)
         public static int[] gOtherConfig = new int[4];              // Reserved. [0] = DebugWindowShow, 1: enquiry period, 2:data logging
+
+        public static int gGoMain = 1;
         public static void ChangeForm(int index)
         {
             Globals.gFormList[index].Show();

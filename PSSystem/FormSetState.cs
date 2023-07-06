@@ -336,7 +336,7 @@ namespace PSSystem
                 // Call Main Panel Function
                 ((FormMain) Globals.gFormList[(int)FORM_INDEX.NO_FORM_MAIN]).NotifyEvent(iType, ix);
 
-                if (iType != 0) // go to main
+                if (iType != 0 && Globals.gGoMain == 1) // go to main
                 {
                     if (Globals.gCurrentIndex != (int)FORM_INDEX.NO_FORM_MAIN)
                     {

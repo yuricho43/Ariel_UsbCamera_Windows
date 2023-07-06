@@ -84,6 +84,7 @@ namespace PSSystem
             // 
             // btnTest
             // 
+            this.btnTest.ForeColor = System.Drawing.Color.Black;
             this.btnTest.Location = new System.Drawing.Point(146, 243);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(115, 38);
