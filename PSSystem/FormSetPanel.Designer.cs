@@ -49,7 +49,6 @@ namespace PSSystem
             this.label17 = new System.Windows.Forms.Label();
             this.textWifiPass = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textWifiName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textSensor = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -77,6 +76,7 @@ namespace PSSystem
             this.label13 = new System.Windows.Forms.Label();
             this.btnWifiSend = new System.Windows.Forms.Button();
             this.btnKeyboard = new System.Windows.Forms.Button();
+            this.cmbWifiName = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -205,13 +205,13 @@ namespace PSSystem
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cmbWifiName);
             this.groupBox2.Controls.Add(this.textSNSString);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.textPhoneNumber);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.textWifiPass);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textWifiName);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.textSensor);
             this.groupBox2.Controls.Add(this.label9);
@@ -219,14 +219,14 @@ namespace PSSystem
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(393, 56);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(327, 145);
+            this.groupBox2.Size = new System.Drawing.Size(327, 195);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "센서수, Wifi";
             // 
             // textSNSString
             // 
-            this.textSNSString.Location = new System.Drawing.Point(125, 110);
+            this.textSNSString.Location = new System.Drawing.Point(125, 154);
             this.textSNSString.Name = "textSNSString";
             this.textSNSString.Size = new System.Drawing.Size(196, 25);
             this.textSNSString.TabIndex = 9;
@@ -234,7 +234,7 @@ namespace PSSystem
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(25, 113);
+            this.label18.Location = new System.Drawing.Point(25, 157);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(50, 17);
             this.label18.TabIndex = 8;
@@ -243,7 +243,7 @@ namespace PSSystem
             // 
             // textPhoneNumber
             // 
-            this.textPhoneNumber.Location = new System.Drawing.Point(125, 82);
+            this.textPhoneNumber.Location = new System.Drawing.Point(125, 122);
             this.textPhoneNumber.Name = "textPhoneNumber";
             this.textPhoneNumber.Size = new System.Drawing.Size(196, 25);
             this.textPhoneNumber.TabIndex = 7;
@@ -251,7 +251,7 @@ namespace PSSystem
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(25, 85);
+            this.label17.Location = new System.Drawing.Point(25, 125);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(73, 17);
             this.label17.TabIndex = 6;
@@ -259,7 +259,7 @@ namespace PSSystem
             // 
             // textWifiPass
             // 
-            this.textWifiPass.Location = new System.Drawing.Point(125, 54);
+            this.textWifiPass.Location = new System.Drawing.Point(125, 90);
             this.textWifiPass.Name = "textWifiPass";
             this.textWifiPass.Size = new System.Drawing.Size(196, 25);
             this.textWifiPass.TabIndex = 5;
@@ -267,23 +267,16 @@ namespace PSSystem
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 57);
+            this.label7.Location = new System.Drawing.Point(25, 93);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 17);
             this.label7.TabIndex = 4;
             this.label7.Text = "Wifi 암호: ";
             // 
-            // textWifiName
-            // 
-            this.textWifiName.Location = new System.Drawing.Point(219, 26);
-            this.textWifiName.Name = "textWifiName";
-            this.textWifiName.Size = new System.Drawing.Size(102, 25);
-            this.textWifiName.TabIndex = 3;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(147, 29);
+            this.label8.Location = new System.Drawing.Point(25, 61);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 17);
             this.label8.TabIndex = 2;
@@ -291,9 +284,9 @@ namespace PSSystem
             // 
             // textSensor
             // 
-            this.textSensor.Location = new System.Drawing.Point(84, 26);
+            this.textSensor.Location = new System.Drawing.Point(125, 26);
             this.textSensor.Name = "textSensor";
-            this.textSensor.Size = new System.Drawing.Size(42, 25);
+            this.textSensor.Size = new System.Drawing.Size(50, 25);
             this.textSensor.TabIndex = 1;
             // 
             // label9
@@ -472,9 +465,9 @@ namespace PSSystem
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(393, 204);
+            this.groupBox4.Location = new System.Drawing.Point(393, 270);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(327, 163);
+            this.groupBox4.Size = new System.Drawing.Size(327, 96);
             this.groupBox4.TabIndex = 22;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "기타 설정";
@@ -514,6 +507,7 @@ namespace PSSystem
             this.btnWifiSend.TabIndex = 23;
             this.btnWifiSend.Text = "WiFi전송";
             this.btnWifiSend.UseVisualStyleBackColor = true;
+            this.btnWifiSend.Click += new System.EventHandler(this.btnWifiSend_Click);
             // 
             // btnKeyboard
             // 
@@ -525,6 +519,14 @@ namespace PSSystem
             this.btnKeyboard.Text = "키보드";
             this.btnKeyboard.UseVisualStyleBackColor = true;
             this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
+            // 
+            // cmbWifiName
+            // 
+            this.cmbWifiName.FormattingEnabled = true;
+            this.cmbWifiName.Location = new System.Drawing.Point(125, 58);
+            this.cmbWifiName.Name = "cmbWifiName";
+            this.cmbWifiName.Size = new System.Drawing.Size(196, 25);
+            this.cmbWifiName.TabIndex = 10;
             // 
             // FormSetPanel
             // 
@@ -579,7 +581,6 @@ namespace PSSystem
         private GroupBox groupBox2;
         private TextBox textWifiPass;
         private Label label7;
-        private TextBox textWifiName;
         private Label label8;
         private TextBox textSensor;
         private Label label9;
@@ -611,5 +612,6 @@ namespace PSSystem
         private TextBox textPeriod;
         private Button btnWifiSend;
         private Button btnKeyboard;
+        private ComboBox cmbWifiName;
     }
 }

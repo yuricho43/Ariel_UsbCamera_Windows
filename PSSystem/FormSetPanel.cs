@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NativeWifi;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,32 @@ namespace PSSystem
 {
     public partial class FormSetPanel : Form
     {
+        
+	    private WlanClient wlanClient = new WlanClient();
+        List<string> wSSIDs = new List<string>();
+        private string GetSSIDString(Wlan.WlanAvailableNetwork wlanAvailableNetwork)
+        {
+            Wlan.Dot11Ssid dot11Ssid = wlanAvailableNetwork.dot11Ssid;
+            return Encoding.ASCII.GetString(dot11Ssid.SSID, 0, (int)dot11Ssid.SSIDLength);
+        }
+
+        void GetIds()
+        {
+            Wlan.WlanAvailableNetwork[] wlanAvailableNetworkArray = this.wlanClient.Interfaces[0].GetAvailableNetworkList(0);
+            int count = wlanAvailableNetworkArray.Length;
+
+            wSSIDs.Clear();
+            for (int i = 0; i < count; i++)
+            {
+                Wlan.WlanAvailableNetwork wlanAvailableNetwork = wlanAvailableNetworkArray[i];
+                string ssidString = GetSSIDString(wlanAvailableNetwork);
+                if (ssidString.Length > 0)
+                    wSSIDs.Add(ssidString);
+            }
+
+            wSSIDs = wSSIDs.Distinct().ToList();
+        }
+
         public FormSetPanel()
         {
             InitializeComponent();
@@ -22,6 +49,7 @@ namespace PSSystem
             groupBox2.BackColor = Color.Transparent;
             groupBox3.BackColor = Color.Transparent;
             groupBox4.BackColor = Color.Transparent;
+            GetIds();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -42,7 +70,10 @@ namespace PSSystem
 
             //--- Sensor수, Wifi
             textSensor.Text = Globals.gNumSensor.ToString();
-            textWifiName.Text = Globals.gWifi[0];
+            cmbWifiName.Items.Clear();
+            for (int i = 0; i < wSSIDs.Count; i++)
+                cmbWifiName.Items.Add(wSSIDs[i]);
+            cmbWifiName.Text = Globals.gWifi[0];
             textWifiPass.Text = Globals.gWifi[1];
             textPhoneNumber.Text = Globals.gWifi[2];
             textSNSString.Text = Globals.gWifi[3];
@@ -77,7 +108,7 @@ namespace PSSystem
 
             //--- Sensor수, Wifi
             Globals.gNumSensor = int.Parse(textSensor.Text);
-            Globals.gWifi[0] = textWifiName.Text;
+            Globals.gWifi[0] = cmbWifiName.Text;
             Globals.gWifi[1] = textWifiPass.Text;
             Globals.gWifi[2] = textPhoneNumber.Text;
             Globals.gWifi[3] = textSNSString.Text;
@@ -113,6 +144,18 @@ namespace PSSystem
         private void btnKeyboard_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("osk.exe");
+            GetIds();
+        }
+
+        private void btnWifiSend_Click(object sender, EventArgs e)
+        {
+            // Wifi 전송
+            /*  참고 변수들
+            Globals.gWifi[0] = wifi 이름;
+            Globals.gWifi[1] = wifi password;
+            Globals.gWifi[2] = 전화번호
+            Globals.gWifi[3] = SNM문자열
+            */
         }
     }
 }
