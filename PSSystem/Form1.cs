@@ -160,8 +160,6 @@ namespace PSSystem
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Globals.Write_Configuration();
-            ((FormSetVideo)Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_VIDEO]).Close_Video();
         }
 
         public void Process_Received__Data(byte [] dataSensor, int len)
@@ -179,12 +177,14 @@ namespace PSSystem
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Globals.Write_Configuration();
-            ((FormSetVideo)Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_VIDEO]).Close_Video();
         }
 
         private void lblModelName_DoubleClick(object sender, EventArgs e)
         {
+            Globals.Write_Configuration();
+            ((FormSetVideo)Globals.gFormList[(int)FORM_INDEX.NO_FORM_SET_VIDEO]).Close_Video();
+
+            Thread.Sleep(1000);
             Close();
         }
 
