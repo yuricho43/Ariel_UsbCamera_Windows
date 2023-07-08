@@ -93,7 +93,7 @@ namespace PSSystem
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(65, 75);
+            this.label2.Location = new System.Drawing.Point(65, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 45);
             this.label2.TabIndex = 18;
@@ -126,7 +126,7 @@ namespace PSSystem
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(65, 130);
+            this.label3.Location = new System.Drawing.Point(65, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 45);
             this.label3.TabIndex = 28;
@@ -152,7 +152,7 @@ namespace PSSystem
             this.lblFire.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblFire.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblFire.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFire.Location = new System.Drawing.Point(7, 87);
+            this.lblFire.Location = new System.Drawing.Point(7, 33);
             this.lblFire.Name = "lblFire";
             this.lblFire.Size = new System.Drawing.Size(118, 31);
             this.lblFire.TabIndex = 34;
@@ -200,7 +200,7 @@ namespace PSSystem
             this.lblArc.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblArc.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblArc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblArc.Location = new System.Drawing.Point(7, 32);
+            this.lblArc.Location = new System.Drawing.Point(7, 87);
             this.lblArc.Name = "lblArc";
             this.lblArc.Size = new System.Drawing.Size(118, 31);
             this.lblArc.TabIndex = 30;
@@ -227,7 +227,7 @@ namespace PSSystem
             this.lblFire2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblFire2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblFire2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFire2.Location = new System.Drawing.Point(7, 87);
+            this.lblFire2.Location = new System.Drawing.Point(7, 33);
             this.lblFire2.Name = "lblFire2";
             this.lblFire2.Size = new System.Drawing.Size(118, 31);
             this.lblFire2.TabIndex = 34;
@@ -275,7 +275,7 @@ namespace PSSystem
             this.lblArc2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblArc2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblArc2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblArc2.Location = new System.Drawing.Point(7, 32);
+            this.lblArc2.Location = new System.Drawing.Point(7, 87);
             this.lblArc2.Name = "lblArc2";
             this.lblArc2.Size = new System.Drawing.Size(118, 31);
             this.lblArc2.TabIndex = 30;
@@ -302,7 +302,7 @@ namespace PSSystem
             this.lblFire4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblFire4.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblFire4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFire4.Location = new System.Drawing.Point(7, 87);
+            this.lblFire4.Location = new System.Drawing.Point(7, 33);
             this.lblFire4.Name = "lblFire4";
             this.lblFire4.Size = new System.Drawing.Size(118, 31);
             this.lblFire4.TabIndex = 34;
@@ -350,7 +350,7 @@ namespace PSSystem
             this.lblArc4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblArc4.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblArc4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblArc4.Location = new System.Drawing.Point(7, 32);
+            this.lblArc4.Location = new System.Drawing.Point(7, 87);
             this.lblArc4.Name = "lblArc4";
             this.lblArc4.Size = new System.Drawing.Size(118, 31);
             this.lblArc4.TabIndex = 30;
@@ -377,7 +377,7 @@ namespace PSSystem
             this.lblFire3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblFire3.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblFire3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFire3.Location = new System.Drawing.Point(7, 87);
+            this.lblFire3.Location = new System.Drawing.Point(6, 33);
             this.lblFire3.Name = "lblFire3";
             this.lblFire3.Size = new System.Drawing.Size(118, 31);
             this.lblFire3.TabIndex = 34;
@@ -425,7 +425,7 @@ namespace PSSystem
             this.lblArc3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblArc3.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblArc3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblArc3.Location = new System.Drawing.Point(7, 32);
+            this.lblArc3.Location = new System.Drawing.Point(7, 87);
             this.lblArc3.Name = "lblArc3";
             this.lblArc3.Size = new System.Drawing.Size(118, 31);
             this.lblArc3.TabIndex = 30;

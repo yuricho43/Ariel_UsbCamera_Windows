@@ -79,18 +79,18 @@ namespace PSSystem
             textSNSString.Text = Globals.gWifi[3];
 
             //--- Warnings
-            textSensorWarn.Text = Globals.gWarningThreshold[0].ToString();
-            textFireWarn.Text = Globals.gWarningThreshold[1].ToString();
+            textFireWarn.Text = Globals.gWarningThreshold[0].ToString();        // 화재
+            textSensorWarn.Text = Globals.gWarningThreshold[1].ToString();
             textXiroWarn.Text = Globals.gWarningThreshold[2].ToString();
             textSoundWarn.Text = Globals.gWarningThreshold[3].ToString();
-            textTempWarn.Text = Globals.gWarningThreshold[4].ToString();
+            textTempWarn.Text = Globals.gWarningThreshold[4].ToString();        // 온도
 
             //--- Criticals
-            textSensorCrit.Text = Globals.gCriticalThreshold[0].ToString();
-            textFireCrit.Text = Globals.gCriticalThreshold[1].ToString();
+            textFireCrit.Text = Globals.gCriticalThreshold[0].ToString();       // 화재
+            textSensorCrit.Text = Globals.gCriticalThreshold[1].ToString();
             textXiroCrit.Text = Globals.gCriticalThreshold[2].ToString();
             textSoundCrit.Text = Globals.gCriticalThreshold[3].ToString();
-            textTempCrit.Text = Globals.gCriticalThreshold[4].ToString();
+            textTempCrit.Text = Globals.gCriticalThreshold[4].ToString();       // 온도
 
             //--- Others
             textPeriod.Text = Globals.gOtherConfig[1].ToString();
@@ -114,18 +114,18 @@ namespace PSSystem
             Globals.gWifi[3] = textSNSString.Text;
 
             //--- Warnings
-            Globals.gWarningThreshold[0] = int.Parse(textTempWarn.Text);
+            Globals.gWarningThreshold[0] = int.Parse(textFireWarn.Text);        // 화재
             Globals.gWarningThreshold[1] = int.Parse(textSensorWarn.Text);
-            Globals.gWarningThreshold[2] = int.Parse(textSoundWarn.Text);
-            Globals.gWarningThreshold[3] = int.Parse(textXiroWarn.Text);
-            Globals.gWarningThreshold[4] = int.Parse(textFireWarn.Text);
+            Globals.gWarningThreshold[2] = int.Parse(textXiroWarn.Text);
+            Globals.gWarningThreshold[3] = int.Parse(textSoundWarn.Text);
+            Globals.gWarningThreshold[4] = int.Parse(textTempWarn.Text);        // 온도
 
             //--- Criticals
-            Globals.gCriticalThreshold[0] = int.Parse(textTempCrit.Text);
+            Globals.gCriticalThreshold[0] = int.Parse(textFireCrit.Text);       // 화재
             Globals.gCriticalThreshold[1] = int.Parse(textSensorCrit.Text);
-            Globals.gCriticalThreshold[2] = int.Parse(textSoundCrit.Text);
-            Globals.gCriticalThreshold[3] = int.Parse(textXiroCrit.Text);
-            Globals.gCriticalThreshold[4] = int.Parse(textFireCrit.Text);
+            Globals.gCriticalThreshold[2] = int.Parse(textXiroCrit.Text);
+            Globals.gCriticalThreshold[3] = int.Parse(textSoundCrit.Text);
+            Globals.gCriticalThreshold[4] = int.Parse(textTempCrit.Text);       // 온도
 
             //--- Others
             Globals.gOtherConfig[1] = int.Parse(textPeriod.Text);

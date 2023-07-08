@@ -43,6 +43,7 @@ namespace PSSystem
             this.label2 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbWifiName = new System.Windows.Forms.ComboBox();
             this.textSNSString = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.textPhoneNumber = new System.Windows.Forms.TextBox();
@@ -76,7 +77,6 @@ namespace PSSystem
             this.label13 = new System.Windows.Forms.Label();
             this.btnWifiSend = new System.Windows.Forms.Button();
             this.btnKeyboard = new System.Windows.Forms.Button();
-            this.cmbWifiName = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -224,6 +224,14 @@ namespace PSSystem
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "센서수, Wifi";
             // 
+            // cmbWifiName
+            // 
+            this.cmbWifiName.FormattingEnabled = true;
+            this.cmbWifiName.Location = new System.Drawing.Point(125, 58);
+            this.cmbWifiName.Name = "cmbWifiName";
+            this.cmbWifiName.Size = new System.Drawing.Size(196, 25);
+            this.cmbWifiName.TabIndex = 10;
+            // 
             // textSNSString
             // 
             this.textSNSString.Location = new System.Drawing.Point(125, 154);
@@ -345,7 +353,7 @@ namespace PSSystem
             // 
             // textFireCrit
             // 
-            this.textFireCrit.Location = new System.Drawing.Point(207, 49);
+            this.textFireCrit.Location = new System.Drawing.Point(207, 22);
             this.textFireCrit.Name = "textFireCrit";
             this.textFireCrit.Size = new System.Drawing.Size(92, 25);
             this.textFireCrit.TabIndex = 14;
@@ -366,7 +374,7 @@ namespace PSSystem
             // 
             // textSensorCrit
             // 
-            this.textSensorCrit.Location = new System.Drawing.Point(207, 22);
+            this.textSensorCrit.Location = new System.Drawing.Point(207, 49);
             this.textSensorCrit.Name = "textSensorCrit";
             this.textSensorCrit.Size = new System.Drawing.Size(92, 25);
             this.textSensorCrit.TabIndex = 11;
@@ -380,7 +388,7 @@ namespace PSSystem
             // 
             // textFireWarn
             // 
-            this.textFireWarn.Location = new System.Drawing.Point(85, 49);
+            this.textFireWarn.Location = new System.Drawing.Point(85, 22);
             this.textFireWarn.Name = "textFireWarn";
             this.textFireWarn.Size = new System.Drawing.Size(95, 25);
             this.textFireWarn.TabIndex = 9;
@@ -388,7 +396,7 @@ namespace PSSystem
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(25, 52);
+            this.label19.Location = new System.Drawing.Point(25, 25);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(42, 17);
             this.label19.TabIndex = 8;
@@ -428,7 +436,7 @@ namespace PSSystem
             // 
             // textSensorWarn
             // 
-            this.textSensorWarn.Location = new System.Drawing.Point(85, 22);
+            this.textSensorWarn.Location = new System.Drawing.Point(85, 49);
             this.textSensorWarn.Name = "textSensorWarn";
             this.textSensorWarn.Size = new System.Drawing.Size(95, 25);
             this.textSensorWarn.TabIndex = 3;
@@ -436,7 +444,7 @@ namespace PSSystem
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(25, 25);
+            this.label10.Location = new System.Drawing.Point(25, 52);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 17);
             this.label10.TabIndex = 2;
@@ -519,14 +527,6 @@ namespace PSSystem
             this.btnKeyboard.Text = "키보드";
             this.btnKeyboard.UseVisualStyleBackColor = true;
             this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
-            // 
-            // cmbWifiName
-            // 
-            this.cmbWifiName.FormattingEnabled = true;
-            this.cmbWifiName.Location = new System.Drawing.Point(125, 58);
-            this.cmbWifiName.Name = "cmbWifiName";
-            this.cmbWifiName.Size = new System.Drawing.Size(196, 25);
-            this.cmbWifiName.TabIndex = 10;
             // 
             // FormSetPanel
             // 

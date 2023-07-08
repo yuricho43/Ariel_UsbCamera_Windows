@@ -235,9 +235,9 @@ namespace PSSystem
 
                 if ( (i % 2) == 0)  // Fire
                 {
-                    Globals.gAvgValue[ix, 1] += Globals.gSensor16[ix, i];
-                    if (Globals.gSensor16[ix, i] > Globals.gWarningThreshold[1])
-                        if (Globals.gSensor16[ix, i] > Globals.gCriticalThreshold[1])
+                    Globals.gAvgValue[ix, 0] += Globals.gSensor16[ix, i];
+                    if (Globals.gSensor16[ix, i] > Globals.gWarningThreshold[0])        // 화재
+                        if (Globals.gSensor16[ix, i] > Globals.gCriticalThreshold[0])
                         {
                             iType |= 0x80;
                             break;
@@ -247,10 +247,10 @@ namespace PSSystem
                 }
                 else                // Arc
                 {
-                    Globals.gAvgValue[ix, 0] += Globals.gSensor16[ix, i];
+                    Globals.gAvgValue[ix, 1] += Globals.gSensor16[ix, i];
 
-                    if (Globals.gSensor16[ix, i] > Globals.gWarningThreshold[0])
-                        if (Globals.gSensor16[ix, i] > Globals.gCriticalThreshold[0])
+                    if (Globals.gSensor16[ix, i] > Globals.gWarningThreshold[1])        // 아크
+                        if (Globals.gSensor16[ix, i] > Globals.gCriticalThreshold[1])
                         {
                             iType |= 0x200;
                             break;
