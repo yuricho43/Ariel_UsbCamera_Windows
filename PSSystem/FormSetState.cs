@@ -55,7 +55,9 @@ namespace PSSystem
         /* ix    0         1      2      34      66     68    70    71
          *      STX     Index   온도     센서    사운드  자이로 CS    ETX   (39 bytes ==> 2 + 32 + 32 + 2 + 2 + 2 = 72)
           센서	0x02	0xb1~b4	32byte	32byte	2byte	2byte Ex-Or	0x03
-         
+                 (6월)          
+                               화재/아크 진동  사운드 온도
+                                  32     2      2    32
            ix    0         1      2      3                    6       7
         	    STX	    index	Header	Data1	Data1	Data1 CS	ETX   (8bytes)
           릴레이	0x02	0xc1	0x01	1byte	1byte	1byte Ex-Or	0x03
@@ -71,6 +73,8 @@ namespace PSSystem
             {
                 int iCh = (int)(data[1] - (byte)0xb1);
 
+                /*5월 프로토콜 */
+                /*
                 for (int i = 0; i < 32; i++)
                 {
                     Globals.gTempValue[iCh, i] = data[i + 2];             // 온도
@@ -80,6 +84,14 @@ namespace PSSystem
                 Globals.gSoundValue[iCh, 1] = data[67];
                 Globals.gXiroValue[iCh, 0] = data[68];
                 Globals.gXiroValue[iCh, 1] = data[69];
+                */
+
+                /* 6월 프로토콜 */
+                for (int i = 0; i < 32; i++)
+                    Globals.gSensorValue[iCh, i] = data[i + 2];      // 센서
+
+
+
                 Display_Sensor_Data(iCh);
             } else if (data[1] == (byte)CH_INDEX.CH_RELAY)
             {
@@ -356,7 +368,8 @@ namespace PSSystem
                 }
             } else
             {
-                ((FormMain)Globals.gFormList[(int)FORM_INDEX.NO_FORM_MAIN]).NotifyEvent(iType, ix);
+                // Uncomment if you want to display average value on the main menu
+                // ((FormMain)Globals.gFormList[(int)FORM_INDEX.NO_FORM_MAIN]).NotifyEvent(iType, ix);
             }
 
             //------------------------------------------------------------------
