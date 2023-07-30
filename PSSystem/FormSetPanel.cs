@@ -25,6 +25,9 @@ namespace PSSystem
 
         void GetIds()
         {
+            if (this.wlanClient.Interfaces.Count() <= 0)
+                return;
+
             Wlan.WlanAvailableNetwork[] wlanAvailableNetworkArray = this.wlanClient.Interfaces[0].GetAvailableNetworkList(0);
             int count = wlanAvailableNetworkArray.Length;
 
