@@ -40,5 +40,12 @@ namespace PSSystem
             }
             GSerial.Send_Enquiry_Relay((byte)(uRelay >> 8), (byte)(uRelay & 0xFF));
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 11; i++)
+                checkList1.SetItemChecked(i, false);
+
+        }
     }
 }

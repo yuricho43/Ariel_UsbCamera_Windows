@@ -34,11 +34,12 @@ namespace PSSystem
             this.label2 = new System.Windows.Forms.Label();
             this.checkList1 = new System.Windows.Forms.CheckedListBox();
             this.btnTest = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnHome
             // 
-            this.btnHome.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnHome.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnHome.ForeColor = System.Drawing.Color.Black;
             this.btnHome.Location = new System.Drawing.Point(725, 359);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -62,7 +63,7 @@ namespace PSSystem
             // 
             // checkList1
             // 
-            this.checkList1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.checkList1.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.checkList1.FormattingEnabled = true;
             this.checkList1.Items.AddRange(new object[] {
             "릴레이 1",
@@ -93,16 +94,28 @@ namespace PSSystem
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
+            // btnClear
+            // 
+            this.btnClear.ForeColor = System.Drawing.Color.Black;
+            this.btnClear.Location = new System.Drawing.Point(492, 243);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(115, 38);
+            this.btnClear.TabIndex = 28;
+            this.btnClear.Text = "선택클리어";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // FormSetRelay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 416);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.checkList1);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.label2);
-            this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -119,5 +132,6 @@ namespace PSSystem
         private Label label2;
         private CheckedListBox checkList1;
         private Button btnTest;
+        private Button btnClear;
     }
 }
