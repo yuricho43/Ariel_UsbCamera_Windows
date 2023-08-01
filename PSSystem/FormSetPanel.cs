@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,17 @@ namespace PSSystem
             if (this.wlanClient.Interfaces.Count() <= 0)
                 return;
 
-            Wlan.WlanAvailableNetwork[] wlanAvailableNetworkArray = this.wlanClient.Interfaces[0].GetAvailableNetworkList(0);
+            Wlan.WlanAvailableNetwork[] wlanAvailableNetworkArray;
+
+            try
+            {
+                wlanAvailableNetworkArray = this.wlanClient.Interfaces[0].GetAvailableNetworkList(0);
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
+
             int count = wlanAvailableNetworkArray.Length;
 
             wSSIDs.Clear();
